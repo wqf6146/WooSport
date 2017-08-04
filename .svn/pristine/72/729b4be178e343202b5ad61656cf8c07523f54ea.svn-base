@@ -1,0 +1,240 @@
+package com.yhrjkf.woyundong.http;
+
+import android.support.annotation.NonNull;
+import android.util.Log;
+
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.FieldNamingStrategy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.jakewharton.retrofit.Ok3Client;
+import com.lidroid.xutils.db.annotation.NotNull;
+import com.yhrjkf.woyundong.App;
+import com.yhrjkf.woyundong.bean.CNewsBean;
+import com.yhrjkf.woyundong.bean.InvitationBean;
+import com.yhrjkf.woyundong.bean.LoginBean;
+import com.yhrjkf.woyundong.bean.NewBean;
+import com.yhrjkf.woyundong.bean.RecentSportMsgBean;
+import com.yhrjkf.woyundong.bean.VMonthBean;
+import com.yhrjkf.woyundong.bean.VMonthSportBean;
+import com.yhrjkf.woyundong.http.api.ApiSercice;
+import com.yhrjkf.woyundong.utils.CommonUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.Cache;
+import okhttp3.CacheControl;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit.RestAdapter;
+import retrofit.converter.GsonConverter;
+import rx.Observable;
+import rx.functions.Func1;
+
+/**
+ * Created by Administrator on 2017/2/27.
+ */
+
+public class Api {
+
+    private static Api api;
+    private ApiSercice apiSercice;
+    private RestAdapter restAdapter;
+    private Gson mGson;
+
+    public static int mCacheSize = 10*1024*1024;
+    private static final RestAdapter.LogLevel logLevel = RestAdapter.LogLevel.NONE;
+    private Api(){}
+
+    public static Api getInstance(){
+        if (api==null){
+            api = new Api();
+        }
+        return api;
+    }
+
+    public ApiSercice getApiSercice(){
+        if (apiSercice==null){
+            apiSercice = getRestAdapter().create(ApiSercice.class);
+        }
+        return apiSercice;
+    }
+
+    private RestAdapter getRestAdapter() {
+        if (restAdapter==null){
+            File cacheFile = new File(App.newInstance().getCacheDir().getAbsolutePath(),"httpCache");
+            Cache cache = new Cache(cacheFile,mCacheSize);
+            HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+            OkHttpClient.Builder builder = new OkHttpClient.Builder();
+            builder.cache(cache);
+            builder.readTimeout(20, TimeUnit.SECONDS);
+            builder.connectTimeout(20,TimeUnit.SECONDS);
+            builder.writeTimeout(20,TimeUnit.SECONDS);
+            builder.addInterceptor(getInterceptor());
+            builder.addInterceptor(httpLoggingInterceptor);
+            builder.addNetworkInterceptor(getInterceptor());
+//            CacheM
+            OkHttpClient client = builder.build();
+            RestAdapter.Builder restbuilder = new RestAdapter.Builder();
+            restbuilder.setClient(new Ok3Client(client));
+            restbuilder.setEndpoint(ApiSercice.URL);
+            restbuilder.setConverter(new GsonConverter(getGson()));
+            restAdapter = restbuilder.build();
+            restAdapter.setLogLevel(logLevel);
+        }
+        return restAdapter;
+    }
+
+
+
+    /**
+     * 设置连接器  设置缓存
+     */
+    private Interceptor getNetWorkInterceptor(){
+        return new Interceptor() {
+            @Override
+            public Response intercept(Chain chain) throws IOException {
+                Request request = chain.request();
+                Response response = chain.proceed(request);
+                if (CommonUtils.getNetWorkAvailable()){
+                    int maxAge = 0*60;
+                    response.newBuilder().header("Cache-Control", "public, max-age=" + maxAge)
+                            .removeHeader("Pragma").build();
+                }else {
+                    int maxStale = 60 * 60 * 24 * 7;
+                    response.newBuilder()
+                            .header("Cache-Control", "public, only-if-cached, max-stale=" + maxStale)
+                            .removeHeader("Pragma")
+                            .build();
+                }
+                return response;
+            }
+        };
+    }
+    /**
+     * 设置返回数据的  Interceptor  判断网络   没网读取缓存
+     */
+    //这是设置在多长时间范围内获取缓存里面
+    private static final CacheControl FORCE_CACHE1 = new CacheControl.Builder()
+            .onlyIfCached()
+            .maxStale(7, TimeUnit.SECONDS)//这里是7s，CacheControl.FORCE_CACHE--是int型最大值
+            .build();
+
+    private Interceptor getInterceptor(){
+        return new Interceptor() {
+            @Override
+            public Response intercept(Chain chain) throws IOException {
+                Request request = chain.request();
+
+                if (CommonUtils.getNetWorkAvailable()) {
+                    Response response = chain.proceed(request);
+                    int maxAge = 6; // 在线缓存在1分钟内可读取
+                    String cacheControl = request.cacheControl().toString();
+                    Log.e("yjbo-cache", "在线缓存在1分钟内可读取" + cacheControl);
+                    return response.newBuilder()
+                            .removeHeader("Pragma")
+                            .removeHeader("Cache-Control")
+                            .header("Cache-Control", "public, max-age=" + maxAge)
+                            .build();
+                } else {
+                    Log.e("yjbo-cache", "离线时缓存时间设置");
+                    request = request.newBuilder()
+                            .cacheControl(FORCE_CACHE1)//此处设置了7秒---修改了系统方法
+                            .build();
+
+                    Response response = chain.proceed(request);
+                    //下面注释的部分设置也没有效果，因为在上面已经设置了
+                    return response.newBuilder()
+                        .removeHeader("Pragma")
+                        .removeHeader("Cache-Control")
+                        .header("Cache-Control", "public, only-if-cached, max-stale=50")
+//                        .header("Cache-Control",String.format("max-age=%d", 60))
+                            .build();
+                }
+            }
+        };
+
+    }
+
+    //相关接口
+    //登录
+    public Observable<LoginBean> getLoginRes(final @NonNull String phone,final @NonNull String passwd){
+        return this.getApiSercice().doLogin(phone,passwd);
+
+    }
+
+    //邀请码
+    public Observable<InvitationBean> getInvitationRes(final @NonNull int uid,final @NonNull String ic ){
+        return this.getApiSercice().doInvitation(uid,ic);
+    }
+
+    //CNews列表
+    public Observable<CNewsBean> getCNewsList(@NonNull int type){
+        return this.getApiSercice().doCNewsList(type);
+    }
+
+    //CNews列表
+    public Observable<NewBean> getNewInfo(@NonNull int cat){
+        return this.getApiSercice().doNewInfo(cat);
+    }
+
+    //获取运动月份
+    public Observable<VMonthBean> getVMonthInfo(@NonNull int uid){
+        return this.getApiSercice().doGetVMonth(uid);
+    }
+
+
+    //获取运动月份具体信息
+    public Observable<VMonthSportBean> getVMonthSportInfo(@NonNull int uid, @NonNull String monst){
+        return this.getApiSercice().doGetVMonthSportInfo(uid,monst);
+    }
+
+    //获取最近运动信息
+    public Observable<RecentSportMsgBean> getRecentSportMsg(@NonNull int uid){
+        return this.getApiSercice().deGetRecentSportMsg(uid);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private Gson getGson() {
+        if (mGson == null) {
+            GsonBuilder builder = new GsonBuilder();
+            builder.setFieldNamingStrategy(new AnnotateNaming());
+            builder.serializeNulls();
+            builder.excludeFieldsWithModifiers(Modifier.TRANSIENT);
+            mGson = builder.create();
+        }
+        return mGson;
+    }
+    private static class AnnotateNaming implements FieldNamingStrategy {
+        @Override
+        public String translateName(Field field) {
+            ParamNames a = field.getAnnotation(ParamNames.class);
+            return a != null ? a.value() : FieldNamingPolicy.IDENTITY.translateName(field);
+        }
+    }
+
+}

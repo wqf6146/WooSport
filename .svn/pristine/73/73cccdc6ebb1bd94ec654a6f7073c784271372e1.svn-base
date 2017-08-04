@@ -1,0 +1,63 @@
+// Generated code from Butter Knife. Do not modify!
+package com.yhrjkf.woyundong.fragment;
+
+import android.view.View;
+import butterknife.ButterKnife.Finder;
+import butterknife.ButterKnife.ViewBinder;
+
+public class JianBuXingFragment$$ViewBinder<T extends com.yhrjkf.woyundong.fragment.JianBuXingFragment> implements ViewBinder<T> {
+  @Override public void bind(final Finder finder, final T target, Object source) {
+    View view;
+    view = finder.findRequiredView(source, 2131624121, "field 'mMapView'");
+    target.mMapView = finder.castView(view, 2131624121, "field 'mMapView'");
+    view = finder.findRequiredView(source, 2131624292, "field 'img_jbxing_start'");
+    target.img_jbxing_start = finder.castView(view, 2131624292, "field 'img_jbxing_start'");
+    view = finder.findRequiredView(source, 2131624282, "field 'img_buxing'");
+    target.img_buxing = finder.castView(view, 2131624282, "field 'img_buxing'");
+    view = finder.findRequiredView(source, 2131624283, "field 'img_qixing'");
+    target.img_qixing = finder.castView(view, 2131624283, "field 'img_qixing'");
+    view = finder.findRequiredView(source, 2131624293, "field 'll_jbxing_last'");
+    target.ll_jbxing_last = finder.castView(view, 2131624293, "field 'll_jbxing_last'");
+    view = finder.findRequiredView(source, 2131624285, "field 'tv_jbxing_ms'");
+    target.tv_jbxing_ms = finder.castView(view, 2131624285, "field 'tv_jbxing_ms'");
+    view = finder.findRequiredView(source, 2131624286, "field 'tv_jbxing_juli'");
+    target.tv_jbxing_juli = finder.castView(view, 2131624286, "field 'tv_jbxing_juli'");
+    view = finder.findRequiredView(source, 2131624290, "field 'tv_jbxing_kll'");
+    target.tv_jbxing_kll = finder.castView(view, 2131624290, "field 'tv_jbxing_kll'");
+    view = finder.findRequiredView(source, 2131624295, "field 'tv_jbxing_zuij'");
+    target.tv_jbxing_zuij = finder.castView(view, 2131624295, "field 'tv_jbxing_zuij'");
+    view = finder.findRequiredView(source, 2131624296, "field 'tv_jbxing_lic'");
+    target.tv_jbxing_lic = finder.castView(view, 2131624296, "field 'tv_jbxing_lic'");
+    view = finder.findRequiredView(source, 2131624297, "field 'tv_jbxing_lis'");
+    target.tv_jbxing_lis = finder.castView(view, 2131624297, "field 'tv_jbxing_lis'");
+    view = finder.findRequiredView(source, 2131624294, "field 'll_his'");
+    target.ll_his = finder.castView(view, 2131624294, "field 'll_his'");
+    view = finder.findRequiredView(source, 2131624168, "field 'hideView'");
+    target.hideView = finder.castView(view, 2131624168, "field 'hideView'");
+    view = finder.findRequiredView(source, 2131624289, "field 'tv_his_pj'");
+    target.tv_his_pj = finder.castView(view, 2131624289, "field 'tv_his_pj'");
+    view = finder.findRequiredView(source, 2131624291, "field 'bt_pause'");
+    target.bt_pause = finder.castView(view, 2131624291, "field 'bt_pause'");
+    view = finder.findRequiredView(source, 2131624287, "field 'mRunSecond'");
+    target.mRunSecond = finder.castView(view, 2131624287, "field 'mRunSecond'");
+  }
+
+  @Override public void unbind(T target) {
+    target.mMapView = null;
+    target.img_jbxing_start = null;
+    target.img_buxing = null;
+    target.img_qixing = null;
+    target.ll_jbxing_last = null;
+    target.tv_jbxing_ms = null;
+    target.tv_jbxing_juli = null;
+    target.tv_jbxing_kll = null;
+    target.tv_jbxing_zuij = null;
+    target.tv_jbxing_lic = null;
+    target.tv_jbxing_lis = null;
+    target.ll_his = null;
+    target.hideView = null;
+    target.tv_his_pj = null;
+    target.bt_pause = null;
+    target.mRunSecond = null;
+  }
+}

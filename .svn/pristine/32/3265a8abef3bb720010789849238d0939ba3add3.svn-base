@@ -1,0 +1,86 @@
+[
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\state_ride.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\state_ride.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\woo_1.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\woo_1.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\circle_2.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\circle_2.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\store_2.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\store_2.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\state_run2.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\state_run2.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\discover_1.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\discover_1.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\woo_2.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\woo_2.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\circle_1.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\circle_1.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\restart_run.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\restart_run.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\start_run.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\start_run.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\discover_2.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\discover_2.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\stop_run.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\stop_run.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\pause_run.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\pause_run.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\signin.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\signin.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\run.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\run.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\store_1.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\store_1.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\state_ride2.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\state_ride2.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\rank.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\rank.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\position.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\position.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\state_run1.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable-mdpi\\state_run1.png"
+    }
+]

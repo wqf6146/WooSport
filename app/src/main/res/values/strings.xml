@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">沃运动</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="toast_message">Toast message</string>
+    <string name="authstr">我们已经给你的手机号码%s发送了一条验证码短信。</string>
+    <string name="reportdistance">每%s公里播报</string>
+    <string name="reporttime">每%s分钟播报</string>
+</resources>

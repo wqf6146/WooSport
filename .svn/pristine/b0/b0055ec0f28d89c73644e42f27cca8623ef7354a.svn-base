@@ -1,0 +1,15 @@
+// IServiceCallback.aidl
+package com.yhrjkf.woyundong;
+
+// Declare any non-default types here with import statements
+//import com.yhrjkf.woyundong.bean.CMapLocation;
+
+import android.location.Location;
+//import com.amap.api.location.AMapLocation;
+
+interface IServiceCallback {
+
+    void valueChanged(int value);
+
+//    void mapLocationChanged(in Location aMapLocation, String mapinfo);
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="gray">#666666</color>
+    <color name="viewc">#D1D0D4</color>
+    <color name="default_bg_color">#BDBDBD</color>
+    <color name="default_title_color">#ffffff</color>
+    <color name="default_message_color">#ffffff</color>
+    <color name="default_action_color">#26a69a</color>
+    <color name="tabIndicatorColor">#FF0000</color>
+    <color name="redbar">#FF0000</color>
+    <color name="graybg">#F2F2F2</color>
+    <color name="bg_app">#F1F1F1</color>
+    <color name="toastbg">#AA111111</color>
+    <color name="tab_unselect">#c9c9c9</color>
+    <color name="bg_btn">#dadada</color>
+    <color name="grayline">#D1D1D1</color>
+
+    <color name="homebarbg">#f8f8f8</color>
+
+    <color name="listgraybg">#f2f2f2</color>
+
+    <color name="grayfont">#727070</color>
+
+
+    <color name="bluefont">#3282e6</color>
+
+    <color name="graybtn">#EBEBEB</color>
+    <color name="graybtnfont">#D3D3D3</color>
+
+    <color name="transparency">#00000000</color>
+
+    <color name="jifen">#ff8e38</color>
+    <color name="transparent">#00000000</color>
+    <color name="level">#fcae18</color>
+
+    <color name="bgyellow">#fbac1b</color>
+    <color name="bggrayyellow">#ecba7f</color>
+    <color name="bgblue">#7faee7</color>
+    <color name="bggreen">#57ac3b</color>
+</resources>

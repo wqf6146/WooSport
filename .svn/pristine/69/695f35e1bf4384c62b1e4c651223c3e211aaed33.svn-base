@@ -1,0 +1,63 @@
+// Generated code from Butter Knife. Do not modify!
+package com.yhrjkf.woyundong.fragment;
+
+import android.view.View;
+import butterknife.ButterKnife.Finder;
+import butterknife.ButterKnife.ViewBinder;
+
+public class JianBuXingFragment$$ViewBinder<T extends com.yhrjkf.woyundong.fragment.JianBuXingFragment> implements ViewBinder<T> {
+  @Override public void bind(final Finder finder, final T target, Object source) {
+    View view;
+    view = finder.findRequiredView(source, 2131624109, "field 'mMapView'");
+    target.mMapView = finder.castView(view, 2131624109, "field 'mMapView'");
+    view = finder.findRequiredView(source, 2131624343, "field 'img_jbxing_start'");
+    target.img_jbxing_start = finder.castView(view, 2131624343, "field 'img_jbxing_start'");
+    view = finder.findRequiredView(source, 2131624331, "field 'mTvCityName'");
+    target.mTvCityName = finder.castView(view, 2131624331, "field 'mTvCityName'");
+    view = finder.findRequiredView(source, 2131624332, "field 'mTvWenDu'");
+    target.mTvWenDu = finder.castView(view, 2131624332, "field 'mTvWenDu'");
+    view = finder.findRequiredView(source, 2131624333, "field 'mTvPm25'");
+    target.mTvPm25 = finder.castView(view, 2131624333, "field 'mTvPm25'");
+    view = finder.findRequiredView(source, 2131624334, "field 'mTvWeatherQa'");
+    target.mTvWeatherQa = finder.castView(view, 2131624334, "field 'mTvWeatherQa'");
+    view = finder.findRequiredView(source, 2131624336, "field 'mTvDistance'");
+    target.mTvDistance = finder.castView(view, 2131624336, "field 'mTvDistance'");
+    view = finder.findRequiredView(source, 2131624338, "field 'mTvSpeed'");
+    target.mTvSpeed = finder.castView(view, 2131624338, "field 'mTvSpeed'");
+    view = finder.findRequiredView(source, 2131624340, "field 'mTvSportTime'");
+    target.mTvSportTime = finder.castView(view, 2131624340, "field 'mTvSportTime'");
+    view = finder.findRequiredView(source, 2131624342, "field 'mTvCalorie'");
+    target.mTvCalorie = finder.castView(view, 2131624342, "field 'mTvCalorie'");
+    view = finder.findRequiredView(source, 2131624325, "field 'mImgStateRun'");
+    target.mImgStateRun = finder.castView(view, 2131624325, "field 'mImgStateRun'");
+    view = finder.findRequiredView(source, 2131624326, "field 'mImgStateRide'");
+    target.mImgStateRide = finder.castView(view, 2131624326, "field 'mImgStateRide'");
+    view = finder.findRequiredView(source, 2131624323, "field 'mImgRank'");
+    target.mImgRank = finder.castView(view, 2131624323, "field 'mImgRank'");
+    view = finder.findRequiredView(source, 2131624327, "field 'mImgSignin'");
+    target.mImgSignin = finder.castView(view, 2131624327, "field 'mImgSignin'");
+    view = finder.findRequiredView(source, 2131624344, "field 'mBtnReStartRun'");
+    target.mBtnReStartRun = finder.castView(view, 2131624344, "field 'mBtnReStartRun'");
+    view = finder.findRequiredView(source, 2131624345, "field 'mBtnFinishRun'");
+    target.mBtnFinishRun = finder.castView(view, 2131624345, "field 'mBtnFinishRun'");
+  }
+
+  @Override public void unbind(T target) {
+    target.mMapView = null;
+    target.img_jbxing_start = null;
+    target.mTvCityName = null;
+    target.mTvWenDu = null;
+    target.mTvPm25 = null;
+    target.mTvWeatherQa = null;
+    target.mTvDistance = null;
+    target.mTvSpeed = null;
+    target.mTvSportTime = null;
+    target.mTvCalorie = null;
+    target.mImgStateRun = null;
+    target.mImgStateRide = null;
+    target.mImgRank = null;
+    target.mImgSignin = null;
+    target.mBtnReStartRun = null;
+    target.mBtnFinishRun = null;
+  }
+}

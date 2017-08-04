@@ -1,0 +1,1133 @@
+package com.yhrjkf.woyundong.fragment;
+
+import java.io.StringReader;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Vector;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.ServiceConnection;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
+import android.widget.PopupWindow;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationClient;
+
+import com.amap.api.maps2d.AMap;
+import com.amap.api.maps2d.AMapOptions;
+import com.amap.api.maps2d.CameraUpdateFactory;
+import com.amap.api.maps2d.LocationSource;
+import com.amap.api.maps2d.MapView;
+import com.amap.api.maps2d.model.CameraPosition;
+import com.amap.api.maps2d.model.LatLng;
+import com.amap.api.maps2d.model.Polyline;
+import com.amap.api.maps2d.model.PolylineOptions;
+import com.bigkoo.alertview.AlertView;
+import com.bigkoo.alertview.OnItemClickListener;
+import com.kaopiz.kprogresshud.KProgressHUD;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.vise.log.ViseLog;
+import com.vise.xsnow.cache.SpCache;
+import com.vise.xsnow.event.BusFactory;
+import com.vise.xsnow.net.callback.ApiCallback;
+import com.vise.xsnow.net.exception.ApiException;
+import com.yhrjkf.woyundong.App;
+import com.yhrjkf.woyundong.BaseFragment;
+
+import com.yhrjkf.woyundong.IBgSportsRunService;
+import com.yhrjkf.woyundong.IServiceCallback;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.bean.CSportInfoBean;
+import com.yhrjkf.woyundong.bean.LoginBean;
+import com.yhrjkf.woyundong.bean.SignBean;
+import com.yhrjkf.woyundong.bean.SportResBean;
+import com.yhrjkf.woyundong.bean.WeatherBean;
+import com.yhrjkf.woyundong.event.JianBuXingEvent;
+import com.yhrjkf.woyundong.event.JumpFragmentEvent;
+import com.yhrjkf.woyundong.http.WooSportApi;
+import com.yhrjkf.woyundong.service.MapService;
+import com.yhrjkf.woyundong.service.SportTimerService;
+import com.yhrjkf.woyundong.tools.AppConfig;
+import com.yhrjkf.woyundong.utils.CommonUtils;
+import com.yhrjkf.woyundong.utils.WooConfig;
+
+import butterknife.Bind;
+
+import static android.content.Context.BIND_AUTO_CREATE;
+
+public class JianBuXingFragment extends BaseFragment implements LocationSource, OnClickListener {
+
+    @Bind(R.id.map)
+	MapView mMapView;
+
+	PopupWindow pop, pop2;
+	private AMap aMap;
+	private OnLocationChangedListener mListener;
+	private AMapLocationClient mlocationClient;
+
+	IBgSportsRunService mTimerService = null;
+
+	@Bind(R.id.img_jbxing_start)
+	ImageView img_jbxing_start;
+
+	//步行按钮
+//	@Bind(R.id.img_buxing)
+//	ImageView img_buxing;
+
+	//骑行按钮
+//	@Bind(R.id.img_qixing)
+//	ImageView img_qixing;
+
+//	@Bind(R.id.ll_jbxing_last)
+//	LinearLayout ll_jbxing_last;
+
+	private Boolean startOrFinish = true, firstInitMapView = true;
+
+	//时间 距离 相关
+//	@Bind(R.id.tv_jbxing_ms)
+//	TextView tv_jbxing_ms;
+
+//	@Bind(R.id.tv_jbxing_juli)
+//	TextView tv_jbxing_juli;
+
+//	@Bind(R.id.tv_jbxing_kll)
+//	TextView tv_jbxing_kll;
+// -----------------
+
+//	@Bind(R.id.tv_jbxing_zuij)
+//	TextView tv_jbxing_zuij;
+
+//	@Bind(R.id.tv_jbxing_lic)
+//	TextView tv_jbxing_lic;
+
+//	@Bind(R.id.tv_jbxing_lis)
+//	TextView tv_jbxing_lis;
+
+	View view1, view2;
+
+	Bundle savedInstanceState;
+	View view;
+
+
+	String mRunType = WALK;
+
+	int calorie_uint;
+
+	BigDecimal bd;
+	float f1;
+
+	TextView tv_xianzhic_close;
+
+//	@Bind(R.id.tv_xianzhic_sc)
+	TextView tv_xianzhic_sc;
+
+//	@Bind(R.id.tv_xianzhic_qx)
+	TextView tv_xianzhic_qx;
+
+//	@Bind(R.id.tv_his_pj)
+//	TextView tv_his_pj;
+
+//	Boolean off = false;
+	Boolean terBoolean = false;
+	Boolean backbBoolean = false;
+
+	//暂停按钮
+//	@Bind(R.id.bt_pause)
+//	Button bt_pause;
+
+	//是否在运动
+	Boolean bSportBoolean = false;
+
+	private String ACTION_LOCAL_SEND = "com.yhrjkf.woyundong.loaclsend";
+
+	//运动耗时
+	private int mTimerValue;
+
+
+	//记录上一个点
+	private LatLng mOldLatLng = null;
+
+	@Bind(R.id.fjbx_cityname)
+	TextView mTvCityName;
+
+	@Bind(R.id.fjbx_wendu)
+	TextView mTvWenDu;
+
+	@Bind(R.id.fjbx_pm25)
+	TextView mTvPm25;
+
+	@Bind(R.id.fjbx_weatherqa)
+	TextView mTvWeatherQa;
+
+	@Bind(R.id.fjbx_distance)
+	TextView mTvDistance;
+
+	@Bind(R.id.fjbx_tv_speed)
+	TextView mTvSpeed;
+
+	@Bind(R.id.fjbx_tv_sporttime)
+	TextView mTvSportTime;
+
+	@Bind(R.id.fjbx_tv_calorie)
+	TextView mTvCalorie;
+
+	@Bind(R.id.img_state_run)
+	ImageView mImgStateRun;
+
+	@Bind(R.id.img_state_ride)
+	ImageView mImgStateRide;
+
+	@Bind(R.id.img_rank)
+	ImageView mImgRank;
+
+	@Bind(R.id.img_signin)
+	ImageView mImgSignin;
+
+	@Bind(R.id.img_jbxing_goon)
+	ImageView mBtnReStartRun;
+
+	@Bind(R.id.img_jbxing_finish)
+	ImageView mBtnFinishRun;
+
+
+	private static final String WALK = "跑步";
+	private static final String RIDING = "骑行";
+
+
+	BroadcastReceiver mMapInfoRecevier;
+	MapService.MapBinder mMapBinder;
+	public static JianBuXingFragment getInstance() {
+		JianBuXingFragment fragment = new JianBuXingFragment();
+		Bundle bundle = new Bundle();
+		fragment.setArguments(bundle);
+		return fragment;
+	}
+
+	@Override
+	protected void bindEvent() {
+
+//		bt_pause.setOnClickListener(this);
+		tv_xianzhic_sc.setOnClickListener(this);
+		tv_xianzhic_qx.setOnClickListener(this);
+		tv_xianzhic_close.setOnClickListener(this);
+		img_jbxing_start.setOnClickListener(this);
+
+		mImgStateRide.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mImgStateRun.setImageResource(R.drawable.state_run1);
+				mImgStateRide.setImageResource(R.drawable.state_ride2);
+			}
+		});
+		mImgStateRun.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mImgStateRun.setImageResource(R.drawable.state_run2);
+				mImgStateRide.setImageResource(R.drawable.state_ride );
+			}
+		});
+
+		mImgRank.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				BusFactory.getBus().post(new JumpFragmentEvent(NewRankingFragment.getInstance()));
+			}
+
+		});
+
+		mImgSignin.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				WooSportApi.getInstance().startPostSign(getContext(),
+						String.valueOf(App.newInstance().getUserBean().getId()), new ApiCallback<SignBean>() {
+							@Override
+							public void onStart() {
+								mHud = KProgressHUD.create(getContext())
+										.setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+										.setCancellable(true);
+								mHud.show();
+							}
+
+							@Override
+							public void onError(ApiException e) {
+								ViseLog.e(e);
+							}
+
+							@Override
+							public void onCompleted() {
+								mHud.dismiss();
+							}
+
+							@Override
+							public void onNext(SignBean signBean) {
+								String code = signBean.getRecode();
+								if (code.equals("200")){
+									Toast.makeText(getContext(),"签到成功!",Toast.LENGTH_SHORT).show();
+								}else if (code.equals("403")){
+									Toast.makeText(getContext(),"已经签到了!",Toast.LENGTH_SHORT).show();
+								}
+							}
+						});
+			}
+		});
+
+		//暂停按钮
+		mBtnReStartRun.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (bSportBoolean == true) {
+					pauseSport();
+				} else {
+					reStartSport();
+				}
+			}
+		});
+
+		//结束按钮
+		mBtnFinishRun.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (!startOrFinish) {
+					sportDown();
+				}
+			}
+		});
+	}
+
+	@Override
+	public boolean onBackPressedSupport() {
+		return bSportBoolean;
+	}
+
+	@Override
+	protected void initView(View contentView) {
+		view1 = LayoutInflater.from(getContext()).inflate(R.layout.popupwindow_xianzhi, null);
+		view2 = LayoutInflater.from(getContext()).inflate(R.layout.popupwindow_shangchuan, null);
+		tv_xianzhic_sc = (TextView) view2.findViewById(R.id.tv_xianzhic_sc);
+		tv_xianzhic_qx = (TextView) view2.findViewById(R.id.tv_xianzhic_qx);
+		tv_xianzhic_close = (TextView) view1
+				.findViewById(R.id.tv_xianzhic_close);
+
+		pop = new PopupWindow(view1, LayoutParams.MATCH_PARENT,
+				LayoutParams.MATCH_PARENT, true);
+		pop.setAnimationStyle(R.style.MenuAnimationFade);
+		pop.setBackgroundDrawable(new BitmapDrawable());
+
+		pop2 = new PopupWindow(view2, LayoutParams.MATCH_PARENT,
+				LayoutParams.MATCH_PARENT, true);
+		pop2.setAnimationStyle(R.style.MenuAnimationFade);
+		pop2.setBackgroundDrawable(new BitmapDrawable());
+
+//		bt_pause.setVisibility(View.GONE);
+
+		//初始化地图
+		initMap();
+		initMapService();
+
+	}
+
+	private void setWeatherUi(){
+		WooSportApi.getInstance().startGetXmlWeather(mContext, new ApiCallback<String>() {
+			@Override
+			public void onStart() {
+
+			}
+
+			@Override
+			public void onError(ApiException e) {
+				ViseLog.e(e);
+			}
+
+			@Override
+			public void onCompleted() {
+
+			}
+
+			@Override
+			public void onNext(String s) {
+				ViseLog.e(s);
+				parseXMLWithPull(s);
+			}
+		});
+	}
+	private void parseXMLWithPull(String xmlData){
+		try {
+			XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+			XmlPullParser xmlPullParser = factory.newPullParser();
+			//设置输入的内容
+			xmlPullParser.setInput(new StringReader(xmlData));
+			//获取当前解析事件，返回的是数字
+			int eventType = xmlPullParser.getEventType();
+
+			while (eventType != (XmlPullParser.END_DOCUMENT)){
+				String nodeName = xmlPullParser.getName();
+				switch (eventType){
+					//开始解析XML
+					case XmlPullParser.START_TAG:{
+						//nextText()用于获取结点内的具体内容
+						if("city".equals(nodeName)){
+							mTvCityName.setText(xmlPullParser.nextText()+"市");
+						}
+						else if("quality".equals(nodeName)){
+							mTvWeatherQa.setText("空气质量 "+xmlPullParser.nextText());
+						}else if("pm25".equals(nodeName)){
+							mTvPm25.setText("pm2.5:"+xmlPullParser.nextText());
+						}else if("wendu".equals(nodeName)){
+							mTvWenDu.setText(xmlPullParser.nextText()+"°");
+						}
+					} break;
+					//结束解析
+					case XmlPullParser.END_TAG:
+						break;
+					default: break;
+				}
+				//下一个
+				eventType = xmlPullParser.next();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	@Override
+	protected void initData() {
+		LoginBean.UserBean userBean = App.newInstance().getUserBean();
+		if (userBean == null){
+			ViseLog.i("LoginBean lose!");
+		}else{
+			int weight = userBean.getWeight();
+			if ( weight == 0 ) {
+				calorie_uint = 50;
+			} else {
+				calorie_uint = weight;
+			}
+		}
+
+		setWeatherUi();
+	}
+
+	public boolean getSportStatue(){
+		return bSportBoolean;
+	}
+
+	@Override
+	protected int getFragmentLayoutId() {
+		return R.layout.fragment_jianbuxing;
+	}
+
+	private void tryRecoverSence() {
+		if (getArguments().getBoolean(SportTimerService.ACTION_RESTART)){
+//			bRestart = true;
+			onSportStart();
+		}
+	}
+
+	private void reDrawPoint(Vector<LatLng> latLngs) {
+		Log.e("重画数量:",latLngs.size()+"");
+		if (latLngs.size() > 1){
+			for (int i=0; i<latLngs.size()-1;i++){
+				Log.e("重画点:",i+"");
+				drawPointAtMap(latLngs.get(i),latLngs.get(i+1));
+			}
+		}
+	}
+
+	private void initView() {
+		// TODO Auto-generated method stub
+//		RxUtils.addSubScription(Api.getInstance().getRecentSportMsg(App.newInstance().getmUserBean().getData().getId()),
+//				new ApiCallback<RecentSportMsgBean>() {
+//					@Override
+//					public void onSuccess(RecentSportMsgBean model) {
+//						tv_jbxing_zuij.setText(model.getData().getC_time());
+//						double db3 = model.getData().getDistance() / 1000.0;
+//						bd = new BigDecimal(db3);
+//						tv_jbxing_lic.setText("里程是" + bd.setScale(2, BigDecimal.ROUND_HALF_UP).floatValue() + "千米");
+//
+//						double db2 = model.getData().getY_time() / 60.0;
+//						bd = new BigDecimal(db2);
+//						f1 = bd.setScale(1, BigDecimal.ROUND_HALF_UP).floatValue();
+//
+//						tv_jbxing_lis.setText("用时" + f1 + "分钟");
+//					}
+//
+//					@Override
+//					public void onFailure(int code, String msg) {
+//						Log.e("code:"+code,msg);
+//					}
+//
+//					@Override
+//					public void onFinish() {
+//
+//					}
+//				});
+	}
+
+	private void initMap() {
+//		mMapView.onDestroy();
+		aMap = mMapView.getMap();
+//		aMap.clear();
+		setUpMap();
+	}
+
+	@Override
+	public void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		mMapView.onDestroy();
+		destoryMapService();
+//		Intent intent = new Intent(getActivity(), SportTimerService.class);
+//		getActivity().stopService(intent);
+//		if (CommonUtils.isServiceRunning(SportTimerService.class.getName())) {
+//			Log.e("unbindService","unbindService");
+//			getActivity().unbindService(mSportTimerCon);
+//		}
+//		if (boolean3) {
+//			getActivity().unregisterReceiver(broadcastReceiver);
+//		}
+//		LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(mMapBroadCastReceiver);
+//		ll_jbx_back.setClickable(true);
+//		tb1.setClickable(true);
+//		tb2.setClickable(true);
+//		tb3.setClickable(true);
+
+	}
+
+	@Override
+	public void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		mMapView.onResume();
+//		getView().setFocusableInTouchMode(true);
+//		getView().requestFocus();
+//		getView().setOnKeyListener(new View.OnKeyListener() {
+//
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if (event.getAction() == KeyEvent.ACTION_UP
+//						&& keyCode == KeyEvent.KEYCODE_BACK && backbBoolean) {
+//					return true;
+//
+//				}
+//				return false;
+//			}
+//		});
+
+	}
+
+	@Override
+	public void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		mMapView.onPause();
+		deactivate();
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		// TODO Auto-generated method stub
+		super.onSaveInstanceState(outState);
+		mMapView.onSaveInstanceState(outState);
+	}
+
+	@Override
+	public void activate(OnLocationChangedListener listener) {
+		mListener = listener;
+		// if (mlocationClient == null) {
+		// mlocationClient = new AMapLocationClient(getActivity());
+		// mLocationOption = new AMapLocationClientOption();
+		// mlocationClient.setLocationListener(this);
+		// mLocationOption.setLocationMode(AMapLocationMode.Hight_Accuracy);
+		// mLocationOption.setInterval(1000);
+		// mlocationClient.setLocationOption(mLocationOption);
+		// }
+	}
+
+	@Override
+	public void deactivate() {
+		mListener = null;
+		if (mlocationClient != null) {
+			mlocationClient.stopLocation();
+			mlocationClient.onDestroy();
+		}
+		mlocationClient = null;
+
+	}
+
+	private void setUpMap() {
+		// 自定义系统定位小蓝点
+		// 设置定位监听
+		aMap.setLocationSource(this);
+		aMap.getUiSettings().setMyLocationButtonEnabled(false);// 设置默认定位按钮是否显示
+		aMap.getUiSettings().setZoomControlsEnabled(false);
+		aMap.setMyLocationEnabled(true);// 设置为true表示显示定位层并可触发定位，false表示隐藏定位层并不可触发定位，默认是false
+	}
+
+	private void startRun(){
+		if (CommonUtils.isGpsOPen()) {
+			if (startOrFinish) {
+				onSportStart();
+			}
+//			} else {
+//				sportDown();
+//			}
+		} else {
+			Toast.makeText(getActivity(), "请开启GPS定位",
+					Toast.LENGTH_SHORT).show();
+		}
+
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.img_jbxing_start:
+			//开始跑步
+			SharedPreferences sharedPreferences = getActivity()
+					.getSharedPreferences("user", Activity.MODE_PRIVATE);
+			String ListSize = sharedPreferences.getString("pointsListSize", "");
+			Log.i("size", sharedPreferences.getString("pointsListSize", ""));
+//			bt_pause.setVisibility(View.VISIBLE);
+			if (!(ListSize.equals("0")) && !(ListSize.equals(""))
+					&& !(ListSize == null)) {
+//				changePopupWindowStates();
+			} else {
+				startRun();
+			}
+			break;
+		case R.id.img_state_run:
+			mImgStateRun.setImageResource(R.drawable.state_run2);
+			mImgStateRide.setImageResource(R.drawable.state_ride);
+//			tv_jbxing_ms.setText("步行");
+			mRunType = WALK;
+//			zouqi = false;
+			break;
+		case R.id.img_state_ride:
+			mImgStateRun.setImageResource(R.drawable.state_run1);
+			mImgStateRide.setImageResource(R.drawable.state_ride2);
+//			tv_jbxing_ms.setText("骑行");
+			mRunType = RIDING;
+//			zouqi = true;
+			break;
+//		case R.id.ll_his:
+//			Intent intent = new Intent();
+//			intent.setClass(getActivity(), HistoryFragment.class);
+//			startActivity(intent);
+//			break;
+		case R.id.tv_xianzhic_close:
+			pop.dismiss();
+			break;
+		case R.id.tv_xianzhic_sc:
+//			saveSportInfoToService();
+			commitSportMsg();
+			pop2.dismiss();
+			break;
+		case R.id.tv_xianzhic_qx:
+//			deleteSh();
+			pop2.dismiss();
+			break;
+//		case R.id.bt_pause:
+//			if (bSportBoolean == true) {
+//				pauseSport();
+//			} else {
+//				reStartSport();
+//			}
+//			break;
+		default:
+			break;
+		}
+	}
+
+	/**
+	 * ------------------------------服务相关
+	 */
+
+	private void reStartSport(){
+//		bt_pause.setText("暂停");
+		bSportBoolean = true;
+		onStartSport();
+		mBtnReStartRun.setImageResource(R.drawable.pause_run);
+
+	}
+	private void pauseSport(){
+//		bt_pause.setText("继续");
+		bSportBoolean = false;
+		onPauseSport();
+		mBtnReStartRun.setImageResource(R.drawable.restart_run);
+	}
+
+	//恢复定时服务
+	private void reStartSportTImerService(){
+		try{
+			mTimerService.startTimer();
+		}catch (RemoteException e){
+			e.printStackTrace();
+		}
+	}
+
+	//暂停定时服务
+	private void pauseSportTimerService(){
+		try{
+			mTimerService.pauseTimer();
+		}catch (RemoteException e){
+			e.printStackTrace();
+		}
+	}
+
+	//获取Map服务连接
+	ServiceConnection mapCon = new ServiceConnection() {
+		@Override
+		public void onServiceConnected(ComponentName name, IBinder service) {
+			mMapBinder = (MapService.MapBinder)service;
+//			mLinkLatLngList = mMapBinder.SynListData();
+//			mMapBinder.setSportType(mRunType == WALK ? MapService.TYPE_RUN : MapService.TYPE_RUN,calorie_uint);
+//			reDrawPoint(mMapBinder.synListData());
+			mMapBinder.getWeatherLocationMsg();
+		}
+		@Override
+		public void onServiceDisconnected(ComponentName name) {
+			mMapBinder = null;
+		}
+	};
+	//初始化Map服务
+	private void initMapService(){
+
+		Intent intent = new Intent(getActivity(),MapService.class);
+		getActivity().startService(intent);
+		getActivity().bindService(intent,mapCon,BIND_AUTO_CREATE);
+		IntentFilter filter = new IntentFilter();
+		filter.addAction(MapService.TAG);
+
+		mMapInfoRecevier = new BroadcastReceiver() {
+			@Override
+			public void onReceive(Context context, Intent intent) {
+				if (intent.getAction().equals(MapService.TAG)){
+
+					if (intent.getIntExtra(MapService.SYN_TIME,0) > 0){
+						handlerTimerUI(intent.getIntExtra(MapService.SYN_TIME,0));
+						return;
+					}
+
+					if (intent.getBooleanExtra(MapService.SPEED_OVER,false)){
+						handlerSpeedUnusual(false);
+						return;
+					}else if (intent.getBooleanExtra(MapService.SPEED_SLOW,false)){
+						handlerSpeedUnusual(true);
+						return;
+					}else if(intent.getIntExtra(MapService.ROAD_BLOCK,-1) > 0){
+						Log.e("KIM:",intent.getIntExtra(MapService.ROAD_BLOCK,-1)+"");
+						playerCurKilometresMp3(intent.getIntExtra(MapService.ROAD_BLOCK,1));
+						return;
+					}
+					AMapLocation aMapLocation = (AMapLocation) intent.getParcelableExtra(MapService.MAPLOCATION);
+					if (intent.getBooleanExtra(MapService.WEATHER,false)){
+//						getWeatherMsg(new LatLng(aMapLocation.getLatitude(),aMapLocation.getLongitude()));
+					}
+
+					updateMapInfo(aMapLocation,(CSportInfoBean)intent.getParcelableExtra(MapService.MAPINFO));
+				}
+			}
+		};
+		LocalBroadcastManager.getInstance(getActivity()).registerReceiver(mMapInfoRecevier,filter);
+
+		if (firstInitMapView) {
+			mMapView.onCreate(savedInstanceState);
+			aMap.moveCamera(CameraUpdateFactory.zoomTo(18));
+			aMap.setMapType(AMap.MAP_TYPE_NORMAL);
+			mMapView.setVisibility(View.VISIBLE);
+			firstInitMapView = false;
+		}
+	}
+
+	private void handlerTimerUI(int value) {
+		mTimerValue = value;
+//		mRunSecond.setText(CommonUtils.secondToHMS(value));
+		mTvSportTime.setText(CommonUtils.secondToHMS(value));
+	}
+
+	//播放MP3
+	private void playMp3(int resid){
+		MediaPlayer mp = MediaPlayer.create(getActivity(),resid);
+		mp.start();
+//		mp.release();
+	}
+
+	private void handlerSpeedUnusual(boolean slowOrOver) {
+		if (slowOrOver)
+			ViseLog.e("收到慢速提醒！");
+		else
+			ViseLog.e("收到超速速提醒！");
+		if (slowOrOver == true){
+			//slow
+			if (App.newInstance().getVoiceTip()) {
+				playMp3(R.raw.sudu0);
+			}
+		}else {
+			//超速处理
+			//运动速度
+			mTvSpeed.setText("00");
+			//运动距离
+			mTvDistance.setText("0.00");
+			//卡路里
+			mTvCalorie.setText("0.0");
+			//运动时间
+			mTvSportTime.setText("0:00:00");
+
+			mImgStateRide.setImageResource(R.drawable.state_ride);
+			mImgStateRun.setImageResource(R.drawable.state_run1);
+
+//			pauseSport();
+//			onSportDown();
+			removePolyLine();
+//			aMap.clear();
+//			initMap();
+			bSportBoolean = false;
+//			aMap.clear();
+
+
+			mImgStateRun.setClickable(true);
+			mImgStateRide.setClickable(true);
+
+			startOrFinish = true;
+			img_jbxing_start.setImageResource(R.drawable.start_run);
+
+//			bt_pause.setText("暂停");
+//			bt_pause.setVisibility(View.GONE);
+
+//			clear = true;
+			//是否可以回退，第二版无用
+			backbBoolean = false;
+
+			if (App.newInstance().getVoiceTip()) {
+				playMp3(R.raw.gps);
+
+			}
+		}
+	}
+
+	//开始运动
+	private void onStartSport(){
+		bSportBoolean = true;
+		mMapBinder.startSport();
+	}
+
+	//暂停运动
+	private void onPauseSport(){
+		bSportBoolean = false;
+		mMapBinder.pauseSport();
+	}
+
+	//结束运动
+	private void onSportDown(){
+		bSportBoolean = false;
+//		aMap.clear();
+		mMapBinder.sportDown();
+	}
+
+//	//恢复Map服务
+//	private void reStartMapService(){
+//		if (mMapBinder!=null){
+//			mMapBinder.startLocation();
+//		}
+//	}
+
+	//停止Map服务
+	private void pauseMapService(){
+		if (mMapBinder!=null){
+			mMapBinder.pauseLocatioin();
+		}
+
+	}
+
+	//注销Map服务
+	private void destoryMapService(){
+		getActivity().unbindService(mapCon);
+		getActivity().stopService(new Intent(getActivity(),MapService.class));
+		LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(mMapInfoRecevier);
+	}
+
+	private void reinitUi(){
+		//运动速度
+		mTvSpeed.setText("00");
+		//运动距离
+		mTvDistance.setText("0.00");
+		//卡路里
+		mTvCalorie.setText("0.0");
+		//运动时间
+		mTvSportTime.setText("0:00:00");
+
+		mImgStateRide.setClickable(true);
+		mImgStateRun.setClickable(true);
+
+		startOrFinish = true; //控制开始结束按钮
+		bSportBoolean = false; //是否运动状态
+
+		img_jbxing_start.setVisibility(View.VISIBLE);
+		mBtnReStartRun.setVisibility(View.INVISIBLE);
+		mBtnFinishRun.setVisibility(View.INVISIBLE);
+		img_jbxing_start.setImageResource(R.drawable.start_run);
+		mBtnReStartRun.setImageResource(R.drawable.pause_run);
+		mBtnFinishRun.setImageResource(R.drawable.stop_run);
+
+		backbBoolean = false;
+
+		//清除轨迹
+		removePolyLine();
+	}
+
+	/***
+	 * --------------------开始运动
+	 */
+	private void onSportStart() {
+
+		((MainFragment)getParentFragment()).tabBarAnimateOut();
+
+		mMapBinder.setSportType(mRunType == WALK ? MapService.TYPE_RUN : MapService.TYPE_RIDE,calorie_uint);
+
+		if (App.newInstance().getVoiceTip()) {
+			playMp3(R.raw.start);
+		}
+
+		//先清除状态
+		reinitUi();
+
+//		img_jbxing_start.setImageResource(R.drawable.pause_run);
+		img_jbxing_start.setVisibility(View.INVISIBLE);
+		mBtnReStartRun.setVisibility(View.VISIBLE);
+		mBtnFinishRun.setVisibility(View.VISIBLE);
+
+		mImgStateRide.setClickable(false);
+		mImgStateRun.setClickable(false);
+
+		bSportBoolean = true;
+		startOrFinish = false;
+		backbBoolean = true;
+//
+//		if (mRunType.equals(WALK)){
+//			mImgStateRun.setBackgroundResource(R.drawable.state_run2);
+//		}else{
+//			mImgStateRide.setBackgroundResource(R.drawable.state_ride2);
+//		}
+//		bt_pause.setVisibility(View.VISIBLE);
+	}
+
+
+	//结束运动
+	private void sportDown() {
+		pauseSport();
+		new AlertView("", "是否结束本次跑步？", "结束", new String[]{"继续"}, null, mContext, AlertView.Style.Alert, new OnItemClickListener() {
+			@Override
+			public void onItemClick(Object o, int i) {
+				if (i == -1){   //结束本次跑步
+					((MainFragment)getParentFragment()).tabBarAnimateIn();
+					if (! commitSportMsg()){
+						return;
+					}
+					onSportDown();
+					reinitUi(); //初始化ui
+
+					if (App.newInstance().getVoiceTip()) {
+						playMp3(R.raw.end);
+					}
+					mImgStateRide.setClickable(true);
+					mImgStateRun.setClickable(true);
+//					bt_pause.setVisibility(View.GONE);
+				}else{
+					reStartSport();
+				}
+			}
+		}).show();
+//		new AlertView("标题", "内容", "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
+	}
+
+	//保存运动信息到服务器
+	private boolean commitSportMsg() {
+		Vector<LatLng> vector = mMapBinder.synListData();
+		CSportInfoBean sportBean = mMapBinder.sportFinish();
+		if (vector !=null && vector.size() > 30 && sportBean != null){
+			saveSportInfoToService(vector,sportBean);
+			return true;
+		}else {
+			showToast("跑步距离太短啦,无法保存数据");
+			reinitUi();
+			return false;
+		}
+	}
+	private void saveSportInfoToService(Vector<LatLng> vector,CSportInfoBean sportBean) {
+		// TODO Auto-generated method stub
+		LoginBean.UserBean userBean = App.newInstance().getUserBean();
+		if (userBean == null){
+			showToast("用户数据意外丢失 请重新登陆!");
+			return;
+		}
+
+		LinkedHashMap hashMap = new LinkedHashMap();
+		hashMap.put("uid",userBean.getId()+"");
+		hashMap.put("types",sportBean.getTypes()+"");
+		hashMap.put("distance",sportBean.getDistance()+"");
+		hashMap.put("calorie",sportBean.getCalorie()+"");
+		hashMap.put("start_time",sportBean.getStart_time()+"");
+		hashMap.put("finish_time",sportBean.getFinish_time()+"");
+		hashMap.put("time",sportBean.getTime()+"");
+		for (int i = 0; i < vector.size(); i++) {
+			hashMap.put("path[" + i + "]", vector.get(i).latitude+","+vector.get(i).longitude);
+		}
+		WooSportApi.getInstance().startPostSportInfo(mContext, hashMap, new ApiCallback<SportResBean>() {
+			@Override
+			public void onStart() {
+				mHud = KProgressHUD.create(getContext())
+						.setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+						.setLabel("上传中")
+						.setCancellable(true);
+				mHud.show();
+			}
+
+			@Override
+			public void onError(ApiException e) {
+				ViseLog.e(e);
+				showToast("上传跑步数据成功！");
+				mHud.dismiss();
+			}
+
+			@Override
+			public void onCompleted() {
+
+			}
+
+			@Override
+			public void onNext(SportResBean o) {
+				if (o.getRecode().equals("200")){
+					mHud.dismiss();
+					showToast("上传跑步数据成功！");
+					reinitUi();
+				}
+			}
+		});
+	}
+
+	private List<Polyline> mPolylineList = new ArrayList<>();
+	/**绘制两个坐标点之间的线段,从以前位置到现在位置*/
+	private void drawPointAtMap(LatLng oldData,LatLng newData ) {
+
+		// 绘制一个大地曲线
+		ViseLog.e("画点: old:"+oldData,"new:"+newData);
+		Polyline polyline = aMap.addPolyline((new PolylineOptions())
+				.add(oldData, newData)
+				.geodesic(true).color(Color.RED));
+		mPolylineList.add(polyline);
+	}
+	private void removePolyLine(){
+		mOldLatLng = null;
+		for (int i=0; i<mPolylineList.size(); i++){
+			mPolylineList.get(i).remove();
+		}
+		aMap.invalidate();
+	}
+	private void updatePoint(AMapLocation aMapLocation, CSportInfoBean cSportInfoBean) {
+		//更新速度
+		updateSpeedUi(cSportInfoBean.getDistance());
+
+		//画点
+		if (mOldLatLng == null) {
+			mOldLatLng = new LatLng(aMapLocation.getLatitude(), aMapLocation.getLongitude());
+		}
+		if (mOldLatLng.latitude != aMapLocation.getLatitude() || mOldLatLng.longitude != aMapLocation.getLongitude()){
+			LatLng newLatng = new LatLng(aMapLocation.getLatitude(),aMapLocation.getLongitude());
+			drawPointAtMap(mOldLatLng,newLatng);
+			mOldLatLng = newLatng;
+		}
+
+		//更新相关UI
+		double db2 = cSportInfoBean.getDistance() / 1000.0;
+		bd = new BigDecimal(db2);
+		f1 = bd.setScale(3, BigDecimal.ROUND_HALF_UP)
+				.floatValue();
+		mTvDistance.setText(f1+"");
+		mTvCalorie.setText( new BigDecimal(cSportInfoBean.getCalorie()).setScale(2,BigDecimal.ROUND_HALF_UP).floatValue()+"");
+	}
+
+	public void updateSpeedUi(double distans) {
+		if (mTimerValue > 0 && distans > 0){
+			Log.e("距离:",distans+"");
+			BigDecimal bd = new BigDecimal(distans/mTimerValue * 3.6);
+			mTvSpeed.setText(""+ bd.setScale(2, BigDecimal.ROUND_HALF_UP).floatValue());
+		}
+	}
+
+	//播放当前运动公里数
+	public void playerCurKilometresMp3(int tag) {
+		MediaPlayer mp = MediaPlayer.create(getActivity(), getResource("gongli"
+				+ tag));
+		mp.start();
+		mp.release();
+	}
+
+	public int getResource(String mp3) {
+		Context ctx = getActivity();
+		int resId = getResources().getIdentifier(mp3, "raw",
+				ctx.getPackageName());
+		return resId;
+	}
+
+	//更新地图
+	private void updateMapInfo(AMapLocation aMapLocation,CSportInfoBean cSportInfoBean){
+		double latitude = aMapLocation.getLatitude();
+		double longitude = aMapLocation.getLongitude();
+		Log.e("latitude:",""+latitude);
+		Log.e("longitude:",""+longitude);
+		if (bSportBoolean) {
+			aMap.moveCamera(CameraUpdateFactory
+					.newCameraPosition(new CameraPosition(new LatLng(
+							latitude, longitude),// 新的中心点坐标
+							18, // 新的缩放级别
+							30, // 俯仰角0°~45°（垂直与地图时为0）
+							0 // //偏航角 0~360° (正北方为0)
+					)));
+		}
+
+		if (mListener != null && aMapLocation != null) {
+			mListener.onLocationChanged(aMapLocation);// 显示系统小蓝点
+		}
+		if (bSportBoolean && cSportInfoBean != null)
+			updatePoint(aMapLocation,cSportInfoBean);
+	}
+}

@@ -1,0 +1,75 @@
+// Generated code from Butter Knife. Do not modify!
+package com.yhrjkf.woyundong.fragment;
+
+import android.view.View;
+import butterknife.ButterKnife.Finder;
+
+public class PersonalFragment$$ViewBinder<T extends com.yhrjkf.woyundong.fragment.PersonalFragment> extends com.yhrjkf.woyundong.BaseToolbarFragment$$ViewBinder<T> {
+  @Override public void bind(final Finder finder, final T target, Object source) {
+    super.bind(finder, target, source);
+
+    View view;
+    view = finder.findRequiredView(source, 2131624180, "field 'img_my_touxiang'");
+    target.img_my_touxiang = finder.castView(view, 2131624180, "field 'img_my_touxiang'");
+    view = finder.findRequiredView(source, 2131624178, "field 'rl_my_touxiang'");
+    target.rl_my_touxiang = finder.castView(view, 2131624178, "field 'rl_my_touxiang'");
+    view = finder.findRequiredView(source, 2131624203, "field 'rl_my_qm'");
+    target.rl_my_qm = finder.castView(view, 2131624203, "field 'rl_my_qm'");
+    view = finder.findRequiredView(source, 2131624181, "field 'rl_my_nicheng'");
+    target.rl_my_nicheng = finder.castView(view, 2131624181, "field 'rl_my_nicheng'");
+    view = finder.findRequiredView(source, 2131624186, "field 'rl_my_yx'");
+    target.rl_my_yx = finder.castView(view, 2131624186, "field 'rl_my_yx'");
+    view = finder.findRequiredView(source, 2131624189, "field 'rl_my_sex'");
+    target.rl_my_sex = finder.castView(view, 2131624189, "field 'rl_my_sex'");
+    view = finder.findRequiredView(source, 2131624192, "field 'rl_my_sg'");
+    target.rl_my_sg = finder.castView(view, 2131624192, "field 'rl_my_sg'");
+    view = finder.findRequiredView(source, 2131624195, "field 'rl_my_tz'");
+    target.rl_my_tz = finder.castView(view, 2131624195, "field 'rl_my_tz'");
+    view = finder.findRequiredView(source, 2131624198, "field 'rl_my_csny'");
+    target.rl_my_csny = finder.castView(view, 2131624198, "field 'rl_my_csny'");
+    view = finder.findRequiredView(source, 2131624183, "field 'tv_my_nicheng'");
+    target.tv_my_nicheng = finder.castView(view, 2131624183, "field 'tv_my_nicheng'");
+    view = finder.findRequiredView(source, 2131624185, "field 'tv_my_sjh'");
+    target.tv_my_sjh = finder.castView(view, 2131624185, "field 'tv_my_sjh'");
+    view = finder.findRequiredView(source, 2131624188, "field 'tv_my_yx'");
+    target.tv_my_yx = finder.castView(view, 2131624188, "field 'tv_my_yx'");
+    view = finder.findRequiredView(source, 2131624191, "field 'tv_my_sex'");
+    target.tv_my_sex = finder.castView(view, 2131624191, "field 'tv_my_sex'");
+    view = finder.findRequiredView(source, 2131624194, "field 'tv_my_sg'");
+    target.tv_my_sg = finder.castView(view, 2131624194, "field 'tv_my_sg'");
+    view = finder.findRequiredView(source, 2131624197, "field 'tv_my_tz'");
+    target.tv_my_tz = finder.castView(view, 2131624197, "field 'tv_my_tz'");
+    view = finder.findRequiredView(source, 2131624200, "field 'tv_my_csny'");
+    target.tv_my_csny = finder.castView(view, 2131624200, "field 'tv_my_csny'");
+    view = finder.findRequiredView(source, 2131624202, "field 'tv_my_bmi'");
+    target.tv_my_bmi = finder.castView(view, 2131624202, "field 'tv_my_bmi'");
+    view = finder.findRequiredView(source, 2131624205, "field 'tv_my_qm'");
+    target.tv_my_qm = finder.castView(view, 2131624205, "field 'tv_my_qm'");
+    view = finder.findRequiredView(source, 2131624177, "field 'tv_save_btn'");
+    target.tv_save_btn = finder.castView(view, 2131624177, "field 'tv_save_btn'");
+  }
+
+  @Override public void unbind(T target) {
+    super.unbind(target);
+
+    target.img_my_touxiang = null;
+    target.rl_my_touxiang = null;
+    target.rl_my_qm = null;
+    target.rl_my_nicheng = null;
+    target.rl_my_yx = null;
+    target.rl_my_sex = null;
+    target.rl_my_sg = null;
+    target.rl_my_tz = null;
+    target.rl_my_csny = null;
+    target.tv_my_nicheng = null;
+    target.tv_my_sjh = null;
+    target.tv_my_yx = null;
+    target.tv_my_sex = null;
+    target.tv_my_sg = null;
+    target.tv_my_tz = null;
+    target.tv_my_csny = null;
+    target.tv_my_bmi = null;
+    target.tv_my_qm = null;
+    target.tv_save_btn = null;
+  }
+}

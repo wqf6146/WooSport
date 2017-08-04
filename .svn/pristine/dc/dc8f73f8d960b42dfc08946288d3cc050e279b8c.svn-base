@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+    android:gravity="center_vertical"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    >
+    
+    <TextView 
+        android:id="@+id/tv_ranking_mingci"
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        />
+    <ImageView 
+        android:id="@+id/img_ranking_touxiang"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/tuzi"
+        android:textColor="#000000"
+        />
+    <TextView 
+        android:id="@+id/tv_ranking_name"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="刘朋"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        />
+     <TextView 
+        android:id="@+id/tv_ranking_distance"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:text="0千米"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:textColor="#000000"
+        />
+     <TextView 
+        android:id="@+id/tv_ranking_time"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:text="101秒"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        />
+
+</LinearLayout>

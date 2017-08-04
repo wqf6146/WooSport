@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yhrjkf.woyundong.view.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/graybg"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/fr_rl_topbar"
+        android:background="#FF0000"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="100%">
+
+        <ImageView
+            android:id="@+id/fhn_img_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:padding="12dp"
+            android:src="@drawable/leftarrow" />
+
+        <TextView
+            android:id="@+id/fr_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:text="验证手机号码"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/ff_edit_phone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/findpw_edit_style"
+        android:drawableLeft="@drawable/phone"
+        android:hint="输入手机号"
+        android:inputType="phone"
+        android:textColorHint="@color/grayline"
+        android:drawablePadding="5dp"
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="80%" />
+
+    <TextView
+        android:id="@+id/ff_tv_next"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textview_back_red"
+        android:gravity="center"
+        android:text="下一步"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="80%" />
+</com.yhrjkf.woyundong.view.PercentLinearLayout>

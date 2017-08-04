@@ -1,0 +1,291 @@
+package com.yhrjkf.woyundong.fragment;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.kaopiz.kprogresshud.KProgressHUD;
+import com.lidroid.xutils.BitmapUtils;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.vise.log.ViseLog;
+import com.vise.xsnow.loader.ILoader;
+import com.vise.xsnow.loader.LoaderFactory;
+import com.vise.xsnow.net.callback.ApiCallback;
+import com.vise.xsnow.net.exception.ApiException;
+import com.vise.xsnow.net.mode.CacheResult;
+import com.yhrjkf.woyundong.BaseFragment;
+import com.yhrjkf.woyundong.activity.EventDetails;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.bean.DiscoverBean;
+import com.yhrjkf.woyundong.http.WooSportApi;
+import com.yhrjkf.woyundong.tools.AppConfig;
+
+import butterknife.Bind;
+
+public class EventFragment extends BaseFragment {
+
+	@Bind(R.id.lv_event_hd)
+	ListView lv_event_hd;
+
+	List<HashMap<String, String>> rqlist;
+	Handler handler;
+	IndentCusAdapter rpAdapter;
+
+	public static EventFragment getInstance() {
+		EventFragment fragment = new EventFragment();
+		Bundle bundle = new Bundle();
+		fragment.setArguments(bundle);
+		return fragment;
+	}
+
+	@Override
+	protected void initView(View contentView) {
+
+	}
+
+	@Override
+	protected void initData() {
+		WooSportApi.getInstance().startGetDiscover(mContext, new ApiCallback<CacheResult<DiscoverBean>>() {
+			@Override
+			public void onStart() {
+				mHud = KProgressHUD.create(getContext())
+						.setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+						.setCancellable(true);
+				mHud.show();
+			}
+
+			@Override
+			public void onError(ApiException e) {
+				ViseLog.e(e);
+				mHud.dismiss();
+			}
+
+			@Override
+			public void onCompleted() {
+				mHud.dismiss();
+			}
+
+			@Override
+			public void onNext(CacheResult<DiscoverBean> discoverBean) {
+				if (discoverBean==null){
+					return;
+				}
+				rpAdapter = new IndentCusAdapter(discoverBean.getCacheData().getData());
+				lv_event_hd.setAdapter(rpAdapter);
+			}
+		});
+	}
+
+	@Override
+	protected void bindEvent() {
+
+	}
+
+	@Override
+	protected int getFragmentLayoutId() {
+		return R.layout.fragment_event;
+	}
+
+	@Override
+	public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+		super.onViewCreated(view, savedInstanceState);
+//		lv_event_hd = (ListView) view.findViewById(R.id.lv_event_hd);
+
+//		HttpUtils httpUtils = new HttpUtils();
+//		@SuppressWarnings("unused")
+//		RequestParams params = new RequestParams("UTF-8");
+//		httpUtils.send(HttpMethod.POST, AppConfig.EVENT,
+//				new RequestCallBack<String>() {
+//
+//					@Override
+//					public void onFailure(HttpException arg0, String arg1) {
+//						// TODO Auto-generated method stub
+//
+//					}
+//
+//					@Override
+//					public void onSuccess(ResponseInfo<String> responseInfo) {
+//						// TODO Auto-generated method stub
+//						Log.i("result", responseInfo.result);
+//						rqlist = new ArrayList<HashMap<String, String>>();
+//						try {
+//							JSONObject jsonObject = new JSONObject(
+//									responseInfo.result);
+//							JSONArray jsonArray = jsonObject
+//									.getJSONArray("Data");
+//							for (int i = 0; i < jsonArray.length(); i++) {
+//								JSONObject jsob = jsonArray.getJSONObject(i);
+//								HashMap<String, String> hm = new HashMap<String, String>();
+//								hm.put("title", jsob.getString("title"));
+//								hm.put("image", jsob.getString("image"));
+//								hm.put("content", jsob.getString("content"));
+//								hm.put("addr", jsob.getString("addr"));
+//								hm.put("sign_total",
+//										jsob.getString("sign_total"));
+//								hm.put("start", jsob.getString("start"));
+//								hm.put("end", jsob.getString("end"));
+//								rqlist.add(hm);
+//							}
+//							Message message = new Message();
+//							message.arg1 = 0;
+//							handler.sendMessage(message);
+//
+//						} catch (JSONException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//
+//					}
+//				});
+//		handler = new Handler() {
+//			@Override
+//			public void handleMessage(Message msg) {
+//				// TODO Auto-generated method stub
+//				super.handleMessage(msg);
+//				if (msg.arg1 == 0) {
+//					rpAdapter = new IndentCusAdapter(rqlist);
+//					lv_event_hd.setAdapter(rpAdapter);
+//				}
+//			}
+//		};
+	}
+
+//	@Override
+//	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//			Bundle savedInstanceState) {
+//		// TODO Auto-generated method stub
+//		View view = inflater.inflate(R.layout.fragment_event, null);
+//
+//
+//		return view;
+//	}
+
+	private class IndentCusAdapter extends BaseAdapter {
+
+		List<DiscoverBean.DataBean> list = new ArrayList<>();
+
+		public IndentCusAdapter(List<DiscoverBean.DataBean>  overduelist) {
+			list = overduelist;
+		}
+
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return list.size();
+		}
+
+		@Override
+		public Object getItem(int position) {
+			// TODO Auto-generated method stub
+			return list.get(position);
+		}
+
+		@Override
+		public long getItemId(int position) {
+			// TODO Auto-generated method stub
+			return position;
+		}
+
+		@Override
+		public View getView(final int position, View convertView,
+							ViewGroup parent) {
+			// TODO Auto-generated method stub
+			final Cache cache;
+
+			if (convertView == null) {
+
+				convertView = LayoutInflater.from(getActivity()).inflate(
+						R.layout.item_eventfragment,parent,false);
+				cache = new Cache();
+				cache.img_eventitem = (ImageView) convertView
+						.findViewById(R.id.img_eventitem);
+				cache.tv_eventitem_bt = (TextView) convertView
+						.findViewById(R.id.tv_eventitem_bt);
+				cache.tv_eventitem_start = (TextView) convertView
+						.findViewById(R.id.tv_eventitem_start);
+				cache.tv_eventitem_end = (TextView) convertView
+						.findViewById(R.id.tv_eventitem_end);
+				cache.tv_eventitem_canjia = (TextView) convertView
+						.findViewById(R.id.tv_eventitem_canjia);
+				cache.img_eventitem = (ImageView) convertView
+						.findViewById(R.id.img_eventitem);
+
+				convertView.setTag(cache);
+			} else {
+				cache = (Cache) convertView.getTag();
+			}
+
+			cache.tv_eventitem_bt.setText(list.get(position).getTitle());
+			cache.tv_eventitem_start.setText(list.get(position).getStart());
+			cache.tv_eventitem_end.setText(list.get(position).getEnd());
+			cache.tv_eventitem_canjia.setText("参加人数"
+					+ list.get(position).getSign_total());
+//			BitmapUtils bitmapUtils = new BitmapUtils(getActivity());
+//			bitmapUtils.display(cache.img_eventitem,
+//					list.get(position).getImage());
+
+			LoaderFactory.getLoader().loadNet(cache.img_eventitem, list.get(position).getImage(),
+					new ILoader.Options(R.drawable.biaoti, R.drawable.biaoti));
+
+			// ImageLoader.getInstance().loadImage(
+			// mLatLngList.get(position).get("image"),
+			// new SimpleImageLoadingListener() {
+			// @Override
+			// public void onLoadingComplete(String imageUri,
+			// View view, Bitmap loadedImage) {
+			// // TODO Auto-generated method stub
+			// cache.img_eventitem.setImageBitmap(loadedImage);
+			// super.onLoadingComplete(imageUri, view, loadedImage);
+			// }
+			// });
+			convertView.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Intent intent = new Intent();
+					intent.setClass(getActivity(), EventDetails.class);
+					Log.i("content", list.get(position).getContent());
+					intent.putExtra("content", list.get(position)
+							.getContent());
+
+					startActivity(intent);
+
+				}
+			});
+			return convertView;
+		}
+	}
+
+	class Cache {
+		ImageView img_eventitem;
+		TextView tv_eventitem_bt, tv_eventitem_start, tv_eventitem_end,
+				tv_eventitem_canjia;
+	}
+
+}

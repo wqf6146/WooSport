@@ -1,0 +1,207 @@
+package com.yhrjkf.woyundong.fragment;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.lidroid.xutils.BitmapUtils;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.yhrjkf.woyundong.activity.NewsDetails;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.tools.AppConfig;
+
+public class New2Fragment extends Fragment {
+	private ListView lv_new;
+	private HashMap<String, String> hm;
+	private List<HashMap<String, String>> rqlist;
+	Handler handler;
+	IndentCusAdapter rpAdapter;
+
+	@Override
+	public View onCreateView(LayoutInflater inflater,
+			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View view = inflater.inflate(R.layout.fragment_new, null);
+		lv_new = (ListView) view.findViewById(R.id.lv_new);
+
+		HttpUtils httpUtils = new HttpUtils();
+		RequestParams params = new RequestParams("UTF-8");
+		params.addBodyParameter("cat", "12");
+		httpUtils.send(HttpMethod.POST, AppConfig.NEWS, params,
+				new RequestCallBack<String>() {
+
+					@Override
+					public void onFailure(HttpException arg0, String arg1) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onSuccess(ResponseInfo<String> responseInfo) {
+						// TODO Auto-generated method stub
+						Log.i("result", responseInfo.result);
+						try {
+							rqlist = new ArrayList<HashMap<String, String>>();
+							JSONObject jsonObject = new JSONObject(
+									responseInfo.result);
+							JSONArray jsonArray = jsonObject
+									.getJSONArray("Data");
+							for (int i = 0; i < jsonArray.length(); i++) {
+								hm = new HashMap<String, String>();
+								JSONObject jsonObject2 = jsonArray
+										.getJSONObject(i);
+								hm.put("id", jsonObject2.getString("id"));
+								hm.put("title", jsonObject2.getString("title"));
+								hm.put("image", jsonObject2.getString("image"));
+								hm.put("content",
+										jsonObject2.getString("content"));
+								hm.put("created_at",
+										jsonObject2.getString("created_at"));
+								hm.put("updated_at",
+										jsonObject2.getString("updated_at"));
+								hm.put("remark",
+										jsonObject2.getString("remark"));
+								rqlist.add(hm);
+							}
+							Message message = new Message();
+							message.arg1 = 0;
+							handler.sendMessage(message);
+
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
+					}
+				});
+		handler = new Handler() {
+			@Override
+			public void handleMessage(Message msg) {
+				// TODO Auto-generated method stub
+				super.handleMessage(msg);
+				if (msg.arg1 == 0) {
+					rpAdapter = new IndentCusAdapter(rqlist);
+					lv_new.setAdapter(rpAdapter);
+				}
+			}
+		};
+
+		return view;
+	}
+
+	private class IndentCusAdapter extends BaseAdapter {
+		List<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
+
+		public IndentCusAdapter(List<HashMap<String, String>> overduelist) {
+			Log.i("+++++", "加载适配器之后");
+			list = overduelist;
+		}
+
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return list.size();
+		}
+
+		@Override
+		public Object getItem(int position) {
+			// TODO Auto-generated method stub
+			return list.get(position);
+		}
+
+		@Override
+		public long getItemId(int position) {
+			// TODO Auto-generated method stub
+			return position;
+		}
+
+		@Override
+		public View getView(final int position, View convertView,
+				ViewGroup parent) {
+			// TODO Auto-generated method stub
+			Cache cache = null;
+			if (convertView == null) {
+				convertView = LayoutInflater.from(getActivity()).inflate(
+						R.layout.item_news, null);
+				cache = new Cache();
+				cache.img_tupian = (ImageView) convertView
+						.findViewById(R.id.img_tupian);
+				cache.tv_news_bt = (TextView) convertView
+						.findViewById(R.id.tv_news_bt);
+				cache.tv_news_nr = (TextView) convertView
+						.findViewById(R.id.tv_news_nr);
+				cache.tv_news_time = (TextView) convertView
+						.findViewById(R.id.tv_news_time);
+				convertView.setTag(cache);
+
+			} else {
+				cache = (Cache) convertView.getTag();
+			}
+			cache.tv_news_bt.setText(list.get(position).get("title"));
+			cache.tv_news_nr.setText(list.get(position).get("remark"));
+			cache.tv_news_time.setText(list.get(position).get("created_at"));
+			BitmapUtils bitmapUtils = new BitmapUtils(getActivity());
+			bitmapUtils.display(cache.img_tupian,
+					list.get(position).get("image"));
+
+			// ImageLoader.getInstance().loadImage(
+			// mLatLngList.get(position).get("image"),
+			// new SimpleImageLoadingListener() {
+			// @Override
+			// public void onLoadingComplete(String imageUri,
+			// View view, Bitmap loadedImage) {
+			// // TODO Auto-generated method stub
+			// Log.i("loadedImage", loadedImage.toString());
+			// cache.img_tupian.setImageBitmap(loadedImage);
+			// super.onLoadingComplete(imageUri, view, loadedImage);
+			// }
+			// });
+			convertView.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Intent intent = new Intent();
+					intent.setClass(getActivity(), NewsDetails.class);
+					intent.putExtra("content", list.get(position)
+							.get("content"));
+					startActivity(intent);
+
+				}
+			});
+
+			return convertView;
+		}
+
+	}
+
+	class Cache {
+		ImageView img_tupian;
+		TextView tv_news_bt, tv_news_nr, tv_news_time;
+	}
+}

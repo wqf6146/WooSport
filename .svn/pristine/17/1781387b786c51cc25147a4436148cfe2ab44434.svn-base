@@ -1,0 +1,42 @@
+// Generated code from Butter Knife. Do not modify!
+package com.yhrjkf.woyundong.fragment;
+
+import android.view.View;
+import butterknife.ButterKnife.Finder;
+import butterknife.ButterKnife.ViewBinder;
+
+public class NewHistoryFragment$$ViewBinder<T extends com.yhrjkf.woyundong.fragment.NewHistoryFragment> implements ViewBinder<T> {
+  @Override public void bind(final Finder finder, final T target, Object source) {
+    View view;
+    view = finder.findRequiredView(source, 2131624297, "field 'mImgBack'");
+    target.mImgBack = finder.castView(view, 2131624297, "field 'mImgBack'");
+    view = finder.findRequiredView(source, 2131624300, "field 'mCalendarView'");
+    target.mCalendarView = finder.castView(view, 2131624300, "field 'mCalendarView'");
+    view = finder.findRequiredView(source, 2131624301, "field 'mTvSportTimes'");
+    target.mTvSportTimes = finder.castView(view, 2131624301, "field 'mTvSportTimes'");
+    view = finder.findRequiredView(source, 2131624302, "field 'mTvSportHour'");
+    target.mTvSportHour = finder.castView(view, 2131624302, "field 'mTvSportHour'");
+    view = finder.findRequiredView(source, 2131624303, "field 'mTvSportDistance'");
+    target.mTvSportDistance = finder.castView(view, 2131624303, "field 'mTvSportDistance'");
+    view = finder.findRequiredView(source, 2131624304, "field 'mTvSportCarloris'");
+    target.mTvSportCarloris = finder.castView(view, 2131624304, "field 'mTvSportCarloris'");
+    view = finder.findRequiredView(source, 2131624306, "field 'mSportChart'");
+    target.mSportChart = finder.castView(view, 2131624306, "field 'mSportChart'");
+    view = finder.findRequiredView(source, 2131624299, "field 'mTvMonth'");
+    target.mTvMonth = finder.castView(view, 2131624299, "field 'mTvMonth'");
+    view = finder.findRequiredView(source, 2131624305, "field 'mChartTitle'");
+    target.mChartTitle = finder.castView(view, 2131624305, "field 'mChartTitle'");
+  }
+
+  @Override public void unbind(T target) {
+    target.mImgBack = null;
+    target.mCalendarView = null;
+    target.mTvSportTimes = null;
+    target.mTvSportHour = null;
+    target.mTvSportDistance = null;
+    target.mTvSportCarloris = null;
+    target.mSportChart = null;
+    target.mTvMonth = null;
+    target.mChartTitle = null;
+  }
+}

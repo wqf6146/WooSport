@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/fc_tablayout"
+        android:layout_width="match_parent"
+        style="@style/CsTabLayoutStyle"
+        android:layout_height="wrap_content">
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/fc_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:background="@android:color/white" />
+
+     <!--<LinearLayout -->
+         <!--android:layout_width="match_parent"-->
+         <!--android:layout_height="wrap_content"-->
+         <!--android:paddingTop="10dp"-->
+         <!--android:paddingBottom="10dp"-->
+         <!--android:background="#C9C9C9"-->
+         <!--android:orientation="horizontal"-->
+         <!--&gt;-->
+         <!--<TextView -->
+             <!--android:id="@+id/tv_zx_new1"-->
+             <!--android:layout_width="0dp"-->
+             <!--android:layout_height="wrap_content"-->
+             <!--android:layout_weight="1"-->
+             <!--android:text="新闻1"-->
+             <!--android:gravity="center"-->
+             <!--android:textColor="#FF0000"-->
+             <!--/>-->
+          <!--<TextView -->
+             <!--android:id="@+id/tv_zx_new2"-->
+             <!--android:layout_width="0dp"-->
+             <!--android:layout_height="wrap_content"-->
+             <!--android:layout_weight="1"-->
+             <!--android:text="新闻2"-->
+             <!--android:gravity="center"-->
+             <!--android:textColor="#969696"-->
+             <!--/>-->
+           <!--<TextView -->
+             <!--android:id="@+id/tv_zx_new3"-->
+             <!--android:layout_width="0dp"-->
+             <!--android:layout_height="wrap_content"-->
+             <!--android:layout_weight="1"-->
+             <!--android:text="新闻3"-->
+             <!--android:gravity="center"-->
+             <!--android:textColor="#969696"-->
+             <!--/>-->
+     <!--</LinearLayout>-->
+     <!--<LinearLayout -->
+         <!--android:layout_width="match_parent"-->
+         <!--android:layout_height="wrap_content"-->
+         <!--android:orientation="horizontal"-->
+         <!--&gt;-->
+         <!--<View -->
+             <!--android:id="@+id/view_xian1"-->
+             <!--android:layout_width="0dp"-->
+             <!--android:layout_height="1dp"-->
+             <!--android:background="#FF0000"-->
+             <!--android:layout_weight="1"-->
+             <!--/>-->
+         <!--<View -->
+             <!--android:id="@+id/view_xian2"-->
+             <!--android:layout_width="0dp"-->
+             <!--android:layout_height="1dp"-->
+             <!--android:background="#AAAAAA"-->
+             <!--android:layout_weight="1"-->
+             <!--/>-->
+         <!--<View -->
+             <!--android:id="@+id/view_xian3"-->
+             <!--android:layout_width="0dp"-->
+             <!--android:layout_height="1dp"-->
+             <!--android:background="#AAAAAA"-->
+             <!--android:layout_weight="1"-->
+             <!--/>-->
+     <!--</LinearLayout>-->
+   <!--<LinearLayout-->
+        <!--android:id="@+id/content"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:orientation="vertical" >-->
+    <!--</LinearLayout>-->
+    
+
+</LinearLayout>

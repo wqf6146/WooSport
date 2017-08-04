@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainPublish_dialog_rlMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeffffff"
+    android:clickable="true" >
+
+        <!--<ImageView-->
+            <!--android:layout_width="220dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="60dp"-->
+            <!--android:contentDescription="@null"-->
+            <!--android:scaleType="centerInside"-->
+            <!--android:src="@drawable/mainactivity_publish_worlduc" />-->
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="2dp"-->
+        <!--android:layout_above="@+id/mainPublish_dialog_llBtnMenu"-->
+        <!--android:background="@drawable/line"/>-->
+
+    <LinearLayout
+        android:id="@+id/mainPublish_dialog_llBtnMenu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        app:layout_widthPercent="100%"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_heightPercent="9%"
+        android:background="@color/homebarbg"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/mainPublish_dialog_ivMenu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null"
+            android:src="@drawable/cha" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_weight="2.5"
+            android:layout_height="0dp">
+
+            <View
+                android:layout_width="1dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/midtag"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:id="@+id/mainPublish_dialog_llBtnArticle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_marginRight="40dp"
+                android:layout_toLeftOf="@+id/midtag"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp" >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@null"
+                    android:src="@drawable/paihang" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="排行榜"
+                    android:textColor="#3E3E3E"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mainPublish_dialog_llBtnMiniBlog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_toRightOf="@+id/midtag"
+                android:clickable="true"
+                android:orientation="vertical"
+
+                android:layout_marginTop="40dp" >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@null"
+                    android:src="@drawable/shuju" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="数据同步"
+                    android:textColor="#3E3E3E"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mainPublish_dialog_llBtnLetter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mainPublish_dialog_llBtnArticle"
+                android:layout_toLeftOf="@+id/midtag"
+                android:layout_marginRight="40dp"
+                android:clickable="true"
+                android:orientation="vertical"
+
+                android:layout_marginTop="40dp" >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@null"
+                    android:src="@drawable/huodong" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="活动"
+                    android:textColor="#3E3E3E"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mainPublish_dialog_llBtnPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mainPublish_dialog_llBtnMiniBlog"
+                android:layout_toRightOf="@+id/midtag"
+                android:clickable="true"
+                android:layout_marginLeft="40dp"
+                android:orientation="vertical"
+
+                android:layout_marginTop="40dp" >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@null"
+                    android:src="@drawable/qiandao" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="签到"
+                    android:textColor="#3E3E3E"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</android.support.percent.PercentRelativeLayout>
+
+

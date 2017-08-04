@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yhrjkf.woyundong.view.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/graybg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/ar_rl_topbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="7%"
+        android:background="@color/bluefont">
+
+        <ImageView
+            android:id="@+id/ar_img_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:padding="12dp"
+            android:src="@drawable/leftarrow" />
+        <TextView
+            android:id="@+id/ar_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:text="记录"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="60%"
+        android:padding="10dp"
+        android:layout_width="0dp"
+        android:orientation="vertical"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_height="0dp">
+            <android.support.percent.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/rank_ll_style"
+                android:layout_margin="3dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:src="@drawable/clock"
+                    android:id="@+id/ar_img_time"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="30dp" />
+                <TextView
+                    android:layout_width="0dp"
+                    app:layout_widthPercent="60%"
+                    app:layout_heightPercent="20%"
+                    android:id="@+id/ar_tv_time"
+                    android:layout_below="@+id/ar_img_time"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="时间最长"
+                    android:background="@drawable/background_yellow_style"
+                    android:layout_height="0dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:padding="5dp"
+                        android:id="@+id/ar_ll_time"
+                        android:gravity="center"
+                        android:layout_below="@+id/ar_tv_time"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/am_tv_time_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:text="0"
+                            android:textColor="@color/bgyellow"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/grayfont"
+                            android:layout_gravity="bottom"
+                            android:textSize="16sp"
+                            android:text="分钟"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:padding="2dp"
+                    android:gravity="center"
+                    android:layout_below="@+id/ar_ll_time"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/am_tv_time_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:textColor="@color/grayfont"
+                        android:textSize="@dimen/fontsize" />
+
+                </LinearLayout>
+
+            </android.support.percent.PercentRelativeLayout>
+            <android.support.percent.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/rank_ll_style"
+                android:layout_margin="3dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:src="@drawable/positiongray"
+                    android:id="@+id/ar_img_position"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="30dp" />
+                <TextView
+                    android:layout_width="0dp"
+                    app:layout_widthPercent="60%"
+                    app:layout_heightPercent="20%"
+                    android:id="@+id/ar_tv_position"
+                    android:layout_below="@+id/ar_img_position"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="距离最长"
+                    android:background="@drawable/background_grayorgange_style"
+                    android:layout_height="0dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:id="@+id/ar_ll_ds"
+                    android:gravity="center"
+                    android:layout_below="@+id/ar_tv_position"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/am_tv_ds_ds"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="0"
+                        android:textColor="@color/bggrayyellow"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/am_ds_ds"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:text="千米"
+                        android:textColor="@color/grayfont"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:padding="2dp"
+                    android:gravity="center"
+                    android:layout_below="@+id/ar_ll_ds"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/am_tv_ds_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:textColor="@color/grayfont"
+                        android:textSize="@dimen/fontsize" />
+
+                </LinearLayout>
+
+            </android.support.percent.PercentRelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_height="0dp">
+            <android.support.percent.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/rank_ll_style"
+                android:layout_margin="3dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:src="@drawable/grayfire"
+                    android:id="@+id/ar_img_fire"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="30dp" />
+                <TextView
+                    android:layout_width="0dp"
+                    app:layout_widthPercent="60%"
+                    app:layout_heightPercent="20%"
+                    android:id="@+id/ar_tv_fire"
+                    android:layout_below="@+id/ar_img_fire"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="燃烧最多"
+                    android:background="@drawable/background_blue_style"
+                    android:layout_height="0dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:id="@+id/ar_ll_fire"
+                    android:gravity="center"
+                    android:layout_below="@+id/ar_tv_fire"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/am_tv_fire_calorie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="0"
+                        android:textColor="@color/bgblue"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/bgblue"
+                        android:layout_gravity="bottom"
+                        android:textSize="16sp"
+                        android:text="千卡"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:padding="2dp"
+                    android:gravity="center"
+                    android:layout_below="@+id/ar_ll_fire"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/am_tv_fire_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:textColor="@color/grayfont"
+                        android:textSize="@dimen/fontsize" />
+
+                </LinearLayout>
+
+            </android.support.percent.PercentRelativeLayout>
+            <android.support.percent.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/rank_ll_style"
+                android:layout_margin="3dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:src="@drawable/graysd"
+                    android:id="@+id/ar_img_speed"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="30dp" />
+                <TextView
+                    android:layout_width="0dp"
+                    app:layout_widthPercent="60%"
+                    app:layout_heightPercent="20%"
+                    android:id="@+id/ar_tv_speed"
+                    android:layout_below="@+id/ar_img_speed"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="速度最快"
+                    android:background="@drawable/background_green_style"
+                    android:layout_height="0dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:id="@+id/ar_ll_speed"
+                    android:gravity="center"
+                    android:layout_below="@+id/ar_tv_speed"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/am_tv_speed_ds"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="0"
+                        android:textColor="@color/bggreen"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/grayfont"
+                        android:layout_gravity="bottom"
+                        android:textSize="16sp"
+                        android:text="km/h"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:padding="2dp"
+                    android:gravity="center"
+                    android:layout_below="@+id/ar_ll_speed"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/am_tv_speed_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:textColor="@color/grayfont"
+                        android:textSize="@dimen/fontsize" />
+
+                </LinearLayout>
+
+            </android.support.percent.PercentRelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</com.yhrjkf.woyundong.view.PercentLinearLayout>

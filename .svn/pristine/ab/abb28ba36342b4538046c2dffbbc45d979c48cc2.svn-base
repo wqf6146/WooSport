@@ -1,0 +1,193 @@
+package com.yhrjkf.woyundong.activity;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.vise.xsnow.cache.SpCache;
+import com.vise.xsnow.net.api.ViseApi;
+import com.vise.xsnow.net.callback.ApiCallback;
+import com.vise.xsnow.net.exception.ApiException;
+import com.yhrjkf.woyundong.App;
+import com.yhrjkf.woyundong.BaseActivity;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.bean.InvitationBean;
+import com.yhrjkf.woyundong.bean.LoginBean;
+import com.yhrjkf.woyundong.fragment.MainFragment;
+import com.yhrjkf.woyundong.http.Api;
+import com.yhrjkf.woyundong.http.WooSportApi;
+import com.yhrjkf.woyundong.http.api.ApiSercice;
+import com.yhrjkf.woyundong.utils.RxUtils;
+import com.yhrjkf.woyundong.utils.SharedPreferencesUtil;
+import com.yhrjkf.woyundong.utils.WooConfig;
+
+import java.util.HashMap;
+
+import rx.Observable;
+import rx.functions.Func1;
+
+public class LoginActivity extends BaseActivity implements OnClickListener {
+
+	private TextView tv_login_zhuce, tv_login_denglu;
+	private EditText ed_login_sjh, ed_login_mm, ed_login_yqm;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+//		if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+//			finish();
+//			return;
+//		}
+		setContentView(R.layout.activity_login);
+	}
+
+	@Override
+	protected void bindEvent() {
+		tv_login_zhuce.setOnClickListener(this);
+		tv_login_denglu.setOnClickListener(this);
+	}
+
+	@Override
+	protected void initData() {
+
+	}
+
+	@Override
+	protected void initView() {
+		tv_login_zhuce = (TextView) findViewById(R.id.tv_login_zhuce);
+		tv_login_denglu = (TextView) findViewById(R.id.tv_login_denglu);
+		ed_login_sjh = (EditText) findViewById(R.id.ed_login_sjh);
+		ed_login_mm = (EditText) findViewById(R.id.ed_login_mm);
+		ed_login_yqm = (EditText) findViewById(R.id.ed_login_yqm);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.tv_login_zhuce:
+			Intent intent = new Intent();
+			intent.setClass(this, RegisterActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.tv_login_denglu:
+			doLogin();
+		default:
+			break;
+		}
+
+	}
+
+//	private void doInvitation(final LoginBean loginbean,String key){
+//		HashMap hashMap = new HashMap();
+//		hashMap.put("uid",loginbean.getData().getId());
+//		hashMap.put("key",key);
+//		ViseApi api = new ViseApi.Builder(mContext).build();
+//		api.apiPost(ApiSercice.URL_CHECKKEY, hashMap, new ApiCallback<InvitationBean>(){
+//			@Override
+//			public void onCompleted() {
+//
+//			}
+//
+//			@Override
+//			public void onError(ApiException e) {
+//
+//			}
+//
+//			@Override
+//			public void onNext(InvitationBean loginBean) {
+//				SpCache sp = new SpCache(mContext,WooConfig.USER.USER_FILE);
+//				sp.put(WooConfig.USER.LOGINBEAN,loginBean);
+//			}
+//
+//			@Override
+//			public void onStart() {
+//
+//			}
+//		});
+//
+//	}
+
+	private void doLogin(){
+		final String sphone = ed_login_sjh.getText().toString();
+		final String spasswd = ed_login_mm.getText().toString();
+		final String skey = ed_login_yqm.getText().toString();
+		if (sphone.isEmpty() || spasswd.isEmpty() || skey.isEmpty()){
+			showToast("请补全信息");
+		}else{
+			WooSportApi.getInstance().startLogin(mContext, sphone, spasswd, skey);
+//			HashMap hashMap = new HashMap();
+//			hashMap.put("phone",spasswd);
+//			hashMap.put("password",spasswd);
+//			ViseApi api = new ViseApi.Builder(mContext).build();
+//			api.apiPost(ApiSercice.URL_LOGIN, hashMap, new ApiCallback<LoginBean>(){
+//				@Override
+//				public void onCompleted() {
+//
+//				}
+//
+//				@Override
+//				public void onError(ApiException e) {
+//
+//				}
+//
+//				@Override
+//				public void onNext(LoginBean loginBean) {
+//					doInvitation(loginBean,skey);
+//				}
+//
+//				@Override
+//				public void onStart() {
+//
+//				}
+//			});
+
+//					mSubscription = RxUtils.addSubScription(
+//							Api.getInstance().getLoginRes(sphone, spasswd)
+//									.flatMap(new Func1<LoginBean, Observable<InvitationBean>>() {
+//										@Override
+//										public Observable<InvitationBean> call(LoginBean loginBean) {
+//											App.newInstance().saveUserInfo(loginBean);
+//											return Api.getInstance().getInvitationRes(loginBean.getData().getId(), skey);
+//										}
+//									}), new ApiCallback<InvitationBean>() {
+//								@Override
+//								public void onSuccess(InvitationBean model) {
+//									if (model.getRecode().equals("200") && model.getData().equals("success")) {
+//										SharedPreferencesUtil.saveData("phone", Base64.encodeToString(sphone.getBytes(), Base64.DEFAULT));
+//										SharedPreferencesUtil.saveData("password", Base64.encodeToString(spasswd.getBytes(), Base64.DEFAULT));
+//										Intent intent = new Intent();
+//										intent.setClass(getApplicationContext(), MainActivity.class);
+//										startActivity(intent);
+//										finish();
+//									} else {
+//										showToast("邀请码错误");
+//									}
+//								}
+//
+//								@Override
+//								public void onFailure(int code, String msg) {
+//									Log.e("code:" + code, msg);
+//									showToast("登录失败,请重试");
+//								}
+//
+//								@Override
+//								public void onFinish() {
+//
+//								}
+//							});
+		}
+	}
+
+
+}

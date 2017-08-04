@@ -1,0 +1,341 @@
+package com.yhrjkf.woyundong.activity;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.yhrjkf.woyundong.App;
+import com.yhrjkf.woyundong.BaseActivity;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.bean.LoginBean;
+import com.yhrjkf.woyundong.tools.AppConfig;
+import com.yhrjkf.woyundong.tools.Connectors;
+
+public class HistoryActivity extends BaseActivity implements OnClickListener {
+	private RelativeLayout ll_history_back;
+	private TextView tv_history_down, tv_histort_day, tv_history_up,
+			tv_history_cishu, tv_history_time, tv_history_juli,
+			tv_history_reliang;
+	private ListView lv_history;
+	private List<String> keylist;
+	private List<HashMap<String, String>> dayList;
+	private List<List<HashMap<String, String>>> allList = new ArrayList<List<HashMap<String, String>>>();
+	private HashMap<String, String> hm;
+	private IndentCusAdapter adapter;
+	Handler handler;
+	private int tag = 0;
+	private int alltime, alljuli, allreliang;
+	BigDecimal bd;
+	Float f1;
+
+	@Override
+	protected void initView() {
+		ll_history_back = (RelativeLayout) findViewById(R.id.ll_history_back);
+		tv_history_down = (TextView) findViewById(R.id.tv_history_down);
+		tv_histort_day = (TextView) findViewById(R.id.tv_histort_day);
+		tv_history_up = (TextView) findViewById(R.id.tv_history_up);
+		tv_history_cishu = (TextView) findViewById(R.id.tv_history_cishu);
+		tv_history_time = (TextView) findViewById(R.id.tv_history_time);
+		tv_history_juli = (TextView) findViewById(R.id.tv_history_juli);
+		tv_history_reliang = (TextView) findViewById(R.id.tv_history_reliang);
+		lv_history = (ListView) findViewById(R.id.lv_history);
+	}
+
+	@Override
+	protected void initData() {
+
+	}
+
+	@Override
+	protected void bindEvent() {
+		ll_history_back.setOnClickListener(this);
+		tv_history_down.setOnClickListener(this);
+		tv_history_up.setOnClickListener(this);
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+			finish();
+			return;
+		}
+		setContentView(R.layout.activity_history);
+
+		handler = new Handler() {
+			@Override
+			public void handleMessage(Message msg) {
+				// TODO Auto-generated method stub
+				super.handleMessage(msg);
+				if (msg.arg1 == 0) {
+					tv_histort_day.setText(keylist.get(tag));
+					tv_history_cishu.setText(allList.get(tag).size() + "");
+					for (int i = 0; i < allList.get(tag).size(); i++) {
+						int a = Integer.parseInt(allList.get(tag).get(i)
+								.get("time"));
+						int b = Integer.parseInt(allList.get(tag).get(i)
+								.get("distance"));
+						int c = Integer.parseInt(allList.get(tag).get(i)
+								.get("calorie"));
+						alltime = alltime + a;
+						alljuli = alljuli + b;
+						allreliang = allreliang + c;
+					}
+					tv_history_time.setText(alltime + "");
+					tv_history_juli.setText(alljuli + "");
+					tv_history_reliang.setText(allreliang + "");
+					adapter = new IndentCusAdapter(allList.get(tag));
+					lv_history.setAdapter(adapter);
+				}
+			}
+		};
+
+//		HttpUtils httpUtils = new HttpUtils();
+//		RequestParams params = new RequestParams("UTF-8");
+//		params.addBodyParameter("uid", String.valueOf(App.newInstance().getmUserBean().getData().getId()));
+//		httpUtils.send(HttpMethod.POST, AppConfig.HISTORY, params,
+//				new RequestCallBack<String>() {
+//					@Override
+//					public void onFailure(HttpException arg0, String arg1) {
+//						// TODO Auto-generated method stub
+//					}
+//
+//					@Override
+//					public void onSuccess(ResponseInfo<String> responseInfo) {
+//						// TODO Auto-generated method stub
+//						Log.i("result", responseInfo.result);
+//						keylist = new ArrayList<String>();
+//						try {
+//							JSONObject jsonObject = new JSONObject(
+//									responseInfo.result);
+//							JSONArray jsonArray1 = jsonObject
+//									.getJSONArray("Data");
+//							for (int i = 0; i < jsonArray1.length(); i++) {
+//								JSONObject jsonObject2 = jsonArray1
+//										.getJSONObject(i);
+//								@SuppressWarnings("unchecked")
+//								Iterator<String> keys = jsonObject2.keys();
+//								while (keys.hasNext()) {
+//									String key = keys.next();
+//									keylist.add(key);
+//								}
+//								for (int k = 0; k < keylist.size(); k++) {
+//									dayList = new ArrayList<HashMap<String, String>>();
+//									JSONObject jsonObject3 = jsonObject2
+//											.getJSONObject(keylist.get(k));
+//									JSONArray jsonArray = jsonObject3
+//											.getJSONArray("data");
+//									for (int j = 0; j < jsonArray.length(); j++) {
+//										JSONObject jsonObject4 = jsonArray
+//												.getJSONObject(j);
+//										hm = new HashMap<String, String>();
+//										hm.put("types",
+//												jsonObject4.getString("types"));
+//										hm.put("time",
+//												jsonObject4.getString("time"));
+//										hm.put("distance", jsonObject4
+//												.getString("distance"));
+//										hm.put("speed",
+//												jsonObject4.getString("speed"));
+//										hm.put("calorie", jsonObject4
+//												.getString("calorie"));
+//										dayList.add(hm);
+//									}
+//									allList.add(dayList);
+//								}
+//
+//							}
+//							Message message = new Message();
+//							message.arg1 = 0;
+//							handler.sendMessage(message);
+//						} catch (JSONException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//					}
+//				});
+
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.ll_history_back:
+			finish();
+			break;
+		case R.id.tv_history_down:
+			if ((tag + 1) < allList.size()) {
+				alltime = 0;
+				alljuli = 0;
+				allreliang = 0;
+				tag = tag + 1;
+				tv_histort_day.setText(keylist.get(tag));
+				tv_history_cishu.setText(allList.get(tag).size() + "");
+				for (int i = 0; i < allList.get(tag).size(); i++) {
+					int a = Integer.parseInt(allList.get(tag).get(i)
+							.get("time"));
+					int b = Integer.parseInt(allList.get(tag).get(i)
+							.get("distance"));
+					int c = Integer.parseInt(allList.get(tag).get(i)
+							.get("calorie"));
+
+					alltime = alltime + a;
+					alljuli = alljuli + b;
+					allreliang = allreliang + c;
+				}
+				tv_history_time.setText(alltime + "");
+				tv_history_juli.setText(alljuli + "");
+				tv_history_reliang.setText(allreliang + "");
+				adapter = new IndentCusAdapter(allList.get(tag));
+				lv_history.setAdapter(adapter);
+			}
+			break;
+		case R.id.tv_history_up:
+			if (tag > 0) {
+				tag = tag - 1;
+				alltime = 0;
+				alljuli = 0;
+				allreliang = 0;
+				tv_histort_day.setText(keylist.get(tag));
+				tv_history_cishu.setText(allList.get(tag).size() + "");
+				for (int i = 0; i < allList.get(tag).size(); i++) {
+					int a = Integer.parseInt(allList.get(tag).get(i)
+							.get("time"));
+					int b = Integer.parseInt(allList.get(tag).get(i)
+							.get("distance"));
+					int c = Integer.parseInt(allList.get(tag).get(i)
+							.get("calorie"));
+
+					alltime = alltime + a;
+					alljuli = alljuli + b;
+					allreliang = allreliang + c;
+				}
+				tv_history_time.setText(alltime + "");
+				tv_history_juli.setText(alljuli + "");
+				tv_history_reliang.setText(allreliang + "");
+				adapter = new IndentCusAdapter(allList.get(tag));
+				lv_history.setAdapter(adapter);
+			}
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
+	private class IndentCusAdapter extends BaseAdapter {
+
+		List<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
+
+		public IndentCusAdapter(List<HashMap<String, String>> overduelist) {
+			list = overduelist;
+		}
+
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return list.size();
+		}
+
+		@Override
+		public Object getItem(int position) {
+			// TODO Auto-generated method stub
+			return list.get(position);
+		}
+
+		@Override
+		public long getItemId(int position) {
+			// TODO Auto-generated method stub
+			return position;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			// TODO Auto-generated method stub
+			Cache cache = null;
+			if (convertView == null) {
+				convertView = LayoutInflater.from(getApplicationContext())
+						.inflate(R.layout.item_history, null);
+				cache = new Cache();
+				cache.tv_item_cishu = (TextView) convertView
+						.findViewById(R.id.tv_item_cishu);
+				cache.tv_item_time = (TextView) convertView
+						.findViewById(R.id.tv_item_time);
+				cache.tv_item_reliang = (TextView) convertView
+						.findViewById(R.id.tv_item_reliang);
+				cache.tv_item_juli = (TextView) convertView
+						.findViewById(R.id.tv_item_juli);
+				convertView.setTag(cache);
+			} else {
+				cache = (Cache) convertView.getTag();
+			}
+			if (position == 0) {
+				cache.tv_item_cishu.setText("最近1次");
+				int times = Integer.parseInt(list.get(0).get("time"));
+				double db2 = times / 60.0;
+				bd = new BigDecimal(db2);
+				f1 = bd.setScale(1, BigDecimal.ROUND_HALF_UP).floatValue();
+				cache.tv_item_time.setText("用时" + f1 + "分钟");
+				cache.tv_item_reliang.setText("消耗热量"
+						+ list.get(0).get("calorie") + "大卡");
+				int juli = Integer.parseInt(list.get(0).get("distance"));
+				double db21 = juli / 1000.0;
+				bd = new BigDecimal(db21);
+				float f2 = bd.setScale(2, BigDecimal.ROUND_HALF_UP)
+						.floatValue();
+				cache.tv_item_juli.setText("距离" + f2 + "km");
+
+			} else {
+				cache.tv_item_cishu.setText("");
+				int times = Integer.parseInt(list.get(position).get("time"));
+				double db2 = times / 60.0;
+				bd = new BigDecimal(db2);
+				f1 = bd.setScale(1, BigDecimal.ROUND_HALF_UP).floatValue();
+				cache.tv_item_time.setText("用时" + f1 + "分钟");
+				cache.tv_item_reliang.setText("消耗热量"
+						+ list.get(position).get("calorie") + "大卡");
+				int juli = Integer.parseInt(list.get(position).get("distance"));
+				double db21 = juli / 1000.0;
+				bd = new BigDecimal(db21);
+				f1 = bd.setScale(2, BigDecimal.ROUND_HALF_UP).floatValue();
+				cache.tv_item_juli.setText("距离" + f1 + "Km");
+			}
+			return convertView;
+		}
+	}
+
+	class Cache {
+		TextView tv_item_cishu, tv_item_time, tv_item_reliang, tv_item_juli;
+	}
+
+}

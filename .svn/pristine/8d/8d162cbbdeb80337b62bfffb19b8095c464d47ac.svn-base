@@ -1,0 +1,284 @@
+package com.yhrjkf.woyundong.activity;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.kaopiz.kprogresshud.KProgressHUD;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.vise.xsnow.cache.SpCache;
+import com.yhrjkf.woyundong.App;
+import com.yhrjkf.woyundong.BaseActivity;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.bean.LoginBean;
+import com.yhrjkf.woyundong.tools.AppConfig;
+import com.yhrjkf.woyundong.tools.Connectors;
+import com.yhrjkf.woyundong.utils.WooConfig;
+
+public class MedalActivity extends BaseActivity {
+
+	HashMap<String, String> hm;
+	List<HashMap<String, String>> list;
+	Handler handler;
+	private LinearLayout ll_back;
+	private ImageView img_xunzhang_1, img_xunzhang_2, img_xunzhang_3,
+			img_xunzhang_4, img_xunzhang_5, img_xunzhang_6, img_xunzhang_7,
+			img_xunzhang_8, img_xunzhang_9, img_xunzhang_10, img_xunzhang_11,
+			img_xunzhang_12, img_xunzhang_13, img_xunzhang_14, img_xunzhang_15,
+			img_xunzhang_16, img_xunzhang_17, img_xunzhang_18, img_xunzhang_19,
+			img_xunzhang_20, img_xunzhang_21, img_xunzhang_22, img_xunzhang_23,
+			img_xunzhang_24;
+	TextView tv_guize;
+
+	@Override
+	protected void initData() {
+
+	}
+
+	@Override
+	protected void initView() {
+		ll_back = (LinearLayout) findViewById(R.id.ll_back);
+		tv_guize = (TextView) findViewById(R.id.tv_guize);
+		img_xunzhang_1 = (ImageView) findViewById(R.id.img_xunzhang_1);
+		img_xunzhang_2 = (ImageView) findViewById(R.id.img_xunzhang_2);
+		img_xunzhang_3 = (ImageView) findViewById(R.id.img_xunzhang_3);
+		img_xunzhang_4 = (ImageView) findViewById(R.id.img_xunzhang_4);
+		img_xunzhang_5 = (ImageView) findViewById(R.id.img_xunzhang_5);
+		img_xunzhang_6 = (ImageView) findViewById(R.id.img_xunzhang_6);
+		img_xunzhang_7 = (ImageView) findViewById(R.id.img_xunzhang_7);
+		img_xunzhang_8 = (ImageView) findViewById(R.id.img_xunzhang_8);
+		img_xunzhang_9 = (ImageView) findViewById(R.id.img_xunzhang_9);
+		img_xunzhang_10 = (ImageView) findViewById(R.id.img_xunzhang_10);
+		img_xunzhang_11 = (ImageView) findViewById(R.id.img_xunzhang_11);
+		img_xunzhang_12 = (ImageView) findViewById(R.id.img_xunzhang_12);
+		img_xunzhang_13 = (ImageView) findViewById(R.id.img_xunzhang_13);
+		img_xunzhang_14 = (ImageView) findViewById(R.id.img_xunzhang_14);
+		img_xunzhang_15 = (ImageView) findViewById(R.id.img_xunzhang_15);
+		img_xunzhang_16 = (ImageView) findViewById(R.id.img_xunzhang_16);
+		img_xunzhang_17 = (ImageView) findViewById(R.id.img_xunzhang_17);
+		img_xunzhang_18 = (ImageView) findViewById(R.id.img_xunzhang_18);
+		img_xunzhang_19 = (ImageView) findViewById(R.id.img_xunzhang_19);
+		img_xunzhang_20 = (ImageView) findViewById(R.id.img_xunzhang_20);
+		img_xunzhang_21 = (ImageView) findViewById(R.id.img_xunzhang_21);
+		img_xunzhang_22 = (ImageView) findViewById(R.id.img_xunzhang_22);
+		img_xunzhang_23 = (ImageView) findViewById(R.id.img_xunzhang_23);
+		img_xunzhang_24 = (ImageView) findViewById(R.id.img_xunzhang_24);
+	}
+
+	@Override
+	protected void bindEvent() {
+		tv_guize.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent();
+				intent.setClass(getApplicationContext(), RuleActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		ll_back.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+			finish();
+			return;
+		}
+		setContentView(R.layout.activity_medal);
+
+
+		HttpUtils httpUtils = new HttpUtils();
+		RequestParams params = new RequestParams("UTF-8");
+
+		//Log.i("uid", Connectors.getId());
+		LoginBean.UserBean userBean = App.newInstance().getUserBean();
+		params.addBodyParameter("uid", String.valueOf(userBean.getId()));
+		mHud = KProgressHUD.create(this)
+				.setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+				.setCancellable(true);
+		mHud.show();
+		httpUtils.send(HttpMethod.POST, AppConfig.MEDAL, params,
+				new RequestCallBack<String>() {
+
+					@Override
+					public void onFailure(HttpException arg0, String arg1) {
+						// TODO Auto-generated method stub
+						mHud.dismiss();
+					}
+
+					@Override
+					public void onSuccess(ResponseInfo<String> responseInfo) {
+						// TODO Auto-generated method stub
+						Log.i("result", responseInfo.result);
+						try {
+							JSONObject jsonObject = new JSONObject(
+									responseInfo.result);
+							list = new ArrayList<HashMap<String, String>>();
+							JSONArray jsonArray = jsonObject
+									.getJSONArray("Data");
+							for (int i = 0; i < jsonArray.length(); i++) {
+								hm = new HashMap<String, String>();
+								JSONObject jsonObject2 = jsonArray
+										.getJSONObject(i);
+								hm.put("medal", jsonObject2.getString("medal"));
+								list.add(hm);
+							}
+							Message message = new Message();
+							message.arg1 = 0;
+							handler.sendMessage(message);
+							mHud.dismiss();
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
+					}
+				});
+		handler = new Handler() {
+			@Override
+			public void handleMessage(Message msg) {
+				// TODO Auto-generated method stub
+				super.handleMessage(msg);
+				if (msg.arg1 == 0) {
+					for (int i = 0; i < list.size(); i++) {
+						if (list.get(i).get("medal").equals("A")) {
+							img_xunzhang_1
+									.setImageResource(R.drawable.xunzhang2);
+						}
+						if (list.get(i).get("medal").equals("B")) {
+							img_xunzhang_2
+									.setImageResource(R.drawable.xunzhang2);
+						}
+						if (list.get(i).get("medal").equals("C")) {
+							img_xunzhang_3
+									.setImageResource(R.drawable.xunzhang2);
+						}
+						if (list.get(i).get("medal").equals("D")) {
+							img_xunzhang_4
+									.setImageResource(R.drawable.xunzhang2);
+						}
+						if (list.get(i).get("medal").equals("E")) {
+							img_xunzhang_5
+									.setImageResource(R.drawable.xunzhang2);
+						}
+						if (list.get(i).get("medal").equals("F")) {
+							img_xunzhang_6
+									.setImageResource(R.drawable.xunzhang2);
+						}
+						if (list.get(i).get("medal").equals("G")) {
+							img_xunzhang_7
+									.setImageResource(R.drawable.xunzhang2);
+						}
+						if (list.get(i).get("medal").equals("H")) {
+							img_xunzhang_8
+									.setImageResource(R.drawable.xunzhang2);
+						}
+						if (list.get(i).get("medal").equals("I")) {
+							img_xunzhang_9
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("J")) {
+							img_xunzhang_10
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("K")) {
+							img_xunzhang_11
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("L")) {
+							img_xunzhang_12
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("M")) {
+							img_xunzhang_13
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("N")) {
+							img_xunzhang_14
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("O")) {
+							img_xunzhang_15
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("P")) {
+							img_xunzhang_16
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("Q")) {
+							img_xunzhang_17
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("R")) {
+							img_xunzhang_18
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("S")) {
+							img_xunzhang_19
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("T")) {
+							img_xunzhang_20
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("U")) {
+							img_xunzhang_21
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("V")) {
+							img_xunzhang_22
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("W")) {
+							img_xunzhang_23
+									.setImageResource(R.drawable.xunzhang4);
+						}
+						if (list.get(i).get("medal").equals("X")) {
+							img_xunzhang_24
+									.setImageResource(R.drawable.xunzhang4);
+						}
+
+					}
+
+				}
+			}
+		};
+
+	}
+
+
+
+}

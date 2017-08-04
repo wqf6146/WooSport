@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\f65345d1b45e514d6f1345000aa9ed0d7e140e7f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_5bd6cdccfad184a207112598c501bfa0a9884ce8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\ffba70fbd49fe89d684f9354e4f50f4f468abf26\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_8df1a5964da49155778ddef42103fadf57b3caf1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport4\app\libs\xUtils-2.6.14.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f10c51f3e0732fdeefe6e104279a58e275879b6c">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\xUtils-2.6.14_3cb61a9aae6cb1f923f58579347da9de4374821f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2da834608698fc6f2a772f9d251cc23620dd3156">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\release\classes_6a8091e9183e4b16dddf3a313392a69382b16084.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport4\calendarlibrary\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6873cc3a01c80ade3f9ab672ab92a1b05ee76188">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\release\classes_83acbd9056e0f5c31677384f223f542f27b36d2b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\0a22cf00af995b0877f9293718bbcedd463f47d1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cc03ddac6017ba6366944c3eb01efc8751a00a6b">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_2ea91c0f29b04c53e9c9ab92b518354483614fad.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\babedcd30af7a6a04934d6fe6c998d7d4e015991\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_a2ca0a18e70cbd0dac6235857fb8e10faa76ddab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\5846a1c76f896f61a1183f6c36172084cba8603e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e51c2f662bb72419632af5192553c37e33890a99">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_004d8690ba385cfbd05c3a226bc1f41b2b3c2b48.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport4\xsnow\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4123f7188bbc7c727909b599e14eb7983b411fb8">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\release\classes_bbf45cdad1ce0c077de7415329c58e9702d25bd7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport4\app\libs\AMap3DMap_5.0.0_AMapLocation_3.3.0_20170311.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fc994e9c647528f5777a2cdd2a22c11dbc58305c">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\AMap3DMap_5.0.0_AMapLocation_3.3.0_20170311_23af1626f3402794153efc4fa2285e202bd42c3b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport4\sweetdialog\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f741b716013e7345e9c871b970597a89c9b1fb8b">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\release\classes_85042a216e771336e0a2c822c699b8fe469fb26f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport4\app\libs\com.baidu.tts_2.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="13821b9782a321df92a623074b28c8aee1f03348">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\com.baidu.tts_2.3.0_ff95e80b2338277c33ba6e06cd68ffe243c4e183.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\18a27a8e292a46f5ac730a55bfc0ae97f2303883\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_6883143039fd994010f6a92b8ba43786c86315d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport4\countdownbtn\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="77f862024881bfcd91ae46f831f6e5a800c10dbf">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_d460971b312306e797527534c5cc0f29759887e2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\f3e6e54c52e5eea3f37193631e3a3bf7b50c69bf\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_6c79451e76b0ae994ab957fe8aeb43d5cf9ea7d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\1b04b06239672aeff5780aeeb51efc7c3b0fda78\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_05a7e6f2ab3de1d0211c30ec530bd6c56f6113cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\337b79ff7a2d9bf43e7784f5dabb9ab71ad4367a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_257c11183004c5feef154414e72cf4743437cea7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\support-annotations-26.0.0-alpha1_51fde4b16fd0a7eeb280abb2913adc017d9df2c2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\c831d930db916649a407f9983fc639679280a43b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fee8132e5e0717ebe43d996ed3c5a60de206d3d1">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_0e2552a816762793ef2bba930d4e05e44ac07b3d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\9069f85a66665cf9c82ae978af6eae01f51576f7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_2674fc90e29f0572f5cc85a523ce0ae31a92e041.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\e4b07bff3922b2ac8e2aa9a3f6841089fe124259\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_d358a878f292f0daad51a36eb8dba0569aed1cf3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport4\app\libs\hellocharts-library-1.5.8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="700944cb3a8ce4fe543cfac1a9146a11cbf702dc">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\hellocharts-library-1.5.8_77dd4b076ee0fd182ffa22b19a1534e6d4107eed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\a438a8c10ecd641951e7a641ccd1775f9e38ea41\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_bb6feb9359661e96f8620e7aca048d106df416ff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\2e7ef59fb16527c686714bfc20de860455530b47\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="E:\WorkPlaces\WoSport4\app\build\intermediates\pre-dexed\debug\classes_3e2192d787c7879bd716081857283948e76bbe73.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yhrjkf.woyundong.view.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/graybg"
+    android:paddingBottom="?actionBarSize"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/fjbx_rl_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bluefont">
+        <TextView
+            android:id="@+id/fm_tv_title"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:text="沃"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="34%"
+        app:layout_widthPercent="100%"
+        android:background="@color/bluefont"
+        android:padding="5dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:src="@drawable/tuzi"
+            android:scaleType="centerCrop"
+            android:id="@+id/fm_userimg"
+            android:layout_centerHorizontal="true"
+            android:layout_height="100dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/fm_username"
+            android:layout_below="@+id/fm_userimg"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:text="张华"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/fm_jifen"
+            android:text="积分"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp"
+            android:paddingRight="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/fm_username"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/fm_level"
+            android:text="等级"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/fm_username"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/fm_tv_jifen"
+            android:text="2210"
+            android:textSize="16sp"
+            android:textColor="@color/jifen"
+            android:paddingRight="60dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/fm_username"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/fm_tv_level"
+            android:text="LV5"
+            android:textSize="16sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/level"
+            android:paddingLeft="170dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/fm_username"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:src="@drawable/compile"
+            android:id="@+id/fm_btn_compile"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/fm_tv_edit"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/fm_tv_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="15dp"
+            android:text="编辑"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="54%"
+        app:layout_widthPercent="100%"
+        android:orientation="vertical"
+        android:paddingTop="2dp"
+        android:paddingBottom="10dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/grayline"/>
+        <RelativeLayout
+            android:id="@+id/ll_myf_ls"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:paddingLeft="10dp"
+
+            >
+            <ImageView
+                android:id="@+id/img_my_lishi"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/history"
+                android:layout_centerVertical="true" />
+            <TextView
+                android:id="@+id/tv_ls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="历史"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/img_my_lishi"
+                android:textSize="16dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="#000000"
+                />
+            <TextView
+                android:id="@+id/tv_myf_ls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="坚持到底"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/fm_btn_histroyback"
+                android:layout_centerVertical="true"
+                android:textColor="#CCCCCC"
+                />
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="13dp"
+                android:id="@+id/fm_btn_histroyback"
+                android:background="@drawable/backright"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/viewc"
+            android:layout_marginLeft="30dp"
+            />
+        <RelativeLayout
+            android:id="@+id/ll_myf_jl"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:paddingLeft="10dp"
+            >
+            <ImageView
+                android:id="@+id/img_my_jilu"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/record"
+                android:layout_centerVertical="true" />
+            <TextView
+                android:id="@+id/tv_jl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="记录"
+                android:layout_centerVertical="true"
+                android:textSize="16dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/img_my_jilu"
+                android:textColor="#000000"
+                />
+            <TextView
+                android:id="@+id/tv_myf_jl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="打破记录,永无止境"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/fm_btn_recordback"
+                android:layout_centerVertical="true"
+                android:textColor="#CCCCCC"
+                />
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="13dp"
+                android:id="@+id/fm_btn_recordback"
+                android:background="@drawable/backright"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/viewc"
+            android:layout_marginLeft="30dp"
+            />
+        <RelativeLayout
+            android:id="@+id/ll_myf_jz"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:background="@color/white"
+            >
+            <ImageView
+                android:id="@+id/img_my_jiangzhang"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/medal"
+                android:layout_marginRight="5dp"
+                android:layout_centerVertical="true" />
+            <TextView
+                android:id="@+id/tv_jz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="奖章"
+                android:layout_centerVertical="true"
+                android:textSize="16dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/img_my_jiangzhang"
+                android:textColor="#000000"
+                />
+            <TextView
+                android:id="@+id/tv_myf_jz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已获得奖章数"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/fm_btn_modelback"
+                android:layout_centerVertical="true"
+                android:textColor="#CCCCCC"
+                />
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="13dp"
+                android:id="@+id/fm_btn_modelback"
+                android:background="@drawable/backright"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/grayline"/>
+
+        <RelativeLayout
+            android:id="@+id/ll_myf_sz"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:paddingLeft="10dp">
+
+            <ImageView
+                android:id="@+id/img_my_shezhi"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/setting"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/tv_sz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/img_my_shezhi"
+                android:text="设置"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tv_myf_sz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_sz"
+                android:textColor="#CCCCCC" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="13dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/backright" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/grayline"/>
+
+        <Button
+            android:id="@+id/fm_btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/rank_ll_style"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="退出登陆"
+            android:textColor="@color/red_btn_bg_color"
+            android:textSize="20sp"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</com.yhrjkf.woyundong.view.PercentLinearLayout>

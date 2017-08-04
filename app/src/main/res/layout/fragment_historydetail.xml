@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yhrjkf.woyundong.view.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/graybg"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/fr_rl_topbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="7%"
+        android:background="@color/bluefont">
+
+        <ImageView
+            android:id="@+id/fhd_img_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:padding="12dp"
+            android:src="@drawable/leftarrow" />
+        <TextView
+            android:id="@+id/fhd_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:text="历史记录"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="2017-5-3"
+            android:textSize="20sp"
+            android:textColor="@color/grayfont"
+            android:id="@+id/fhd_tv_date"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/fhd_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/white"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"></ListView>
+</com.yhrjkf.woyundong.view.PercentLinearLayout>

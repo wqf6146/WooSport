@@ -1,0 +1,265 @@
+package com.yhrjkf.woyundong.activity;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.vise.log.ViseLog;
+import com.vise.xsnow.net.callback.ApiCallback;
+import com.vise.xsnow.net.exception.ApiException;
+import com.vise.xsnow.net.mode.CacheResult;
+import com.yhrjkf.woyundong.App;
+import com.yhrjkf.woyundong.BaseActivity;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.bean.LoginBean;
+import com.yhrjkf.woyundong.bean.SportDayInfoBean;
+import com.yhrjkf.woyundong.http.WooSportApi;
+import com.yhrjkf.woyundong.tools.AppConfig;
+import com.yhrjkf.woyundong.tools.Connectors;
+
+public class HistoryDayActivity extends BaseActivity implements OnClickListener {
+	private String monst;
+	private String day;
+	private HashMap<String, String> hashMap;
+//	private List<HashMap<String, String>> allList;
+	private ListView lv_his;
+	private Handler handler;
+	private IndentCusAdapter adapter;
+	private LinearLayout ll_back;
+
+	@Override
+	protected void initData() {
+
+	}
+
+	@Override
+	protected void initView() {
+		lv_his = (ListView) findViewById(R.id.lv_his);
+		ll_back = (LinearLayout) findViewById(R.id.ll_back);
+	}
+
+	@Override
+	protected void bindEvent() {
+		ll_back.setOnClickListener(this);
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+			finish();
+			return;
+		}
+		setContentView(R.layout.activity_histortyday);
+
+
+		Intent intent = getIntent();
+		monst = intent.getStringExtra("monst");
+		day = intent.getStringExtra("day");
+//		handler = new Handler() {
+//			@Override
+//			public void handleMessage(Message msg) {
+//				// TODO Auto-generated method stub
+//				super.handleMessage(msg);
+//				if (msg.arg1 == 0) {
+//					adapter = new IndentCusAdapter();
+//					lv_his.setAdapter(adapter);
+//				}
+//			}
+//
+//		};
+		getData();
+
+	}
+
+	private void getData() {
+
+		WooSportApi.getInstance().startGetSportDayDetail(mContext, String.valueOf(App.newInstance().getUserBean().getId()),
+				monst, day, new ApiCallback<CacheResult<SportDayInfoBean>>() {
+					@Override
+					public void onStart() {
+
+					}
+
+					@Override
+					public void onError(ApiException e) {
+						ViseLog.e(e);
+					}
+
+					@Override
+					public void onCompleted() {
+
+					}
+
+					@Override
+					public void onNext(CacheResult<SportDayInfoBean> sportDayInfoBeanCacheResult) {
+						if (sportDayInfoBeanCacheResult==null)
+							return;
+						adapter = new IndentCusAdapter(sportDayInfoBeanCacheResult.getCacheData().getData());
+						lv_his.setAdapter(adapter);
+					}
+				});
+		
+//		HttpUtils httpUtils = new HttpUtils();
+//		RequestParams params = new RequestParams("UTF-8");
+//		params.addBodyParameter("uid", String.valueOf(App.newInstance().getUserBean().getId()));
+//		params.addBodyParameter("monst", monst);
+//		params.addBodyParameter("day", day);
+//		httpUtils.send(HttpMethod.POST, AppConfig.HISTORYDAYS, params,
+//				new RequestCallBack<String>() {
+//
+//					@Override
+//					public void onFailure(HttpException arg0, String arg1) {
+//						// TODO Auto-generated method stub
+//						Log.i("HttpException", arg1);
+//					}
+//
+//					@Override
+//					public void onSuccess(ResponseInfo<String> responseInfo) {
+//						// TODO Auto-generated method stub
+//						Log.i("result", responseInfo.result);
+//						try {
+//							JSONObject jsonObject = new JSONObject(
+//									responseInfo.result);
+//							JSONArray jsonArray = jsonObject
+//									.getJSONArray("Data");
+//							allList = new ArrayList<HashMap<String, String>>();
+//							for (int i = 0; i < jsonArray.length(); i++) {
+//								hashMap = new HashMap<String, String>();
+//								JSONObject jsonObject2 = jsonArray
+//										.getJSONObject(i);
+//								hashMap.put("id", jsonObject2.getString("id"));
+//								hashMap.put("time",
+//										jsonObject2.getString("time"));
+//								hashMap.put("calorie",
+//										jsonObject2.getString("calorie"));
+//								hashMap.put("distance",
+//										jsonObject2.getString("distance"));
+//								allList.add(hashMap);
+//							}
+//							Message message = new Message();
+//							message.arg1 = 0;
+//							handler.sendMessage(message);
+//
+//						} catch (JSONException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//
+//					}
+//				});
+	}
+
+	private class IndentCusAdapter extends BaseAdapter {
+
+		List<SportDayInfoBean.DataBean> mData;
+
+		public IndentCusAdapter(List<SportDayInfoBean.DataBean> data){
+			mData = data;
+		}
+
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return mData.size();
+		}
+
+		@Override
+		public Object getItem(int position) {
+			// TODO Auto-generated method stub
+			return mData.get(position);
+		}
+
+		@Override
+		public long getItemId(int position) {
+			// TODO Auto-generated method stub
+			return position;
+		}
+
+		@Override
+		public View getView(final int position, View convertView,
+				ViewGroup parent) {
+			// TODO Auto-generated method stub
+			Cache cache = null;
+			if (convertView == null) {
+				convertView = LayoutInflater.from(getApplicationContext())
+						.inflate(R.layout.item_his, null);
+				cache = new Cache();
+				cache.tv_itme_time = (TextView) convertView
+						.findViewById(R.id.tv_itme_time);
+				cache.tv_itme_calorie = (TextView) convertView
+						.findViewById(R.id.tv_itme_calorie);
+				cache.tv_itme_distance = (TextView) convertView
+						.findViewById(R.id.tv_itme_distance);
+				convertView.setTag(cache);
+			} else {
+				cache = (Cache) convertView.getTag();
+			}
+			cache.tv_itme_time.setText("时间："
+					+ mData.get(position).getTime());
+			cache.tv_itme_calorie.setText("卡路里："
+					+ mData.get(position).getCalorie());
+			cache.tv_itme_distance.setText("路程："
+					+ mData.get(position).getDistance());
+			convertView.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Intent intent = new Intent();
+					intent.setClass(getApplicationContext(),
+							HistoryMapActivity.class);
+					intent.putExtra("mid", mData.get(position).getId());
+					startActivity(intent);
+				}
+			});
+
+			return convertView;
+		}
+	}
+
+	class Cache {
+
+		TextView tv_itme_time, tv_itme_calorie, tv_itme_distance;
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.ll_back:
+			finish();
+			break;
+
+		default:
+			break;
+		}
+
+	}
+}

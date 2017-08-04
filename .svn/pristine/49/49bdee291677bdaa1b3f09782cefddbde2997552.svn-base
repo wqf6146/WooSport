@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/fr_rl_topbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="7%"
+        android:background="@color/bluefont">
+        <ImageView
+            android:layout_width="40dp"
+            android:src="@drawable/leftarrow"
+            android:layout_centerVertical="true"
+            android:padding="12dp"
+            android:id="@+id/fr_img_back"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/fr_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:text="排行榜"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/fr_function_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_below="@+id/fr_rl_topbar"
+        android:background="@color/bluefont"
+        app:layout_heightPercent="11%"
+        app:layout_widthPercent="100%">
+
+        <LinearLayout
+            android:id="@+id/fr_ll_classilytab"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerHorizontal="true"
+            app:layout_heightPercent="60%"
+            app:layout_widthPercent="65%">
+
+            <Button
+                android:id="@+id/fr_btn_all"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/rank_btn_style"
+                android:text="全部"
+                android:textColor="@color/bluefont"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/fr_btn_run"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@color/transparency"
+                android:text="健走"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/fr_btn_ride"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@color/transparency"
+                android:text="骑行"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            app:layout_heightPercent="53%"
+            app:layout_marginTopPercent="47%"
+            app:layout_widthPercent="100%">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fr_btn_day"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="天"
+                    android:textColor="@color/grayfont" />
+
+                <TextView
+                    android:id="@+id/fr_btn_week"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="周"
+                    android:textColor="@color/grayfont" />
+
+                <TextView
+                    android:id="@+id/fr_btn_month"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="月"
+                    android:textColor="@color/grayfont" />
+
+                <TextView
+                    android:id="@+id/fr_btn_alltime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="总"
+                    android:textColor="@color/grayfont" />
+            </LinearLayout>
+
+            <com.yhrjkf.woyundong.view.PercentLinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="1dp"
+                android:layout_marginBottom="1dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/fr_line_day"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/bluefont"
+                    app:layout_marginLeftPercent="7%"
+                    app:layout_marginRightPercent="7%" />
+
+                <View
+                    android:id="@+id/fr_line_week"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/bluefont"
+                    app:layout_marginLeftPercent="7%"
+                    app:layout_marginRightPercent="7%" />
+
+                <View
+                    android:id="@+id/fr_line_month"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/bluefont"
+                    app:layout_marginLeftPercent="7%"
+                    app:layout_marginRightPercent="7%" />
+
+                <View
+                    android:id="@+id/fr_line_alltime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/bluefont"
+                    app:layout_marginLeftPercent="7%"
+                    app:layout_marginRightPercent="7%" />
+            </com.yhrjkf.woyundong.view.PercentLinearLayout>
+        </LinearLayout>
+    </android.support.percent.PercentRelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/bluefont"
+        android:paddingBottom="60dp"
+        android:layout_below="@+id/fr_function_bar"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rank_ll_style">
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/fr_recycleview_rank"
+                >
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/fr_tv_myrank"
+            android:text="456"
+            android:textSize="16sp"
+            android:textColor="@color/bluefont"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+        <com.yhrjkf.woyundong.view.CircleImageView
+            android:layout_width="40dp"
+            android:scaleType="centerCrop"
+            android:layout_toRightOf="@+id/fr_tv_myrank"
+            android:id="@+id/fr_img_myimg"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/tuzi"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/fr_tv_myname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/fr_img_myimg"
+            android:text="李华"
+            android:textColor="@color/grayfont" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="公里"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/grayfont"
+            android:id="@+id/fr_gl"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/fr_tv_mydistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/fr_gl"
+            android:text="0.23"
+            android:textColor="@color/bluefont"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</android.support.percent.PercentRelativeLayout>

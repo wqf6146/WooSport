@@ -1,0 +1,101 @@
+package com.yhrjkf.woyundong.activity;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
+
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.yhrjkf.woyundong.R;
+
+public class DemoPost extends Activity {
+
+	TextView tv_fanhui;
+	List<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
+	HashMap<String, String> hashMap = new HashMap<String, String>();
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_aaaaa);
+		tv_fanhui = (TextView) findViewById(R.id.tv_fanhui);
+		hashMap.put("latitude", "3.123123123123");
+		hashMap.put("longitude", "3.123123123123");
+		list.add(hashMap);
+		hashMap = new HashMap<String, String>();
+		hashMap.put("latitude", "3.222222");
+		hashMap.put("longitude", "3.2222222");
+		list.add(hashMap);
+		hashMap = new HashMap<String, String>();
+		hashMap.put("latitude", "3.1111111");
+		hashMap.put("longitude", "3.2222222");
+		list.add(hashMap);
+		hashMap = new HashMap<String, String>();
+		hashMap.put("latitude", "3.3333333");
+		hashMap.put("longitude", "3.2222222");
+		list.add(hashMap);
+
+		HttpUtils httpUtils = new HttpUtils();
+		RequestParams params = new RequestParams("UTF-8");
+		for (int i = 0; i < list.size(); i++) {
+			String latitude = list.get(i).get("latitude");
+			String longitude = list.get(i).get("longitude");
+			params.addBodyParameter("path[" + i + "]", latitude + ","
+					+ longitude);
+
+		}
+		httpUtils.send(HttpMethod.POST, "http://0109.yuanhuiit.cn/test",
+				params, new RequestCallBack<String>() {
+
+					@Override
+					public void onFailure(HttpException arg0, String arg1) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onSuccess(ResponseInfo<String> responseInfo) {
+						// TODO Auto-generated method stub
+						Log.i("result", responseInfo.result);
+						try {
+							JSONArray jsonArray = new JSONArray(
+									responseInfo.result);
+							list = new ArrayList<HashMap<String, String>>();
+							for (int i = 0; i < jsonArray.length(); i++) {
+								JSONObject jsonObject = jsonArray
+										.getJSONObject(i);
+								String latitude = jsonObject
+										.getString("latitude");
+								String longitude = jsonObject
+										.getString("longitude");
+								hashMap = new HashMap<String, String>();
+								hashMap.put("latitude", latitude);
+								hashMap.put("longitude", longitude);
+								list.add(hashMap);
+							}
+							tv_fanhui.setText(list.get(0).get("longitude"));
+
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
+					}
+				});
+
+	}
+}

@@ -1,0 +1,334 @@
+[
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_vector_test.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\bg_alertview_alert.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\drawable\\bg_alertview_alert.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\wheel_bg.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\wheel_bg.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\design_password_eye.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\drawable\\design_password_eye.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\textview_back_red.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\textview_back_red.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\design_snackbar_background.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\top.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\top.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\tab_square_btn.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\tab_square_btn.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\lin_right_red.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\lin_right_red.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\tab_selfinfo_btn.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\tab_selfinfo_btn.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\textview_yuan_left.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\textview_yuan_left.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\gray_radius.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\e50b04f66f525d0aae70fed8266741bfb0d1f2c9\\output\\res\\drawable\\gray_radius.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\lin_left_red.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\lin_left_red.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\bg_alertbutton_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\drawable\\bg_alertbutton_bottom.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\drawable\\design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\textcolor.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\textcolor.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\lin_left_white.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\lin_left_white.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\tab_home_btn.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\tab_home_btn.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\dialog_btn_left_selector.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\dialog_btn_left_selector.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\bg_alertbutton_left.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\drawable\\bg_alertbutton_left.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\text_biankuang.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\text_biankuang.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\ed_yuan.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\ed_yuan.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\bottom.png",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\bottom.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\white_radius.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\e50b04f66f525d0aae70fed8266741bfb0d1f2c9\\output\\res\\drawable\\white_radius.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\textview_bk_white.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\textview_bk_white.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\selector_tab_background.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\selector_tab_background.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\bg_actionsheet_cancel.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\drawable\\bg_actionsheet_cancel.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_voice_search_api_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\lin_right_white.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\lin_right_white.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\dialog_btn_right_selector.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\dialog_btn_right_selector.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\tab_message_btn.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\tab_message_btn.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\bg_actionsheet_header.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\drawable\\bg_actionsheet_header.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\bg_alertbutton_none.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\drawable\\bg_alertbutton_none.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\bg_alertbutton_right.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\drawable\\bg_alertbutton_right.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\mycontact_selector.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\mycontact_selector.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\tv_yuan_white.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\tv_yuan_white.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\textview_bk_red.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\textview_bk_red.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\textview_yuan_right.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\textview_yuan_right.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\black_background.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\e50b04f66f525d0aae70fed8266741bfb0d1f2c9\\output\\res\\drawable\\black_background.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\tv_pop_yuan.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\tv_pop_yuan.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\navigation_empty_icon.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\drawable\\navigation_empty_icon.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\textrili_yuan.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\textrili_yuan.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\tabitem_txt_sel.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\tabitem_txt_sel.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\design_fab_background.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\textrili_yuan2.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\textrili_yuan2.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\wheel_val.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\wheel_val.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\release\\drawable\\tab_more_btn.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\drawable\\tab_more_btn.xml"
+    }
+]

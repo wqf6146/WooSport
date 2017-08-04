@@ -1,0 +1,78 @@
+package com.yhrjkf.woyundong.activity;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
+
+import com.vise.xsnow.cache.SpCache;
+import com.yhrjkf.woyundong.App;
+import com.yhrjkf.woyundong.BaseActivity;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.bean.LoginBean;
+import com.yhrjkf.woyundong.tools.AppConfig;
+import com.yhrjkf.woyundong.tools.Connectors;
+import com.yhrjkf.woyundong.utils.WooConfig;
+
+public class IntegralActivity extends BaseActivity {
+	private WebView web_integral;
+	private LinearLayout ll_back;
+
+	@Override
+	protected void initData() {
+		SpCache sp = new SpCache(mContext, WooConfig.USER.USER_FILE);
+		LoginBean.UserBean userBean = ((LoginBean)sp.get(WooConfig.USER.LOGINBEAN)).getData();
+
+		String uid = String.valueOf(userBean.getId());
+		Log.i("url", AppConfig.INTEGRAL + uid);
+		web_integral.loadUrl(AppConfig.INTEGRAL + uid);
+
+		WebSettings webSettings = web_integral.getSettings();
+		// webSettings.setBuiltInZoomControls(true);
+		webSettings.setJavaScriptEnabled(true);
+	}
+
+	@Override
+	protected void initView() {
+		web_integral = (WebView) findViewById(R.id.web_integral);
+		ll_back = (LinearLayout) findViewById(R.id.ll_back);
+	}
+
+	@Override
+	protected void bindEvent() {
+		web_integral.setWebViewClient(new WebViewClient() {
+			public boolean shouldOverrideUrlLoading(WebView view, String url) {
+				// 重写此方法表明点击网页里面的链接还是在当前的webview里跳转，不跳到浏览器那边
+				view.loadUrl(url);
+				return true;
+			}
+
+		});
+
+		ll_back.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+			finish();
+			return;
+		}
+		setContentView(R.layout.activity_integral);
+	}
+
+}

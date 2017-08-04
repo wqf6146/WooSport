@@ -1,0 +1,1 @@
+include ':app', ':xsnow', ':calendarlibrary', ':sweetdialog', ':takephoto_library', ':countdownbtn'

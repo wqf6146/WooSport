@@ -1,0 +1,321 @@
+package com.yhrjkf.woyundong.service;
+
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Message;
+import android.os.Process;
+import android.os.RemoteCallbackList;
+import android.os.RemoteException;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationClient;
+import com.amap.api.location.AMapLocationClientOption;
+import com.amap.api.location.AMapLocationClientOption.AMapLocationMode;
+import com.amap.api.location.AMapLocationListener;
+//import com.yhrjkf.woyundong.activity.IRemoteService;
+//import com.yhrjkf.woyundong.activity.IRemoteServiceCallback;
+//import com.yhrjkf.woyundong.activity.ISecondary;
+import com.yhrjkf.woyundong.IBgSportsRunService;
+import com.yhrjkf.woyundong.IServiceCallback;
+import com.yhrjkf.woyundong.activity.JianBuXingActivity;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.activity.LaunchActivity;
+import com.yhrjkf.woyundong.activity.MainActivity;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class SportTimerService extends Service {
+
+
+	public AMapLocationClientOption mLocationOption = null;
+	AMapLocationClient mlocationClient = null;
+	private double latitude, longitude;
+	private static final String ACTION = "com.yhrjkf.woyundong.tools.SENDBROADCAST";
+	int tag = 1;
+
+	final RemoteCallbackList<IServiceCallback> mCallbacks
+			= new RemoteCallbackList<IServiceCallback>();
+	private int mValue = 0;
+	private static final int REPORT_MSG = 1;
+
+
+	private String FILE_NAME = "RUNSPORT";
+	private String SPORT_VALUE = "SPORT_VALUE";
+
+	//中断
+	private String BREAk_OFF = "breack_off";
+
+	public static String ACTION_RESTART = "ACTION_RESTART";
+	/**
+	 * Our Handler used to execute operations on the main thread.  This is used
+	 * to schedule increments of our value.
+	 */
+
+	private Timer mTimer;
+
+	private void timeRun(){
+		if (mTimer!=null)
+			mTimer.cancel();
+		mTimer = new Timer();
+		mTimer.schedule(new TimerTask() {
+			@Override
+			public void run() {
+				mValue++;
+				final int N = mCallbacks.beginBroadcast();
+				Log.e("N:", N + "|" + mValue);
+				for (int i = 0; i < N; i++) {
+					try {
+						mCallbacks.getBroadcastItem(i).valueChanged(mValue);
+					} catch (RemoteException e) {
+						// The RemoteCallbackList will take care of removing
+						// the dead object for us.
+					}
+				}
+				mCallbacks.finishBroadcast();
+			}
+		},1000,1000);
+	}
+
+//	private final Handler mHandler = new Handler() {
+//		@Override
+//		public void handleMessage(Message msg) {
+//			switch (msg.what) {
+//				// It is time to bump the value!
+//				case REPORT_MSG: {
+//					// Up it goes.
+//					int value = ++mValue;
+//					// Broadcast to all clients the new value.
+//
+//					final int N = mCallbacks.beginBroadcast();
+//					Log.e("N:", N + "|" + value);
+//					for (int i = 0; i < N; i++) {
+//						try {
+//							mCallbacks.getBroadcastItem(i).valueChanged(value);
+//						} catch (RemoteException e) {
+//							// The RemoteCallbackList will take care of removing
+//							// the dead object for us.
+//						}
+//					}
+//					mCallbacks.finishBroadcast();
+//					// Repeat every 1 second.
+//					sendMessageDelayed(obtainMessage(REPORT_MSG), 1 * 1000);
+//				}
+//				break;
+//				default:
+//					super.handleMessage(msg);
+//			}
+//		}
+//	};
+
+
+	public void onCreate() {
+		// TODO Auto-generated method stub
+		super.onCreate();
+		Log.e("mapservice","onCreate");
+//		context = getApplicationContext();
+
+//		mHandler.sendEmptyMessage(REPORT_MSG);
+//		showNotification();
+
+//		readValue();
+		recover();
+//		timeRun();
+
+	}
+
+	private void recover() {
+		int break_off = readValue(BREAk_OFF);
+		if (break_off > 0){
+			mValue = break_off;
+			initValue();
+			timeRun();
+			showNotification();
+
+//			Log.e("restart Map Service","start");
+//			Intent intent = new Intent(this,MapService.class);
+//			intent.putExtra(ACTION_RESTART,true);
+//			startService(intent);
+		}
+	}
+
+	private int readValue(String key) {
+		return getSharedPreferences(FILE_NAME,Context.MODE_PRIVATE).getInt(key,0);
+	}
+
+//	private void initMapService(){
+//		mlocationClient = new AMapLocationClient(this);
+//		mLocationOption = new AMapLocationClientOption();
+//		mlocationClient.setLocationListener(this);
+//		mLocationOption.setLocationMode(AMapLocationMode.Hight_Accuracy);
+//		// 设置定位间隔,单位毫秒,默认为2000ms
+//		mLocationOption.setInterval(2000);
+//		// 设置定位参数
+//		mlocationClient.setLocationOption(mLocationOption);
+//		mlocationClient.startLocation();
+//		// CreateInform();
+//		showNotification();
+//	}
+
+	@Override
+	public IBinder onBind(Intent intent) {
+		// TODO Auto-generated method stub
+		Log.e("mapservice","onBind");
+//		initMapService();
+		if (SportTimerService.class.getName().equals(intent.getComponent().getClassName())) {
+			return mBinder;
+		}
+//		if (ISecondary.class.getName().equals(intent.getAction())) {
+//			return mSecondaryBinder;
+//		}
+		return null;
+	}
+
+
+
+
+	@Override
+	public void onRebind(Intent intent) {
+		super.onRebind(intent);
+		Log.e("mapservice","rebing");
+	}
+
+	@Override
+	public boolean onUnbind(Intent intent) {
+		Log.e("mapservice","onUnbind");
+//		mlocationClient.stopLocation();
+		stopSelf();
+		return true;
+	}
+
+	@Override
+	public void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		Log.i("mapservice", "onDestroy");
+//		mlocationClient.stopLocation();
+//		if (wakeLock != null) {
+//			wakeLock.release();
+//			wakeLock = null;
+//		}
+
+		Toast.makeText(this, "SportTimerService destroy", Toast.LENGTH_SHORT).show();
+		// Unregister all callbacks.
+		mCallbacks.kill();
+		// Remove the next pending message to increment the counter, stopping
+		// the increment loop.
+//		mHandler.removeMessages(REPORT_MSG);
+		mTimer.cancel();
+		initValue();
+	}
+
+	//启动前天通知
+	private void showNotification(){
+		Notification.Builder builder = new Notification.Builder(this)
+				.setSmallIcon(R.drawable.logo)
+				.setContentTitle("--KM")
+				.setContentText("里程");
+
+		// 设置启动的程序，如果存在则找出，否则新的启动
+		Intent intent = new Intent(Intent.ACTION_MAIN);
+		intent.putExtra(ACTION_RESTART,true);
+		intent.addCategory(Intent.CATEGORY_LAUNCHER);
+		intent.setComponent(new ComponentName(this.getPackageName(), LaunchActivity.class.getCanonicalName()));//用ComponentName得到class对象
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);// 关键的一步，设置启动模式，两种情况
+		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, 0);//将经过设置了的Intent绑定给PendingIntent
+		//获取通知服务
+		NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+//		//构建通知
+		Notification notification = builder.build();
+		notification.flags |= Notification.FLAG_NO_CLEAR;
+		notification.contentIntent = contentIntent;
+//		//显示通知
+		nm.notify(0,notification);
+//		//启动为前台服务
+		startForeground(0,notification);
+	}
+
+
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+		return START_STICKY;
+	}
+
+
+//	@Override
+//	public void onLocationChanged(AMapLocation amapLocation) {
+//		// TODO Auto-generated method stub
+//
+//	}
+
+	/**
+	 * The IRemoteInterface is defined through IDL
+	 */
+	private final IBgSportsRunService.Stub mBinder = new IBgSportsRunService.Stub() {
+		public void registerCallback(IServiceCallback cb) {
+			if (cb != null) mCallbacks.register(cb);
+		}
+		public void unregisterCallback(IServiceCallback cb) {
+			if (cb != null) mCallbacks.unregister(cb);
+		}
+
+		@Override
+		public void pauseTimer() throws RemoteException {
+			Log.e("pauseTimer","pauseTimer");
+			saveValue(SPORT_VALUE,mValue);
+			mTimer.cancel();
+//			mHandler.removeMessages(REPORT_MSG);
+			hideNotification();
+		}
+
+		@Override
+		public void startTimer() throws RemoteException {
+			Log.e("startTimer","startTimer");
+			mValue = readValue(SPORT_VALUE);
+//			mHandler.sendEmptyMessage(REPORT_MSG);
+			timeRun();
+			showNotification();
+		}
+	};
+
+	private void hideNotification() {
+		NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+		nm.cancel(0);
+	}
+
+	private void initValue(){
+		SharedPreferences sharedPreferences =
+				getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = sharedPreferences.edit();
+		editor.putInt(SPORT_VALUE,0);
+		editor.putInt(BREAk_OFF,0);
+		editor.commit();
+	}
+
+	private void saveValue(String key,int value){
+		SharedPreferences sharedPreferences =
+				getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = sharedPreferences.edit();
+		editor.putInt(key,value);
+		editor.commit();
+	}
+
+
+	@Override
+	public void onTaskRemoved(Intent rootIntent) {
+//        Toast.makeText(this, "Task removed: " + rootIntent, Toast.LENGTH_LONG).show();
+		Log.e("onTaskRemoved","onTaskRemoved");
+		saveValue(BREAk_OFF,mValue);
+	}
+
+}

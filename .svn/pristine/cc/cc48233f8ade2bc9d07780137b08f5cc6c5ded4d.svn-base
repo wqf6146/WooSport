@@ -1,0 +1,251 @@
+package com.yhrjkf.woyundong.fragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.yhrjkf.woyundong.BaseFragment;
+import com.yhrjkf.woyundong.BaseToolbarFragment;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.tools.NoScrollViewPager;
+import com.yhrjkf.woyundong.view.PublishDialog;
+
+import butterknife.Bind;
+
+public class MainFragment extends BaseFragment implements OnClickListener {
+	@Bind(R.id.vp_frag)
+	NoScrollViewPager viewPager;
+
+	private List<Fragment> mList;
+
+	@Bind(R.id.ll_home)
+	LinearLayout ll_home;
+
+	@Bind(R.id.ll_faxian)
+	LinearLayout ll_faxian;
+
+	@Bind(R.id.img_store)
+	ImageView img_store;
+
+	@Bind(R.id.ll_my)
+	LinearLayout ll_my;
+
+	@Bind(R.id.ll_zixun)
+	LinearLayout ll_zixun;
+
+	@Bind(R.id.img_run)
+	ImageView img_run;
+
+	@Bind(R.id.img_circle)
+	ImageView img_circle;
+
+
+	@Bind(R.id.img_discover)
+	ImageView img_discover;
+
+	@Bind(R.id.img_woo)
+	ImageView img_woo;
+
+	@Bind(R.id.tv_zx)
+	TextView tv_zx;
+
+	@Bind(R.id.tv_hd)
+	TextView tv_hd;
+
+	@Bind(R.id.tv_xx)
+	TextView tv_xx;
+
+	@Bind(R.id.tv_my)
+	TextView tv_my;
+
+	@Bind(R.id.ll_all)
+	LinearLayout mTabLayout;
+
+	private MyFragment mMineFragment;
+
+	@Override
+	protected void initData() {
+		mList = new ArrayList<Fragment>();
+		mList.add(new CircleFragment());
+		mList.add(ConsultFragment.getInstance());
+		mList.add(JianBuXingFragment.getInstance());
+		mList.add(ConsultFragment.getInstance());
+		mList.add(mMineFragment = new MyFragment());
+
+		MyAdapter myAdapter = new MyAdapter(getChildFragmentManager(), mList);
+		viewPager.setAdapter(myAdapter);
+		viewPager.setNoScroll(true);
+		viewPager.setCurrentItem(2);
+		viewPager.setOffscreenPageLimit(4);
+	}
+
+	@Override
+	protected void initView(View contentView) {
+
+	}
+
+	@Override
+	protected void bindEvent() {
+		ll_home.setOnClickListener(this);
+		ll_faxian.setOnClickListener(this);
+		ll_zixun.setOnClickListener(this);
+		img_store.setOnClickListener(this);
+		ll_my.setOnClickListener(this);
+		img_run.setOnClickListener(this);
+	}
+
+	public static MainFragment getInstance() {
+		MainFragment fragment = new MainFragment();
+		Bundle bundle = new Bundle();
+		fragment.setArguments(bundle);
+		return fragment;
+	}
+	@Override
+	protected void onFragmentResult(int requestCode, int resultCode, Bundle data) {
+		super.onFragmentResult(requestCode, resultCode, data);
+		if (requestCode == 1){
+			if (mMineFragment!=null){
+				mMineFragment.updateUi();
+			}
+		}
+	}
+
+	public void tabBarAnimateIn(){
+		Animation animation = AnimationUtils.loadAnimation(mContext,R.anim.tabbar_in);
+		animation.setAnimationListener(new Animation.AnimationListener() {
+			@Override
+			public void onAnimationStart(Animation animation) {
+
+			}
+
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				mTabLayout.setVisibility(View.VISIBLE);
+			}
+
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+
+			}
+		});
+		mTabLayout.startAnimation(animation);
+	}
+
+	public void tabBarAnimateOut(){
+		Animation animation = AnimationUtils.loadAnimation(mContext,R.anim.tabbar_out);
+		animation.setAnimationListener(new Animation.AnimationListener() {
+			@Override
+			public void onAnimationStart(Animation animation) {
+
+			}
+
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				mTabLayout.setVisibility(View.INVISIBLE);
+			}
+
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+
+			}
+		});
+		mTabLayout.startAnimation(animation);
+	}
+
+	@Override
+	protected int getFragmentLayoutId() {
+		return R.layout.activity_home;
+	}
+
+
+	class MyAdapter extends FragmentPagerAdapter {
+		private List<Fragment> list = new ArrayList<Fragment>();
+
+		public MyAdapter(FragmentManager fm, List<Fragment> list) {
+			super(fm);
+			this.list = list;
+		}
+
+		@Override
+		public Fragment getItem(int position) {
+			return list.get(position);
+		}
+
+		@Override
+		public int getCount() {
+			return list != null ? list.size() : 0;
+		}
+
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+			case R.id.ll_home:
+//				setToolBarVisible(View.VISIBLE);
+//				setToolbarTitle("圈子");
+				viewPager.setCurrentItem(0);
+				img_circle.setBackgroundResource(R.drawable.circle_2);
+				img_discover.setBackgroundResource(R.drawable.discover_1);
+				img_store.setBackgroundResource(R.drawable.store_1);
+				img_woo.setBackgroundResource(R.drawable.woo_1);
+
+				break;
+			case R.id.ll_faxian:
+//				setToolBarVisible(View.VISIBLE);
+//				setToolbarTitle("发现");
+				viewPager.setCurrentItem(1);
+				img_circle.setBackgroundResource(R.drawable.circle_1);
+				img_discover.setBackgroundResource(R.drawable.discover_2);
+				img_store.setBackgroundResource(R.drawable.store_1);
+				img_woo.setBackgroundResource(R.drawable.woo_1);
+
+				break;
+			case R.id.img_run:
+//				new PublishDialog(getActivity()).show();
+//				setToolBarVisible(View.GONE);
+				viewPager.setCurrentItem(2);
+				img_circle.setBackgroundResource(R.drawable.circle_1);
+				img_discover.setBackgroundResource(R.drawable.discover_1);
+				img_store.setBackgroundResource(R.drawable.store_1);
+				img_woo.setBackgroundResource(R.drawable.woo_1);
+				break;
+			case R.id.ll_zixun:
+//				setToolBarVisible(View.VISIBLE);
+//				setToolbarTitle("商城");
+				viewPager.setCurrentItem(3);
+				img_circle.setBackgroundResource(R.drawable.circle_1);
+				img_discover.setBackgroundResource(R.drawable.discover_1);
+				img_store.setBackgroundResource(R.drawable.store_2);
+				img_woo.setBackgroundResource(R.drawable.woo_1);
+
+				break;
+			case R.id.ll_my:
+//				setToolBarVisible(View.VISIBLE);
+//				setToolbarTitle("沃");
+				viewPager.setCurrentItem(4);
+				img_circle.setBackgroundResource(R.drawable.circle_1);
+				img_discover.setBackgroundResource(R.drawable.discover_1);
+				img_store.setBackgroundResource(R.drawable.store_1);
+				img_woo.setBackgroundResource(R.drawable.woo_2);
+				break;
+		default:
+			break;
+		}
+
+	}
+}

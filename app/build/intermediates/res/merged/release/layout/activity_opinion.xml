@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yhrjkf.woyundong.view.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#DCDCDC">
+    <RelativeLayout
+        android:id="@+id/as_rl_topbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="7%"
+        android:background="@color/bluefont">
+
+        <ImageView
+            android:id="@+id/aa_img_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="12dp"
+            android:src="@drawable/leftarrow"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/as_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:text="意见反馈"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <EditText
+       android:id="@+id/ed_myjy"
+       android:layout_width="match_parent"
+       android:layout_height="200dp"
+       android:background="@drawable/rank_ll_style"
+       android:layout_marginLeft="20dp"
+       android:textSize="16dp"
+       android:inputType="textMultiLine"
+       android:layout_marginTop="20dp"
+       android:layout_marginRight="20dp"
+       android:layout_marginBottom="40dp"
+       android:gravity="top"
+        />
+     <TextView 
+         android:id="@+id/tv_yjfk_tj"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:textSize="18dp"
+         android:textColor="#FFFFFF"
+         android:background="@color/bluefont"
+         android:text="提交"
+         android:gravity="center"
+         android:layout_marginLeft="50dp"
+         android:layout_marginRight="50dp"
+         android:layout_marginTop="20dp"
+         android:paddingTop="5dp"
+         android:paddingBottom="5dp"
+         />
+</com.yhrjkf.woyundong.view.PercentLinearLayout>

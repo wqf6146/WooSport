@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yhrjkf.woyundong.view.PercentLinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_all"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_heightPercent="9%"
+    app:layout_widthPercent="100%"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/suggestion_line"/>
+
+    <LinearLayout
+        android:paddingTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:background="@color/homebarbg"
+        android:paddingBottom="5dp"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <ImageView
+                android:id="@+id/img_zx"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/shouye1"
+                />
+            <TextView
+                android:id="@+id/tv_zx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="首页"
+                android:textColor="#FF0000"
+                android:textSize="12dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_faxian"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <ImageView
+                android:id="@+id/img_hd"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/faxian2"
+                />
+            <TextView
+                android:id="@+id/tv_hd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发现"
+                android:textColor="#8A8A8A"
+                android:textSize="12dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <ImageView
+                android:id="@+id/img_tj"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/tianjia"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_zixun"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <ImageView
+                android:id="@+id/img_xx"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/zixun2"
+                />
+            <TextView
+                android:id="@+id/tv_xx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="资讯"
+                android:textSize="12dp"
+                android:textColor="#8A8A8A"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_my"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:id="@+id/img_my"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/wode2"
+                />
+
+            <TextView
+                android:id="@+id/tv_my"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的"
+                android:textColor="#8A8A8A"
+                android:textSize="12dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.yhrjkf.woyundong.view.PercentLinearLayout>

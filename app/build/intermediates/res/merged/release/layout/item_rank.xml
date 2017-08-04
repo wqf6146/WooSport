@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="80dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/ir_tv_rankid"
+        android:text="1"
+        android:layout_centerVertical="true"
+        android:textSize="16sp"
+        android:textColor="@color/bluefont"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="70dp"
+        android:layout_toRightOf="@+id/ir_tv_rankid"
+        android:id="@+id/ir_rl_img"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_height="70dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/ir_img_myimg"
+            android:src="@drawable/df"
+            android:layout_height="50dp" />
+        <ImageView
+            android:layout_width="35dp"
+            android:id="@+id/ir_img_rank"
+            android:src="@drawable/theone"
+            android:layout_height="25dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/ir_tv_myname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/ir_rl_img"
+        android:text="李华"
+        android:textSize="12sp"
+        android:textColor="@color/grayfont" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="公里"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/grayfont"
+        android:id="@+id/ir_gl"
+        android:layout_centerVertical="true"
+        android:textSize="12sp"
+        android:layout_marginRight="5dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/ir_tv_mydistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/ir_gl"
+        android:text="0.23"
+        android:textColor="@color/bluefont"
+        android:textSize="18sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/fjbx_line"
+        android:layout_below="@+id/fjbx_ll_weather"
+        android:background="@drawable/suggestion_line"/>
+</RelativeLayout>

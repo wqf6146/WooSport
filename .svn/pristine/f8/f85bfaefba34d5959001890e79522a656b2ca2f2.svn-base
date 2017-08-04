@@ -1,0 +1,24 @@
+// Generated code from Butter Knife. Do not modify!
+package com.yhrjkf.woyundong.activity;
+
+import android.view.View;
+import butterknife.ButterKnife.Finder;
+import butterknife.ButterKnife.ViewBinder;
+
+public class JianBuXingActivity$$ViewBinder<T extends com.yhrjkf.woyundong.activity.JianBuXingActivity> implements ViewBinder<T> {
+  @Override public void bind(final Finder finder, final T target, Object source) {
+    View view;
+    view = finder.findRequiredView(source, 2131624319, "field 'mTabActivity'");
+    target.mTabActivity = finder.castView(view, 2131624319, "field 'mTabActivity'");
+    view = finder.findRequiredView(source, 2131624320, "field 'mTabRanklist'");
+    target.mTabRanklist = finder.castView(view, 2131624320, "field 'mTabRanklist'");
+    view = finder.findRequiredView(source, 2131624318, "field 'mTabSports'");
+    target.mTabSports = finder.castView(view, 2131624318, "field 'mTabSports'");
+  }
+
+  @Override public void unbind(T target) {
+    target.mTabActivity = null;
+    target.mTabRanklist = null;
+    target.mTabSports = null;
+  }
+}

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yhrjkf.woyundong.view.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/graybg"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/fr_rl_topbar"
+        android:background="#FF0000"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="100%">
+
+        <ImageView
+            android:id="@+id/fhn_img_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:padding="12dp"
+            android:src="@drawable/leftarrow" />
+
+        <TextView
+            android:id="@+id/fr_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:text="填写验证码"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="15%"
+        android:gravity="center"
+        android:padding="5dp"
+        app:layout_widthPercent="100%">
+
+        <TextView
+            android:id="@+id/ff_tv_authstr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我们已经给你的手机号码18330273525发送了一条验证码短信。"
+            android:textColor="@color/grayfont"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="100%"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%">
+
+        <EditText
+            android:id="@+id/ff_edit_phone"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:inputType="number"
+            android:hint="请输入短信验证码"
+            android:textColorHint="@color/grayfont"
+            android:padding="5dp"
+            android:background="@drawable/findpw_edit_style" />
+
+
+        <com.white.countdownbutton.CountDownButton
+            android:id="@+id/ff_btn_authcode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/gray_btn_style"
+            android:gravity="center"
+            android:paddingRight="5dp"
+            android:text="获取验证码"
+            android:textColor="@color/graybtnfont"
+            android:textSize="16dp"
+            app:countDown="60000"
+            app:countDownFormat="重新发送(%ds)"
+            app:countDownInterval="1000"
+            app:enableCountDown="true" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/ff_tv_next"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/textview_back_gray"
+        android:gravity="center"
+        android:text="下一步"
+        android:textColor="@color/graybtnfont"
+        android:textSize="18dp"
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="80%" />
+</com.yhrjkf.woyundong.view.PercentLinearLayout>

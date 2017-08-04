@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yhrjkf.woyundong.view.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/graybg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/fv_rl_topbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="7%"
+        android:background="@color/bluefont">
+
+        <ImageView
+            android:id="@+id/fv_img_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="12dp"
+            android:src="@drawable/leftarrow"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/fv_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:text="语音播报"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/viewc" />
+    <com.yhrjkf.woyundong.view.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="60%"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#EFEFF4" />
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_widthPercent="100%"
+            app:layout_heightPercent="14%"
+            android:paddingLeft="30dp"
+            android:background="@drawable/item_his_ll_style"
+            android:id="@+id/ll_set_yyts">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="语音播报"
+                android:layout_centerVertical="true"
+                android:textColor="@color/gray"
+                android:id="@+id/textView" />
+            <com.suke.widget.SwitchButton
+                android:id="@+id/fv_btn_switch"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                app:sb_checked_color="@color/bluefont"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+        <com.yhrjkf.woyundong.view.PercentLinearLayout
+            android:id="@+id/fv_ll_report"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            android:orientation="vertical"
+            app:layout_heightPercent="88%"
+            app:layout_widthPercent="100%">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginLeft="30dp"
+                android:background="@color/viewc" />
+
+            <RelativeLayout
+                android:id="@+id/fv_rl_bbpl"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/item_his_ll_style"
+                android:paddingBottom="10dp"
+                android:paddingLeft="30dp"
+                app:layout_heightPercent="15%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:id="@+id/fv_tv_yybp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="播报频率"
+                    android:textColor="@color/grayfont" />
+
+                <TextView
+                    android:id="@+id/fv_tv_bbpl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/fv_img_bbpl"
+                    android:text="每1公里播报"
+                    android:textColor="@color/grayfont" />
+
+                <ImageView
+                    android:id="@+id/fv_img_bbpl"
+                    android:layout_width="15dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/backright" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="播报内容" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/item_his_ll_style"
+                android:paddingBottom="10dp"
+                android:paddingLeft="30dp"
+                app:layout_heightPercent="16%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="距离"
+                    android:textColor="@color/gray" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/fv_btn_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    app:sb_checked_color="@color/bluefont" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginLeft="30dp"
+                android:background="@color/viewc" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/item_his_ll_style"
+                android:paddingBottom="10dp"
+                android:paddingLeft="30dp"
+                app:layout_heightPercent="16%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="时长"
+                    android:textColor="@color/gray" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/fv_btn_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    app:sb_checked_color="@color/bluefont" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginLeft="30dp"
+                android:background="@color/viewc" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/item_his_ll_style"
+                android:paddingBottom="10dp"
+                android:paddingLeft="30dp"
+                app:layout_heightPercent="16%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="配速"
+                    android:textColor="@color/gray" />
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/fv_btn_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    app:sb_checked_color="@color/bluefont" />
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_heightPercent="13%"
+                app:layout_widthPercent="90%"
+                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal"
+                android:text="试听"
+                android:id="@+id/fv_btn_tryreport"
+                android:textSize="20sp"
+                android:textColor="@color/bluefont"
+                android:background="@drawable/rank_ll_style"
+                android:gravity="center" />
+
+        </com.yhrjkf.woyundong.view.PercentLinearLayout>
+
+    </com.yhrjkf.woyundong.view.PercentLinearLayout>
+</com.yhrjkf.woyundong.view.PercentLinearLayout>

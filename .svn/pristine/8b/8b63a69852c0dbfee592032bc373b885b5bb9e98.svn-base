@@ -1,0 +1,490 @@
+[
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popupwindow_sex.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\popupwindow_sex.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_record.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_record.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_base.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_base.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_opinion.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_opinion.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_alertview_actionsheet.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\layout\\layout_alertview_actionsheet.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_aaaaa.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_aaaaa.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_rule.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_rule.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_nickname.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_nickname.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_jbx.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\fragment_jbx.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_newsdetails.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_newsdetails.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_starshine.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_starshine.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_item_view.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\tab_item_view.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_medal.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_medal.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_banner_content.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\view_banner_content.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_phone.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_phone.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_eventfragment.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\item_eventfragment.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_events.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\fragment_events.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_history.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_history.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_navigation_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_bottom_navigation_item.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_new.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\fragment_new.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_eventdetails.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_eventdetails.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_history2.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\fragment_history2.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_historymap.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_historymap.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\notification_template_media_custom.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\include_alertheader.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\layout\\include_alertheader.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_signature.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_signature.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popupwindow_xianzhi.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\popupwindow_xianzhi.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_alertbutton.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\layout\\item_alertbutton.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_aboutus.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_aboutus.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_product.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_product.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_my.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\fragment_my.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_home.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cbk_list_item_calendar.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\cbk_list_item_calendar.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_alertview_alert_vertical.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\layout\\layout_alertview_alert_vertical.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_event.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\fragment_event.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main_dialog_publish.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\main_dialog_publish.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_history2.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_history2.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_calendar.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\item_calendar.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_set.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_set.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_integral.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_integral.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\notification_action.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_layout_tab_text.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\banner.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\e50b04f66f525d0aae70fed8266741bfb0d1f2c9\\output\\res\\layout\\banner.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\notification_template_lines_media.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popupwindow_touxiang.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\popupwindow_touxiang.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_personal.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_personal.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_discover.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\fragment_discover.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popupwindow_shengao.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\popupwindow_shengao.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popupwindow_tizhong.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\popupwindow_tizhong.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\datapick.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\datapick.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popupwindow_shangchuan.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\popupwindow_shangchuan.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_home.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_tablayout.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\view_tablayout.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_consult.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\fragment_consult.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_alertview.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\layout\\layout_alertview.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_alertview_alert_horizontal.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\layout\\layout_alertview_alert_horizontal.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_histroy2.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\fragment_histroy2.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_news.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\item_news.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_histortyday.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activity_histortyday.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_jianbuxing.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\fragment_jianbuxing.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_his.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\item_his.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_toolbar.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\view_toolbar.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popupwindow_tj.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\popupwindow_tj.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_alertview_alert.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\layout\\layout_alertview_alert.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_ranking.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\item_ranking.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activtiy_technology.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\activtiy_technology.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_history.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\item_history.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\6846f0c9d23af9da333211689b4ec6a148b5e040\\output\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\kprogresshud_hud.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\152353a9c046a09d0fdb42abe6265b3de97b3652\\output\\res\\layout\\kprogresshud_hud.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_ranking.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\fragment_ranking.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_check_histroy.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\app\\src\\main\\res\\layout\\fragment_check_histroy.xml"
+    }
+]

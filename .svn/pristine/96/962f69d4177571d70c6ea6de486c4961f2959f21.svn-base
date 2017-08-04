@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\35bc055b2b9010ff1cbcb6afe5004efb9246e0dd\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    }
+]

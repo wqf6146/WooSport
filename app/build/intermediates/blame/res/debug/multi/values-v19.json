@@ -1,0 +1,70 @@
+[
+    {
+        "outputFile": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v19\\values-v19.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 7,
+                    "endColumn": 12,
+                    "endOffset": 382
+                },
+                "from": {
+                    "file": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\values-v19\\styles.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 227,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 559
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 387,
+                    "endLine": 10,
+                    "endColumn": 12,
+                    "endOffset": 517
+                },
+                "from": {
+                    "file": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\values-v19\\styles.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 565,
+                        "endLine": 15,
+                        "endColumn": 12,
+                        "endOffset": 697
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 522,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 707
+                },
+                "from": {
+                    "file": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\values-v19\\styles.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 703,
+                        "endLine": 19,
+                        "endColumn": 12,
+                        "endOffset": 891
+                    }
+                }
+            }
+        ]
+    }
+]

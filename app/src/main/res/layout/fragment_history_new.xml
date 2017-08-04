@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yhrjkf.woyundong.view.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/fr_rl_topbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="7%"
+        android:background="@color/bluefont">
+
+        <ImageView
+            android:id="@+id/fhn_img_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:padding="12dp"
+            android:src="@drawable/leftarrow" />
+        <TextView
+            android:id="@+id/fr_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:text="历史记录"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/fhn_tv_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="35%">
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            android:id="@+id/fhn_calendarView"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/grayfont"
+            android:id="@+id/hfn_tv_bgtip"
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+            android:text="暂无数据,快去跑步吧~"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <com.yhrjkf.woyundong.view.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bluefont"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="100%"
+                app:layout_heightPercent="30%"
+                android:layout_marginTop="@dimen/dp_4"
+                android:orientation="horizontal"
+                android:background="@drawable/rank_ll_style">
+                <com.yhrjkf.woyundong.view.PercentLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_widthPercent="50%"
+                        app:layout_heightPercent="30%"
+                        android:src="@drawable/sporttimes" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_widthPercent="100%"
+                        app:layout_heightPercent="30%"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/fhn_tv_sporttimes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/bluefont"
+                            android:textSize="@dimen/fontsize" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/grayfont"
+                            android:text="次"
+                            android:textSize="@dimen/fontsize"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/grayfont"
+                        android:text="运动次数"
+                        android:textSize="14sp"
+                        android:layout_height="wrap_content" />
+                </com.yhrjkf.woyundong.view.PercentLinearLayout>
+                <com.yhrjkf.woyundong.view.PercentLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_widthPercent="50%"
+                        app:layout_heightPercent="30%"
+                        android:src="@drawable/clock" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_widthPercent="100%"
+                        app:layout_heightPercent="30%"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp">
+
+                        <TextView
+                            android:id="@+id/fhn_tv_sporthour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0:00:00"
+                            android:textColor="@color/bluefont"
+                            android:textSize="@dimen/fontsize" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/grayfont"
+                            android:text="h"
+                            android:textSize="@dimen/fontsize"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/grayfont"
+                        android:text="运动时长"
+                        android:textSize="14sp"
+                        android:layout_height="wrap_content" />
+                </com.yhrjkf.woyundong.view.PercentLinearLayout>
+                <com.yhrjkf.woyundong.view.PercentLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_widthPercent="50%"
+                        app:layout_heightPercent="30%"
+                        android:src="@drawable/position"
+                        />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_widthPercent="100%"
+                        app:layout_heightPercent="30%"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp">
+
+                        <TextView
+                            android:id="@+id/fhn_tv_distance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/bluefont"
+                            android:textSize="@dimen/fontsize" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/grayfont"
+                            android:text="km"
+                            android:textSize="@dimen/fontsize"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/grayfont"
+                        android:text="运动距离"
+                        android:textSize="14sp"
+                        android:layout_height="wrap_content" />
+                </com.yhrjkf.woyundong.view.PercentLinearLayout>
+                <com.yhrjkf.woyundong.view.PercentLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_widthPercent="50%"
+                        app:layout_heightPercent="30%"
+                        android:src="@drawable/fire" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_widthPercent="100%"
+                        app:layout_heightPercent="30%"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp">
+
+                        <TextView
+                            android:id="@+id/fhn_tv_carlorie"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/bluefont"
+                            android:textSize="@dimen/fontsize" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/grayfont"
+                            android:text="千卡"
+                            android:textSize="@dimen/fontsize"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/grayfont"
+                        android:text="燃烧热量"
+                        android:textSize="14sp"
+                        android:layout_height="wrap_content" />
+                </com.yhrjkf.woyundong.view.PercentLinearLayout>
+            </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/fhn_tv_charttitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+        <lecho.lib.hellocharts.view.LineChartView
+            android:layout_marginTop="5dp"
+            android:id="@+id/fhn_soprt_chart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </com.yhrjkf.woyundong.view.PercentLinearLayout>
+
+</com.yhrjkf.woyundong.view.PercentLinearLayout>

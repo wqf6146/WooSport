@@ -1,0 +1,909 @@
+package com.yhrjkf.woyundong.fragment;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.HashMap;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
+import android.widget.PopupWindow;
+import android.widget.PopupWindow.OnDismissListener;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.bigkoo.alertview.AlertView;
+import com.bigkoo.alertview.OnItemClickListener;
+import com.kaopiz.kprogresshud.KProgressHUD;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.vise.log.ViseLog;
+import com.vise.xsnow.event.BusFactory;
+import com.vise.xsnow.loader.ILoader;
+import com.vise.xsnow.loader.LoaderFactory;
+import com.vise.xsnow.net.callback.ApiCallback;
+import com.vise.xsnow.net.exception.ApiException;
+import com.yhrjkf.woyundong.App;
+import com.yhrjkf.woyundong.BaseActivity;
+import com.yhrjkf.woyundong.BaseFragment;
+import com.yhrjkf.woyundong.BaseToolbarFragment;
+import com.yhrjkf.woyundong.activity.EmailActivity;
+import com.yhrjkf.woyundong.activity.NickName;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.activity.SignatureActivity;
+import com.yhrjkf.woyundong.bean.LoginBean;
+import com.yhrjkf.woyundong.event.UserImageEvent;
+import com.yhrjkf.woyundong.http.WooSportApi;
+import com.yhrjkf.woyundong.tools.AppConfig;
+import com.yhrjkf.woyundong.tools.Connectors;
+import com.yhrjkf.woyundong.tools.NumericWheelAdapter;
+import com.yhrjkf.woyundong.tools.OnWheelScrollListener;
+import com.yhrjkf.woyundong.tools.WheelView;
+import com.yhrjkf.woyundong.tools.WheelViews;
+import com.yhrjkf.woyundong.utils.CommonUtils;
+
+import butterknife.Bind;
+import cn.qqtheme.framework.picker.DatePicker;
+import cn.qqtheme.framework.picker.OptionPicker;
+
+public class PersonalFragment extends BaseToolbarFragment implements OnClickListener {
+	private LayoutInflater inflater = null;
+	private WheelViews year;
+	private WheelViews month;
+	private WheelViews day;
+	PopupWindow menuWindow;
+
+	/* 请求码 */
+	private static final int IMAGE_REQUEST_CODE = 0;
+	private static final int CAMERA_REQUEST_CODE = 1;
+	private static final int RESULT_REQUEST_CODE = 2;
+	private static final String IMAGE_FILE_NAME = "faceImage.jpg";
+	private static String path = "/sdcard/myHead/";// sd路径
+
+
+	Toast mToast;
+	Bitmap photo;
+	Drawable drawable;
+	private File tempFile;
+	HttpUtils httpUtils = new HttpUtils();
+	private String[] PLANETS = new String[100];
+	private String[] weight = new String[955];
+
+	String shengao = "50";
+	String tizhong = "20";
+
+	private PopupWindow pop, pop1, pop2, pop3;
+	private View view, view1, view2, view3;
+
+//	@Bind(R.id.ll_back)
+//	LinearLayout ll_back;
+
+//	@Bind(R.id.tv_my_cunchu)
+//	TextView tv_my_cunchu;
+
+	@Bind(R.id.img_my_touxiang)
+	ImageView img_my_touxiang;
+
+	@Bind(R.id.rl_my_touxiang)
+	RelativeLayout rl_my_touxiang;
+
+	@Bind(R.id.rl_my_qm)
+	RelativeLayout rl_my_qm;
+
+//	@Bind(R.id.hideView)
+//	TextView hideView;
+
+	@Bind(R.id.rl_my_nicheng)
+	RelativeLayout rl_my_nicheng;
+
+	@Bind(R.id.rl_my_yx)
+	RelativeLayout rl_my_yx;
+
+	@Bind(R.id.rl_my_sex)
+	RelativeLayout rl_my_sex;
+
+	@Bind(R.id.rl_my_sg)
+	RelativeLayout rl_my_sg;
+
+
+	@Bind(R.id.rl_my_tz)
+	RelativeLayout rl_my_tz;
+
+	@Bind(R.id.rl_my_csny)
+	RelativeLayout rl_my_csny;
+
+	@Bind(R.id.tv_my_nicheng)
+	TextView tv_my_nicheng;
+
+	@Bind(R.id.tv_my_sjh)
+	TextView tv_my_sjh;
+
+	@Bind(R.id.tv_my_yx)
+	TextView tv_my_yx;
+
+	@Bind(R.id.tv_my_sex)
+	TextView tv_my_sex;
+
+	@Bind(R.id.tv_my_sg)
+	TextView tv_my_sg;
+
+	@Bind(R.id.tv_my_tz)
+	TextView tv_my_tz;
+
+	@Bind(R.id.tv_my_csny)
+	TextView tv_my_csny;
+
+	@Bind(R.id.tv_my_bmi)
+	TextView tv_my_bmi;
+
+	@Bind(R.id.tv_my_qm)
+	TextView tv_my_qm;
+
+	@Bind(R.id.vt_rightview)
+	TextView tv_save_btn;
+
+
+	private WheelView wva, wva1;
+
+	private KProgressHUD mHud;
+
+	public static PersonalFragment getInstance() {
+		PersonalFragment fragment = new PersonalFragment();
+		Bundle bundle = new Bundle();
+		fragment.setArguments(bundle);
+		return fragment;
+	}
+
+	@Override
+	protected int getFragmentLayoutId() {
+		return R.layout.activity_personal;
+	}
+
+	@Override
+	public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+		super.onViewCreated(view, savedInstanceState);
+		init();
+	}
+
+//	@Override
+//	protected void onCreate(Bundle savedInstanceState) {
+//		// TODO Auto-generated method stub
+//		super.onCreate(savedInstanceState);
+//		if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+//			finish();
+//			return;
+//		}
+//		setContentView(R.layout.activity_personal);
+//		getView();
+//
+//	}
+
+
+	@Override
+	public void onResume() {
+		super.onResume();
+	}
+
+	@SuppressWarnings("deprecation")
+	private void init() {
+
+		setToolbarTitle("个人中心");
+		setNavigationIcon(R.drawable.backleft);
+		LoginBean.UserBean userBean = App.newInstance().getUserBean();
+
+		tv_save_btn.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				LoginBean.UserBean userBean = App.newInstance().getUserBean();
+				HashMap hashMap = new HashMap();
+				hashMap.put("uid",String.valueOf(userBean.getId()));
+				hashMap.put("realname",String.valueOf(userBean.getRealname()));
+				hashMap.put("email",userBean.getEmail());
+				hashMap.put("sex",String.valueOf(userBean.getSex()));
+				hashMap.put("height",String.valueOf(userBean.getHeight()));
+				hashMap.put("weight",String.valueOf(userBean.getWeight()));
+				hashMap.put("motto",String.valueOf(userBean.getMotto()));
+				hashMap.put("com_level",String.valueOf(userBean.getCom_level()));
+				hashMap.put("employee_num",String.valueOf(userBean.getEmployee_num()));
+
+
+				WooSportApi.getInstance().startPostUserMeg(getContext(), hashMap, new ApiCallback<LoginBean>() {
+					@Override
+					public void onStart() {
+						mHud = KProgressHUD.create(getActivity())
+								.setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+								.setLabel("稍等")
+								.setCancellable(true);
+						mHud.show();
+					}
+
+					@Override
+					public void onNext(LoginBean loginBean) {
+						if (loginBean.getRecode().equals("200")){
+							App.newInstance().saveUserBean(loginBean);
+							showToast("保存成功！");
+						}
+					}
+
+					@Override
+					public void onError(ApiException e) {
+						ViseLog.e(e);
+					}
+
+					@Override
+					public void onCompleted() {
+						mHud.dismiss();
+					}
+				});
+			}
+		});
+
+		LoaderFactory.getLoader().loadNet(img_my_touxiang, userBean.getAvatar(),
+				new ILoader.Options(R.drawable.ic_launcher, R.drawable.ic_launcher));
+
+		tv_my_nicheng.setText(userBean.getRealname());
+		tv_my_sjh.setText(userBean.getPhone());
+		tv_my_yx.setText(userBean.getEmail());
+		if (userBean.getSex()==1) {
+			tv_my_sex.setText("男");
+		} else if (userBean.getSex()==2) {
+			tv_my_sex.setText("女");
+		}
+		tv_my_sg.setText(userBean.getHeight() + "cm");
+		tv_my_tz.setText(userBean.getWeight() + "kg");
+		tv_my_csny.setText(userBean.getBirthday());
+		tv_my_bmi.setText(String.valueOf(userBean.getBmi()));
+		tv_my_qm.setText(userBean.getMotto());
+
+		rl_my_touxiang.setOnClickListener(this);
+		rl_my_nicheng.setOnClickListener(this);
+		rl_my_yx.setOnClickListener(this);
+		rl_my_sex.setOnClickListener(this);
+		rl_my_sg.setOnClickListener(this);
+
+		rl_my_tz.setOnClickListener(this);
+
+		rl_my_qm.setOnClickListener(this);
+		rl_my_csny.setOnClickListener(this);
+
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+//		case R.id.ll_back:
+//			pop();
+////			finish();
+//			break;
+//		case R.id.tv_my_cunchu:
+//			LoginBean.UserBean userBean = App.newInstance().getmUserBean().getData();
+//			HttpUtils httpUtils = new HttpUtils();
+//			RequestParams params = new RequestParams("UTF-8");
+//			params.addBodyParameter("uid", String.valueOf(userBean.getId()));
+//			params.addBodyParameter("realname", userBean.getRealname());
+//			params.addBodyParameter("email", userBean.getEmail());
+//			params.addBodyParameter("sex", String.valueOf(userBean.getSex()));
+//			params.addBodyParameter("height", String.valueOf(userBean.getHeight()));
+//			params.addBodyParameter("weight", String.valueOf(userBean.getWeight()));
+//			params.addBodyParameter("motto", userBean.getMotto());
+//			params.addBodyParameter("birthday", userBean.getBirthday());
+//			params.addBodyParameter("com_level", String.valueOf(userBean.getLevel()));
+//			params.addBodyParameter("employee_num", "0");
+//			httpUtils.send(HttpMethod.POST, AppConfig.USER, params,
+//					new RequestCallBack<String>() {
+//
+//						@Override
+//						public void onFailure(HttpException arg0, String arg1) {
+//							// TODO Auto-generated method stub
+//
+//						}
+//
+//						@Override
+//						public void onSuccess(ResponseInfo<String> responseInfo) {
+//							// TODO Auto-generated method stub
+//							Log.i("result", responseInfo.result);
+//							JSONObject jsonObject;
+//							try {
+//								jsonObject = new JSONObject(responseInfo.result);
+//								String errcode = jsonObject.get("Recode")
+//										.toString();
+//								if (errcode.equals("200")) {
+//									showToast("上传成功");
+////									Intent intent = getIntent();
+////									setResult(RESULT_OK, intent);
+////									finish();
+//								}
+//							} catch (JSONException e) {
+//								// TODO Auto-generated catch block
+//								e.printStackTrace();
+//							}
+//
+//						}
+//
+//					});
+//
+//			break;
+		case R.id.rl_my_touxiang:
+			showDialog();
+			break;
+		case R.id.tv_pop_hq:
+			// 获取本地图片
+			Intent intentFromGallery = new Intent();
+			intentFromGallery.setType("image/*"); // 设置文件类型
+			intentFromGallery.setAction(Intent.ACTION_GET_CONTENT);
+			startActivityForResult(intentFromGallery, IMAGE_REQUEST_CODE);
+			break;
+		case R.id.tv_pop_pz:
+
+			Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+			// 判断存储卡是否可以用，可用进行存储
+			if (hasSdcard()) {
+				intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(
+						Environment.getExternalStorageDirectory(),
+						IMAGE_FILE_NAME)));
+			}
+			startActivityForResult(intent, CAMERA_REQUEST_CODE);
+
+			break;
+		case R.id.tv_poptouxing_qx:
+			pop.dismiss();
+			break;
+		case R.id.rl_my_nicheng:
+			Intent intent2 = new Intent();
+			intent2.setClass(getActivity(), NickName.class);
+			startActivityForResult(intent2, 6);
+			break;
+		case R.id.rl_my_yx:
+			Intent intent3 = new Intent();
+			intent3.setClass(getActivity(), EmailActivity.class);
+			startActivityForResult(intent3, 7);
+			break;
+		case R.id.rl_my_sex:
+			showDialog1();
+			break;
+		case R.id.tv_pop_nan:
+			tv_my_sex.setText("男");
+			App.newInstance().getUserBean().setSex(1);
+			pop1.dismiss();
+			break;
+		case R.id.tv_pop_nv:
+			tv_my_sex.setText("女");
+			App.newInstance().getUserBean().setSex(2);
+			pop1.dismiss();
+			break;
+		case R.id.tv_pop_qx:
+			pop1.dismiss();
+			break;
+		case R.id.rl_my_sg:
+			showDialog2();
+			break;
+		case R.id.tv_popshengao_queren:
+			tv_my_sg.setText(shengao + "cm");
+			App.newInstance().getUserBean().setHeight(Integer.parseInt(shengao));
+			pop2.dismiss();
+			break;
+		case R.id.tv_popshengao_quxiao:
+			pop2.dismiss();
+			break;
+
+		case R.id.tv_poptizhong_queren:
+			tv_my_tz.setText(tizhong + "kg");
+			App.newInstance().getUserBean().setWeight(Integer.parseInt(tizhong));
+			pop3.dismiss();
+			break;
+		case R.id.tv_poptizhong_quxiao:
+			pop3.dismiss();
+			break;
+		case R.id.rl_my_tz:
+			showDialog3();
+			break;
+		case R.id.rl_my_qm:
+			Intent intent4 = new Intent();
+			intent4.setClass(getActivity(), SignatureActivity.class);
+			startActivityForResult(intent4, 8);
+			break;
+		case R.id.rl_my_csny:
+			showDataPop();
+
+		default:
+			break;
+		}
+
+	}
+
+	private void showDataPop() {
+		final DatePicker picker = new DatePicker(getActivity());
+		picker.setTopPadding(2);
+
+		Calendar calendar = Calendar.getInstance();
+		int year = calendar.get(Calendar.YEAR);
+		int month = calendar.get(Calendar.MONTH)+1;
+		int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+		picker.setRangeStart(year-60, month, day);
+		picker.setAnimationStyle(R.style.Animation_CustomPopup);
+		picker.setRangeEnd(year, month, day);
+		picker.setSelectedItem(year-30, month, day);
+		picker.setOnDatePickListener(new DatePicker.OnYearMonthDayPickListener() {
+			@Override
+			public void onDatePicked(String year, String month, String day) {
+				String str = year+"-"+month+"-"+day;
+				tv_my_csny.setText(str);
+				App.newInstance().getUserBean().setBirthday(str);
+			}
+		});
+		picker.setOnWheelListener(new DatePicker.OnWheelListener() {
+			@Override
+			public void onYearWheeled(int index, String year) {
+				picker.setTitleText(year + "-" + picker.getSelectedMonth() + "-" + picker.getSelectedDay());
+			}
+
+			@Override
+			public void onMonthWheeled(int index, String month) {
+				picker.setTitleText(picker.getSelectedYear() + "-" + month + "-" + picker.getSelectedDay());
+			}
+
+			@Override
+			public void onDayWheeled(int index, String day) {
+				picker.setTitleText(picker.getSelectedYear() + "-" + picker.getSelectedMonth() + "-" + day);
+			}
+		});
+		picker.show();
+	}
+
+	private void showDialog3() {
+		// TODO Auto-generated method stub
+//		if (pop3.isShowing()) {
+//			// 隐藏窗口，如果设置了点击窗口外消失，则不需要此方式隐藏
+//			pop3.dismiss();
+//		} else {
+//
+//			// 弹出窗口显示内容视图,默认以锚定视图的左下角为起点，这里为点击按钮
+//			pop3.showAtLocation(img_my_touxiang, Gravity.BOTTOM, 0, 0);
+//		}
+		String[] sts = new String[200];
+		for (int i = 0; i<200; i++){
+			sts[i]=20+i+"";
+		}
+		OptionPicker picker = new OptionPicker(getActivity(), sts);
+		picker.setAnimationStyle(R.style.Animation_CustomPopup);
+		picker.setCycleDisable(false);
+		picker.setLineVisible(false);
+//        picker.setShadowVisible(true);
+		picker.setTextSize(11);
+		picker.setOnOptionPickListener(new OptionPicker.OnOptionPickListener() {
+			@Override
+			public void onOptionPicked(int index, String item) {
+				tv_my_tz.setText(item + "kg");
+				App.newInstance().getUserBean().setWeight(Integer.parseInt(tizhong));
+			}
+		});
+		picker.show();
+
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+
+	}
+
+
+	@Override
+	public boolean onBackPressedSupport() {
+		if (! bCanBack) {
+			setFragmentResult(1, new Bundle());
+		}
+		return bCanBack;
+	}
+
+	private void showDialog2() {
+		// TODO Auto-generated method stub
+		String[] sts = new String[200];
+		for (int i = 0; i<200; i++){
+			sts[i]=50+i+"";
+		}
+		OptionPicker picker = new OptionPicker(getActivity(), sts);
+		picker.setAnimationStyle(R.style.Animation_CustomPopup);
+		picker.setCycleDisable(false);
+		picker.setLineVisible(false);
+//        picker.setShadowVisible(true);
+		picker.setTextSize(11);
+		picker.setOnOptionPickListener(new OptionPicker.OnOptionPickListener() {
+			@Override
+			public void onOptionPicked(int index, String item) {
+				tv_my_sg.setText(item + "cm");
+				App.newInstance().getUserBean().setHeight(Integer.parseInt(shengao));
+			}
+		});
+		picker.show();
+
+	}
+
+	private void showDialog() {
+		// TODO Auto-generated method stub
+//		if (pop.isShowing()) {
+//			// 隐藏窗口，如果设置了点击窗口外消失，则不需要此方式隐藏
+//			pop.dismiss();
+//		} else {
+//
+//			// 弹出窗口显示内容视图,默认以锚定视图的左下角为起点，这里为点击按钮
+////			pop.showAtLocation(hideView, Gravity.BOTTOM, 0, 0);
+//		}
+		bCanBack = true;
+		new AlertView("上传头像", null, "取消", null,
+				new String[]{"拍照", "从相册中选择"},
+				getContext(), AlertView.Style.ActionSheet, new OnItemClickListener() {
+			@Override
+			public void onItemClick(Object o, int i) {
+				if (i == 0){
+					Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+					// 判断存储卡是否可以用，可用进行存储
+					if (hasSdcard()) {
+						intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(
+								Environment.getExternalStorageDirectory(),
+								IMAGE_FILE_NAME)));
+					}
+					startActivityForResult(intent, CAMERA_REQUEST_CODE);
+				}else if (i == 1){
+//					Intent intentFromGallery = new Intent();
+//					intentFromGallery.setType("image/*"); // 设置文件类型
+//					intentFromGallery.setAction(Intent.ACTION_GET_CONTENT);
+//					startActivityForResult(intentFromGallery, IMAGE_REQUEST_CODE);
+
+					Intent albumIntent = new Intent(Intent.ACTION_PICK, null);
+					albumIntent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+					startActivityForResult(albumIntent, IMAGE_REQUEST_CODE);
+				}else{
+
+				}
+				bCanBack = false;
+			}
+		}).show();
+
+	}
+	private boolean bCanBack=false;
+	private void showDialog1() {
+		// TODO Auto-generated method stub
+//		if (pop1.isShowing()) {
+//			// 隐藏窗口，如果设置了点击窗口外消失，则不需要此方式隐藏
+//			pop1.dismiss();
+//		} else {
+//
+//			// 弹出窗口显示内容视图,默认以锚定视图的左下角为起点，这里为点击按钮
+////			pop1.showAtLocation(hideView, Gravity.BOTTOM, 0, 0);
+//		}
+		bCanBack = true;
+		new AlertView("性别", null, "取消", null,
+				new String[]{"男","女"},
+				getContext(), AlertView.Style.ActionSheet, new OnItemClickListener() {
+			@Override
+			public void onItemClick(Object o, int i) {
+				if (i == 0){
+					tv_my_sex.setText("男");
+					App.newInstance().getUserBean().setSex(1);
+				}else if (i == 1){
+					tv_my_sex.setText("女");
+					App.newInstance().getUserBean().setSex(2);
+				}else{
+
+				}
+				bCanBack = false;
+			}
+		}).show();
+
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// 结果码不等于取消时候
+		LoginBean.UserBean userBean = App.newInstance().getUserBean();
+		if (resultCode != RESULT_CANCELED) {
+
+			switch (requestCode) {
+			case IMAGE_REQUEST_CODE:
+				startPhotoZoom(data.getData());
+				break;
+			case CAMERA_REQUEST_CODE:
+
+				if (hasSdcard()) {
+					tempFile = new File(
+							Environment.getExternalStorageDirectory(),
+							IMAGE_FILE_NAME);
+					startPhotoZoom(Uri.fromFile(tempFile));
+				} else {
+					showToast("未找到存储卡，无法存储照片！");
+				}
+
+				break;
+			case RESULT_REQUEST_CODE:
+				if (data != null) {
+					getImageToView(data);
+				}
+				break;
+			case 6:
+				tv_my_nicheng.setText(userBean.getRealname());
+				break;
+			case 7:
+				tv_my_yx.setText(userBean.getEmail());
+				break;
+			case 8:
+				tv_my_qm.setText(userBean.getMotto());
+				break;
+			}
+
+		}
+
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+	public void showToast(String text) {
+		if (mToast == null) {
+			mToast = Toast.makeText(getActivity(), text,
+					Toast.LENGTH_SHORT);
+		} else {
+			mToast.setText(text);
+			mToast.setDuration(Toast.LENGTH_SHORT);
+		}
+		mToast.show();
+	}
+
+	public void startPhotoZoom(Uri uri) {
+
+		Intent intent = new Intent("com.android.camera.action.CROP");
+		intent.setDataAndType(uri, "image/*");
+		// 设置裁剪
+		intent.putExtra("crop", "true");
+		// aspectX aspectY 是宽高的比例
+		intent.putExtra("aspectX", 1);
+		intent.putExtra("aspectY", 1);
+		// outputX outputY 是裁剪图片宽高
+		intent.putExtra("outputX", 320);
+		intent.putExtra("outputY", 320);
+		intent.putExtra("return-data", true);
+		startActivityForResult(intent, RESULT_REQUEST_CODE);
+	}
+
+	@SuppressWarnings("deprecation")
+	private void getImageToView(Intent data) {
+		Bundle extras = data.getExtras();
+		if (extras != null) {
+			photo = extras.getParcelable("data");
+			drawable = new BitmapDrawable(photo);
+			img_my_touxiang.setImageDrawable(drawable);
+//			BusFactory.getBus().post(new UserImageEvent(drawable));
+			//Connectors.setTouxiang(photo);
+			setPicToView(photo);// 保存在SD卡中
+
+		}
+	}
+
+	private void setPicToView(Bitmap mBitmap) {
+		// TODO Auto-generated method stub
+		App.newInstance().setUserDrawable(mBitmap);
+		String sdStatus = Environment.getExternalStorageState();
+		if (!sdStatus.equals(Environment.MEDIA_MOUNTED)) { // 检测sd是否可用
+			return;
+		}
+		FileOutputStream b = null;
+		File file = new File(path);
+		file.mkdirs();// 创建文件夹
+		String fileName = path + "head.jpg";// 图片名字
+		try {
+			b = new FileOutputStream(fileName);
+			mBitmap.compress(Bitmap.CompressFormat.JPEG, 100, b);// 把数据写入文件
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// 关闭流
+				b.flush();
+				b.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		RequestParams params = new RequestParams();
+		params.addBodyParameter("uid", String.valueOf(App.newInstance().getUserBean().getId()));
+		params.addBodyParameter("avatar", new File(fileName));
+		uploadMethod(params, AppConfig.PORTRAIT);
+	}
+
+	private void uploadMethod(final RequestParams params,
+			final String uploadHost) {
+		// TODO Auto-generated method stub
+		httpUtils.send(HttpMethod.POST, uploadHost, params,
+				new RequestCallBack<String>() {
+
+					@Override
+					public void onFailure(HttpException arg0, String arg1) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onSuccess(ResponseInfo<String> responseInfo) {
+						// TODO Auto-generated method stub
+
+						Log.i("result", responseInfo.result);
+						try {
+							JSONObject jsonObject = new JSONObject(
+									responseInfo.result);
+							String avatar = jsonObject.getString("Data");
+							App.newInstance().getUserBean().setAvatar(avatar);
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				});
+
+	}
+
+	private boolean hasSdcard() {
+		if (Environment.getExternalStorageState().equals(
+				Environment.MEDIA_MOUNTED)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	private View getDataPick() {
+		Calendar c = Calendar.getInstance();
+		int curYear = c.get(Calendar.YEAR);
+		int curMonth = c.get(Calendar.MONTH) + 1;// 通过Calendar算出的月数要+1
+		int curDate = c.get(Calendar.DATE);
+		final View view = inflater.inflate(R.layout.datapick, null);
+
+		year = (WheelViews) view.findViewById(R.id.year);
+		year.setAdapter(new NumericWheelAdapter(1950, curYear));
+		year.setLabel("年");
+		year.setCyclic(true);
+		year.addScrollingListener(scrollListener);
+
+		month = (WheelViews) view.findViewById(R.id.month);
+		month.setAdapter(new NumericWheelAdapter(1, 12));
+		month.setLabel("月");
+		month.setCyclic(true);
+		month.addScrollingListener(scrollListener);
+
+		day = (WheelViews) view.findViewById(R.id.day);
+		initDay(curYear, curMonth);
+		day.setLabel("日");
+		day.setCyclic(true);
+
+		year.setCurrentItem(curYear - 1950);
+		month.setCurrentItem(curMonth - 1);
+		day.setCurrentItem(curDate - 1);
+
+		Button bt = (Button) view.findViewById(R.id.set);
+		bt.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				String str = (year.getCurrentItem() + 1950) + "-"
+						+ (month.getCurrentItem() + 1) + "-"
+						+ (day.getCurrentItem() + 1);
+				tv_my_csny.setText(str);
+				App.newInstance().getUserBean().setBirthday(str);
+				menuWindow.dismiss();
+			}
+		});
+		Button cancel = (Button) view.findViewById(R.id.cancel);
+		cancel.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				menuWindow.dismiss();
+			}
+		});
+		return view;
+	}
+
+	private void initDay(int arg1, int arg2) {
+		day.setAdapter(new NumericWheelAdapter(1, getDay(arg1, arg2), "%02d"));
+	}
+
+	private int getDay(int year, int month) {
+		int day = 30;
+		boolean flag = false;
+		switch (year % 4) {
+		case 0:
+			flag = true;
+			break;
+		default:
+			flag = false;
+			break;
+		}
+		switch (month) {
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12:
+			day = 31;
+			break;
+		case 2:
+			day = flag ? 29 : 28;
+			break;
+		default:
+			day = 30;
+			break;
+		}
+		return day;
+	}
+
+	OnWheelScrollListener scrollListener = new OnWheelScrollListener() {
+
+		@Override
+		public void onScrollingStarted(WheelViews wheel) {
+
+		}
+
+		@Override
+		public void onScrollingFinished(WheelViews wheel) {
+			// TODO Auto-generated method stub
+			int n_year = year.getCurrentItem() + 1950;
+			int n_month = month.getCurrentItem() + 1;
+			initDay(n_year, n_month);
+		}
+	};
+
+	@SuppressWarnings({ "deprecation" })
+	private void showPopwindow(View view) {
+		menuWindow = new PopupWindow(view, LayoutParams.FILL_PARENT,
+				LayoutParams.WRAP_CONTENT);
+		menuWindow.setFocusable(true);
+		menuWindow.setBackgroundDrawable(new BitmapDrawable());
+		menuWindow.showAtLocation(view, Gravity.CENTER_HORIZONTAL, 0, 0);
+		menuWindow.setOnDismissListener(new OnDismissListener() {
+			@Override
+			public void onDismiss() {
+				menuWindow = null;
+			}
+		});
+	}
+
+}

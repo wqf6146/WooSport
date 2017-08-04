@@ -1,0 +1,464 @@
+package com.yhrjkf.woyundong.fragment;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.graphics.Color;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.lidroid.xutils.BitmapUtils;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.vise.log.ViseLog;
+import com.vise.xsnow.loader.ILoader;
+import com.vise.xsnow.loader.LoaderFactory;
+import com.vise.xsnow.net.callback.ApiCallback;
+import com.vise.xsnow.net.exception.ApiException;
+import com.vise.xsnow.net.mode.CacheResult;
+import com.yhrjkf.woyundong.BaseFragment;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.bean.RankBean;
+import com.yhrjkf.woyundong.http.WooSportApi;
+import com.yhrjkf.woyundong.tools.AppConfig;
+
+import butterknife.Bind;
+
+public class RankingFragment extends BaseFragment implements OnClickListener {
+
+	@Bind(R.id.lv_ranking)
+	ListView lv_ranking;
+
+	@Bind(R.id.tv_ranking_alls)
+	TextView tv_ranking_alls;
+
+	@Bind(R.id.tv_ranking_jianzou)
+	TextView tv_ranking_jianzou;
+
+	@Bind(R.id.tv_ranking_qixing)
+	TextView tv_ranking_qixing;
+
+	@Bind(R.id.tv_ranking_day)
+	TextView tv_ranking_day;
+
+	@Bind(R.id.tv_ranking_week)
+	TextView tv_ranking_week;
+
+	@Bind(R.id.tv_ranking_month)
+	TextView tv_ranking_month;
+
+	@Bind(R.id.tv_ranking_quarter)
+	TextView tv_ranking_quarter;
+
+	@Bind(R.id.tv_ranking_halfyear)
+	TextView tv_ranking_halfyear;
+
+	@Bind(R.id.tv_ranking_year)
+	TextView tv_ranking_year;
+
+
+
+	String a, b, c;
+//	List<HashMap<String, String>> list;
+	IndentCusAdapter rpAdapter;
+	Handler handler;
+
+	public static RankingFragment getInstance() {
+		RankingFragment fragment = new RankingFragment();
+		Bundle bundle = new Bundle();
+		fragment.setArguments(bundle);
+		return fragment;
+	}
+
+	@Override
+	protected void initData() {
+
+	}
+
+	@Override
+	protected void initView(View contentView) {
+
+	}
+
+	@Override
+	protected void bindEvent() {
+		tv_ranking_alls.setOnClickListener(this);
+		tv_ranking_jianzou.setOnClickListener(this);
+		tv_ranking_qixing.setOnClickListener(this);
+		tv_ranking_day.setOnClickListener(this);
+		tv_ranking_week.setOnClickListener(this);
+		tv_ranking_month.setOnClickListener(this);
+		tv_ranking_quarter.setOnClickListener(this);
+		tv_ranking_halfyear.setOnClickListener(this);
+		tv_ranking_year.setOnClickListener(this);
+	}
+
+	@Override
+	public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+		super.onViewCreated(view, savedInstanceState);
+
+		a = "3";
+		b = "1";
+		getData(a, b);
+
+	}
+
+	@Override
+	protected int getFragmentLayoutId() {
+		return R.layout.fragment_ranking;
+	}
+
+
+	private void getData(String limit_1, String limit_2) {
+		// TODO Auto-generated method stub
+
+		WooSportApi.getInstance().startGetRankInfo(mContext, limit_1, limit_2, new ApiCallback<CacheResult<RankBean>>() {
+			@Override
+			public void onStart() {
+
+			}
+
+			@Override
+			public void onError(ApiException e) {
+				ViseLog.e(e);
+			}
+
+			@Override
+			public void onCompleted() {
+
+			}
+
+			@Override
+			public void onNext(final CacheResult<RankBean> rankBeanCacheResult) {
+				if (rankBeanCacheResult!=null){
+					lv_ranking.post(new Runnable() {
+						@Override
+						public void run() {
+							rpAdapter = new IndentCusAdapter((ArrayList<RankBean.DataBean>) rankBeanCacheResult.getCacheData().getData());
+							lv_ranking.setAdapter(rpAdapter);
+						}
+					});
+				}
+
+			}
+		});
+
+//		HttpUtils httpUtils = new HttpUtils();
+//		RequestParams params = new RequestParams("UTF-8");
+//		params.addBodyParameter("limit_1", limit_1);
+//		params.addBodyParameter("limit_2", limit_2);
+//		params.addBodyParameter("limit_3", limit_3);
+//		httpUtils.send(HttpMethod.POST, AppConfig.RANKING, params,
+//				new RequestCallBack<String>() {
+//
+//					@Override
+//					public void onFailure(HttpException arg0, String arg1) {
+//						// TODO Auto-generated method stub
+//
+//					}
+//
+//					@Override
+//					public void onSuccess(ResponseInfo<String> responseInfo) {
+//						// TODO Auto-generated method stub
+//						Log.i("result", responseInfo.result);
+//						if (responseInfo.result.toString().equals("")
+//								|| responseInfo.result.toString() == null) {
+//							Toast.makeText(getActivity(), "aaa",
+//									Toast.LENGTH_SHORT).show();
+//							lv_ranking.setVisibility(View.GONE);
+//						}
+//
+//						list = new ArrayList<HashMap<String, String>>();
+//						try {
+//							JSONArray jsonArray = new JSONArray(
+//									responseInfo.result);
+//							for (int i = 0; i < jsonArray.length(); i++) {
+//								HashMap<String, String> hm = new HashMap<String, String>();
+//								JSONObject jsonObject = jsonArray
+//										.getJSONObject(i);
+//								hm.put("distance", jsonObject.get("distance")
+//										.toString());
+//								hm.put("time", jsonObject.get("time")
+//										.toString());
+//								hm.put("calorie", jsonObject.get("calorie")
+//										.toString());
+//								hm.put("name", jsonObject.get("name")
+//										.toString());
+//								hm.put("avatar", jsonObject.get("avatar")
+//										.toString());
+//								list.add(hm);
+//								Log.i("mLatLngList", list.get(0).toString());
+//							}
+//							Message message = new Message();
+//							message.arg1 = 0;
+//							handler.sendMessage(message);
+//
+//						} catch (JSONException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//
+//					}
+//				});
+
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.tv_ranking_alls:
+			a = "3";
+			getData(a, b);
+			tv_ranking_alls.setTextColor(Color.parseColor("#000000"));
+			tv_ranking_jianzou.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_qixing.setTextColor(Color.parseColor("#FFFFFF"));
+
+			break;
+		case R.id.tv_ranking_jianzou:
+			a = "1";
+			getData(a, b);
+			tv_ranking_alls.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_jianzou.setTextColor(Color.parseColor("#000000"));
+			tv_ranking_qixing.setTextColor(Color.parseColor("#FFFFFF"));
+
+			break;
+		case R.id.tv_ranking_qixing:
+			a = "2";
+			getData(a, b);
+			tv_ranking_alls.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_jianzou.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_qixing.setTextColor(Color.parseColor("#000000"));
+
+			break;
+		case R.id.tv_ranking_day:
+			b = "1";
+			getData(a, b);
+			tv_ranking_day.setTextColor(Color.parseColor("#000000"));
+			tv_ranking_week.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_month.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_quarter.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_halfyear.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_year.setTextColor(Color.parseColor("#FFFFFF"));
+
+			break;
+		case R.id.tv_ranking_week:
+			b = "2";
+			getData(a, b);
+			tv_ranking_day.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_week.setTextColor(Color.parseColor("#000000"));
+			tv_ranking_month.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_quarter.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_halfyear.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_year.setTextColor(Color.parseColor("#FFFFFF"));
+
+			break;
+		case R.id.tv_ranking_month:
+			b = "3";
+			getData(a, b);
+			tv_ranking_day.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_week.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_month.setTextColor(Color.parseColor("#000000"));
+			tv_ranking_quarter.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_halfyear.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_year.setTextColor(Color.parseColor("#FFFFFF"));
+
+			break;
+		case R.id.tv_ranking_quarter:
+			b = "4";
+			getData(a, b);
+			tv_ranking_day.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_week.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_month.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_quarter.setTextColor(Color.parseColor("#000000"));
+			tv_ranking_halfyear.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_year.setTextColor(Color.parseColor("#FFFFFF"));
+
+			break;
+		case R.id.tv_ranking_halfyear:
+			b = "5";
+			getData(a, b);
+			tv_ranking_day.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_week.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_month.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_quarter.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_halfyear.setTextColor(Color.parseColor("#000000"));
+			tv_ranking_year.setTextColor(Color.parseColor("#FFFFFF"));
+			break;
+		case R.id.tv_ranking_year:
+			b = "6";
+			getData(a, b);
+			tv_ranking_day.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_week.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_month.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_quarter.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_halfyear.setTextColor(Color.parseColor("#FFFFFF"));
+			tv_ranking_year.setTextColor(Color.parseColor("#000000"));
+
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	private class IndentCusAdapter extends BaseAdapter {
+
+//		List<HashMap<String, String>> mDataList = new ArrayList<HashMap<String, String>>();
+//		RankBean mData;
+		List<RankBean.DataBean> dataList;
+		public IndentCusAdapter(ArrayList<RankBean.DataBean> data) {
+			Log.i("+++++", "加载适配器之后");
+//			list = overduelist;
+			if (data!=null){
+				dataList = (ArrayList<RankBean.DataBean>)data.clone();
+			}else {
+				dataList = new ArrayList<>();
+			}
+			notifyDataSetChanged();
+		}
+		public void clearDeviceList() {
+			if (dataList != null) {
+				dataList.clear();
+			}
+			notifyDataSetChanged();
+		}
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return dataList.size();
+		}
+
+		@Override
+		public Object getItem(int position) {
+			// TODO Auto-generated method stub
+			return dataList.get(position);
+		}
+
+		@Override
+		public long getItemId(int position) {
+			// TODO Auto-generated method stub
+			return position;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			// TODO Auto-generated method stub
+			Cache cache = null;
+			if(dataList == null){
+				return null;
+			}
+			RankBean.DataBean bean = dataList.get(position);
+
+			if (convertView == null) {
+				convertView = LayoutInflater.from(getActivity()).inflate(
+						R.layout.item_ranking, null);
+				cache = new Cache();
+				cache.img_ranking_touxiang = (ImageView) convertView
+						.findViewById(R.id.img_ranking_touxiang);
+				cache.tv_ranking_mingci = (TextView) convertView
+						.findViewById(R.id.tv_ranking_mingci);
+				cache.tv_ranking_name = (TextView) convertView
+						.findViewById(R.id.tv_ranking_name);
+				cache.tv_ranking_distance = (TextView) convertView
+						.findViewById(R.id.tv_ranking_distance);
+				cache.tv_ranking_time = (TextView) convertView
+						.findViewById(R.id.tv_ranking_time);
+
+				convertView.setTag(cache);
+
+			} else {
+				cache = (Cache) convertView.getTag();
+			}
+
+			if (position == 0) {
+				cache.tv_ranking_mingci
+						.setBackgroundResource(R.drawable.gold_medal);
+				cache.tv_ranking_mingci.setText("");
+			} else if (position == 1) {
+				cache.tv_ranking_mingci
+						.setBackgroundResource(R.drawable.silver_medal);
+				cache.tv_ranking_mingci.setText("");
+			} else if (position == 2) {
+				cache.tv_ranking_mingci
+						.setBackgroundResource(R.drawable.bronze_medal);
+				cache.tv_ranking_mingci.setText("");
+			} else {
+				cache.tv_ranking_mingci.setBackgroundColor(Color.WHITE);
+				cache.tv_ranking_mingci.setText(position + 1 + "");
+			}
+
+			if (bean.getTime() == 0) {
+				cache.tv_ranking_time.setText(bean.getTime()
+						+ "小时");
+			} else {
+				int i = bean.getTime();
+				float f1 = (float) (i / 3600.00);
+				BigDecimal b = new BigDecimal(f1);
+				float f2 = b.setScale(2, BigDecimal.ROUND_HALF_UP).floatValue();
+				cache.tv_ranking_time.setText(f2 + "小时");
+			}
+
+			cache.tv_ranking_name.setText(bean.getName());
+			cache.tv_ranking_distance.setText(bean.getDistance() + "千米");
+
+//			Log.i("url", list.get(position).get("avatar"));
+			if (bean.getAvatar().equals("default.jpg")) {
+				cache.img_ranking_touxiang.setImageResource(R.drawable.logo);
+
+			} else {
+//				BitmapUtils bitmapUtils = new BitmapUtils(getActivity());
+//				bitmapUtils.display(cache.img_ranking_touxiang,
+//						list.get(position).get("avatar"));
+				LoaderFactory.getLoader().loadNet(cache.img_ranking_touxiang,bean.getAvatar(),
+						new ILoader.Options(R.drawable.biaoti, R.drawable.biaoti));
+			}
+
+			// ImageLoader.getInstance().loadImage(
+			// mLatLngList.get(position).get("avatar"),
+			// new SimpleImageLoadingListener() {
+			// @Override
+			// public void onLoadingComplete(String imageUri,
+			// View view, Bitmap loadedImage) {
+			// // TODO Auto-generated method stub
+			// cache.img_ranking_touxiang
+			// .setImageBitmap(loadedImage);
+			// super.onLoadingComplete(imageUri, view, loadedImage);
+			// }
+			// });
+
+			return convertView;
+		}
+
+	}
+
+	class Cache {
+		ImageView img_ranking_touxiang;
+		TextView tv_ranking_mingci, tv_ranking_name, tv_ranking_distance,
+				tv_ranking_time;
+	}
+
+}

@@ -1,0 +1,51 @@
+// Generated code from Butter Knife. Do not modify!
+package com.yhrjkf.woyundong.fragment;
+
+import android.view.View;
+import butterknife.ButterKnife.Finder;
+import butterknife.ButterKnife.ViewBinder;
+
+public class MyFragment$$ViewBinder<T extends com.yhrjkf.woyundong.fragment.MyFragment> implements ViewBinder<T> {
+  @Override public void bind(final Finder finder, final T target, Object source) {
+    View view;
+    view = finder.findRequiredView(source, 2131624299, "field 'img_myf_tx'");
+    target.img_myf_tx = finder.castView(view, 2131624299, "field 'img_myf_tx'");
+    view = finder.findRequiredView(source, 2131624301, "field 'tv_myf_name'");
+    target.tv_myf_name = finder.castView(view, 2131624301, "field 'tv_myf_name'");
+    view = finder.findRequiredView(source, 2131624304, "field 'tv_myf_lv'");
+    target.tv_myf_lv = finder.castView(view, 2131624304, "field 'tv_myf_lv'");
+    view = finder.findRequiredView(source, 2131624305, "field 'tv_myf_lv1'");
+    target.tv_myf_lv1 = finder.castView(view, 2131624305, "field 'tv_myf_lv1'");
+    view = finder.findRequiredView(source, 2131624306, "field 'tv_myf_jf'");
+    target.tv_myf_jf = finder.castView(view, 2131624306, "field 'tv_myf_jf'");
+    view = finder.findRequiredView(source, 2131624302, "field 'view_jifen'");
+    target.view_jifen = view;
+    view = finder.findRequiredView(source, 2131624303, "field 'view_jifen2'");
+    target.view_jifen2 = view;
+    view = finder.findRequiredView(source, 2131624298, "field 'rl_myf_myxx'");
+    target.rl_myf_myxx = finder.castView(view, 2131624298, "field 'rl_myf_myxx'");
+    view = finder.findRequiredView(source, 2131624307, "field 'll_myf_ls'");
+    target.ll_myf_ls = finder.castView(view, 2131624307, "field 'll_myf_ls'");
+    view = finder.findRequiredView(source, 2131624311, "field 'll_myf_jl'");
+    target.ll_myf_jl = finder.castView(view, 2131624311, "field 'll_myf_jl'");
+    view = finder.findRequiredView(source, 2131624316, "field 'll_myf_jz'");
+    target.ll_myf_jz = finder.castView(view, 2131624316, "field 'll_myf_jz'");
+    view = finder.findRequiredView(source, 2131624320, "field 'll_myf_sz'");
+    target.ll_myf_sz = finder.castView(view, 2131624320, "field 'll_myf_sz'");
+  }
+
+  @Override public void unbind(T target) {
+    target.img_myf_tx = null;
+    target.tv_myf_name = null;
+    target.tv_myf_lv = null;
+    target.tv_myf_lv1 = null;
+    target.tv_myf_jf = null;
+    target.view_jifen = null;
+    target.view_jifen2 = null;
+    target.rl_myf_myxx = null;
+    target.ll_myf_ls = null;
+    target.ll_myf_jl = null;
+    target.ll_myf_jz = null;
+    target.ll_myf_sz = null;
+  }
+}

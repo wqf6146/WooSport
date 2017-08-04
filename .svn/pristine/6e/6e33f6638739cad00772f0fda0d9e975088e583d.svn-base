@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\e6141ef9f533870bda05820e362f3e97d70a6fd1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\classes_47a81bbd6bef943f12f626ea379591b744adebd6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport3\app\libs\ApiStoreSDK1.0.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9afb5799c44dbae661e6ed1dd0ea71586ac2683f">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\ApiStoreSDK1.0.4_e2c35e3bce37ab6c9138d56c8bed8bf756241d99.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\4c8ab3cc8adb3c8b591c41dd94160746046a560e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\classes_31d9fb45fff6e730392c332fa63ad2fc111ab9fe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\1e166754db28c93660e2bd1a3f05895cc73f33ce\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="13717eebb33e0c2e7aecfb05fd53d0bca391e8dc">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\classes_c972c3af1916426aa17a1d1d5eba532b96d184f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\d6a9bb5b681652f589bdad218ba2f50acb0dd32b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f8cdf8e65252623815c235ed45651893777565d0">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\classes_69644ec07cee7a173f490d2d3b5282efd3e1c4d9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport3\calendarlibrary\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1d6a4171064ec8ca2525ec2b8290c28ba1fdec1b">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\classes_7307237faaee3f5b6f29bc6d28e86f47c93dc770.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport3\app\libs\AMap2DMap_4.2.0_AMapLocation_3.3.0_20170120.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="aaa8c525a22beca4d7af07c8f79ae852cd6995f6">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\AMap2DMap_4.2.0_AMapLocation_3.3.0_20170120_29d31d03bc5494f2c9bbf66694751f868252f3c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport3\app\libs\xUtils-2.6.14.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f10c51f3e0732fdeefe6e104279a58e275879b6c">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\xUtils-2.6.14_5b464845492440f0b9c90fb9d34cbde620a8faae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport3\xsnow\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c62be46c0f888327f5b80ac2ab170b28477d616a">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\classes_7092141e54b13fea5fe4bc309f213d238c05716f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\6bbb62b9566ef43e2a18835a0a05fc63bc01b369\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\classes_e730b53b86ce755ce01048410f74952b18b15679.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport3\app\libs\hellocharts-library-1.5.8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="700944cb3a8ce4fe543cfac1a9146a11cbf702dc">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\hellocharts-library-1.5.8_451656a9a321a88249474ac7b5275477751050a1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport3\app\libs\universal-image-loader-1.9.2-SNAPSHOT-with-sources.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e33324b770223932d467e4ec39639b0c15f3b94e">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.2-SNAPSHOT-with-sources_c1124da4f300d4bb0e06a8712cabf95c356b3f2d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\95f176efe59421ce490dba184ed5d5b3fcdee7a3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\classes_66f0cf03caf2f41c4599fae9cc9dbb8e5cc37b59.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport3\app\libs\tbs_sdk_thirdapp_v2.1.2.1096_36511_shareonly_obfs_20160727_105850.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b64fbda1d47f17fc592f36db608b9e7170e19c1e">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\tbs_sdk_thirdapp_v2.1.2.1096_36511_shareonly_obfs_20160727_105850_7e1ee84da739d57ff57336dbc6fc1a628051f13f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\WorkPlaces\WoSport3\app\libs\mpchartlib.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3390f40698955221eab52de2c9659ce418930540">
+        <dex dex="E:\WorkPlaces\WoSport3\app\build\intermediates\pre-dexed\debug\mpchartlib_72dbc5080e7bcff6fd6ccdcb7088f8b7243dd958.jar" />
+    </item>
+
+</items>

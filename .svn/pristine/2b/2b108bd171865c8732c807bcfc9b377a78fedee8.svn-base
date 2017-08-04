@@ -1,0 +1,413 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:2:1-261:12
+	package
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:3:5-35
+		INJECTED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:2:11-69
+uses-sdk
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.CymChad:BaseRecyclerViewAdapterHelper:2.8.6] C:\Users\Administrator\.android\build-cache\d6a9bb5b681652f589bdad218ba2f50acb0dd32b\output\AndroidManifest.xml:7:5-9:41
+MERGED from [me.yokeyword:fragmentation:0.10.1] C:\Users\Administrator\.android\build-cache\42122e5389809cc56faa14556defc641bf5b2165\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:percent:25.1.0] C:\Users\Administrator\.android\build-cache\3e330b615e3a2f948e46b1ee4eac80abd3d16353\output\AndroidManifest.xml:20:5-43
+MERGED from [com.github.2tu.fit:fit:0.3.1] C:\Users\Administrator\.android\build-cache\46d7dc023cd2dd908adb2d246ab56306a23236df\output\AndroidManifest.xml:6:5-43
+MERGED from [com.youth.banner:banner:1.4.9] C:\Users\Administrator\.android\build-cache\e50b04f66f525d0aae70fed8266741bfb0d1f2c9\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.bigkoo:alertview:1.0.2] C:\Users\Administrator\.android\build-cache\37521ccf4a68e81fb8226e48508455e7bb22f353\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.kaopiz:kprogresshud:1.0.2] C:\Users\Administrator\.android\build-cache\152353a9c046a09d0fdb42abe6265b3de97b3652\output\AndroidManifest.xml:7:5-9:41
+MERGED from [cn.qqtheme.framework:WheelPicker:1.4.3] C:\Users\Administrator\.android\build-cache\55acf334d34de22e5d3a5d17e53c93d9c75f2840\output\AndroidManifest.xml:8:5-10:41
+MERGED from [cn.qqtheme.framework:Common:1.4.3] C:\Users\Administrator\.android\build-cache\1abeb195cf4355831fc8b816af96189ba3b7b86c\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.jaeger.statusbaruitl:library:1.3.6] C:\Users\Administrator\.android\build-cache\1e166754db28c93660e2bd1a3f05895cc73f33ce\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:25.1.0] C:\Users\Administrator\.android\build-cache\6846f0c9d23af9da333211689b4ec6a148b5e040\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Administrator\.android\build-cache\95f176efe59421ce490dba184ed5d5b3fcdee7a3\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.1.0] C:\Users\Administrator\.android\build-cache\1423d02292692079d4b89d2593f1d453ed279f52\output\AndroidManifest.xml:20:5-44
+MERGED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport3\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Administrator\.android\build-cache\e6141ef9f533870bda05820e362f3e97d70a6fd1\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Administrator\.android\build-cache\4c8ab3cc8adb3c8b591c41dd94160746046a560e\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Administrator\.android\build-cache\6bbb62b9566ef43e2a18835a0a05fc63bc01b369\output\AndroidManifest.xml:21:5-43
+MERGED from [com.vise.xiaoyaoyou:viseutils:1.0.0] C:\Users\Administrator\.android\build-cache\f8d2671a05cb70149493cbf2aeb5165f76eed9d6\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.vise.xiaoyaoyou:viselog:1.0.0] C:\Users\Administrator\.android\build-cache\32c3adc515d852f3cafe23cf2396a17bac9d9aed\output\AndroidManifest.xml:7:5-9:41
+MERGED from [io.reactivex:rxandroid:1.2.1] C:\Users\Administrator\.android\build-cache\cc358df9db1eadf5ae803742b3742b9686632fd7\output\AndroidManifest.xml:19:5-43
+MERGED from [WoSport3:calendarlibrary:1.4.3] E:\WorkPlaces\WoSport3\calendarlibrary\build\intermediates\bundles\default\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Administrator\.android\build-cache\5ca47e3c6ae451067d590813badd1614bf0cea74\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Administrator\.android\build-cache\63920b4b2b9ad3f9c22f500eb3ec9795a41f36e2\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Administrator\.android\build-cache\7619c5ae6865359cca3f4c010fe82116e0b779ae\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Administrator\.android\build-cache\50dc8b64c149dc7483c623bb3561a9266f01dd70\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Administrator\.android\build-cache\f3eae6ed3aa3ec19af5f82c6ca95a983535fef06\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Administrator\.android\build-cache\e5e5b911244af1e23e9f4e19bb9215f11f2262ae\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.1.0] C:\Users\Administrator\.android\build-cache\6846f0c9d23af9da333211689b4ec6a148b5e040\output\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:9:9-38
+		INJECTED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:8:9-34
+		INJECTED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:10:5-81
+MERGED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport3\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:10:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:12:5-79
+MERGED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport3\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:12:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:14:5-76
+MERGED from [com.vise.xiaoyaoyou:viseutils:1.0.0] C:\Users\Administrator\.android\build-cache\f8d2671a05cb70149493cbf2aeb5165f76eed9d6\output\AndroidManifest.xml:11:5-76
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:14:22-73
+uses-permission#android.permission.INTERNET
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:16:5-67
+MERGED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport3\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:16:22-64
+uses-permission#android.permission.WAKE_LOCK
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:17:5-68
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:17:22-65
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:18:5-80
+MERGED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport3\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:14:5-80
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:18:22-77
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:19:5-75
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:19:22-72
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:29:6-79
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:29:23-77
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:38:5-81
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:38:22-78
+uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:43:5-89
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:43:22-86
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:45:5-76
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:45:22-73
+uses-permission#android.permission.BLUETOOTH
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:64:5-84
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:64:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:65:5-90
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:65:22-71
+application
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:68:5-259:19
+MERGED from [me.yokeyword:fragmentation:0.10.1] C:\Users\Administrator\.android\build-cache\42122e5389809cc56faa14556defc641bf5b2165\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:percent:25.1.0] C:\Users\Administrator\.android\build-cache\3e330b615e3a2f948e46b1ee4eac80abd3d16353\output\AndroidManifest.xml:22:5-20
+MERGED from [com.kaopiz:kprogresshud:1.0.2] C:\Users\Administrator\.android\build-cache\152353a9c046a09d0fdb42abe6265b3de97b3652\output\AndroidManifest.xml:11:5-13:38
+MERGED from [com.jaeger.statusbaruitl:library:1.3.6] C:\Users\Administrator\.android\build-cache\1e166754db28c93660e2bd1a3f05895cc73f33ce\output\AndroidManifest.xml:11:5-20
+MERGED from [com.android.support:design:25.1.0] C:\Users\Administrator\.android\build-cache\6846f0c9d23af9da333211689b4ec6a148b5e040\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:transition:25.1.0] C:\Users\Administrator\.android\build-cache\1423d02292692079d4b89d2593f1d453ed279f52\output\AndroidManifest.xml:22:5-20
+MERGED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport3\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:16:5-21:19
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Administrator\.android\build-cache\e6141ef9f533870bda05820e362f3e97d70a6fd1\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Administrator\.android\build-cache\4c8ab3cc8adb3c8b591c41dd94160746046a560e\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Administrator\.android\build-cache\6bbb62b9566ef43e2a18835a0a05fc63bc01b369\output\AndroidManifest.xml:23:5-20
+MERGED from [com.vise.xiaoyaoyou:viselog:1.0.0] C:\Users\Administrator\.android\build-cache\32c3adc515d852f3cafe23cf2396a17bac9d9aed\output\AndroidManifest.xml:11:5-15:19
+MERGED from [WoSport3:calendarlibrary:1.4.3] E:\WorkPlaces\WoSport3\calendarlibrary\build\intermediates\bundles\default\AndroidManifest.xml:12:5-20
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Administrator\.android\build-cache\5ca47e3c6ae451067d590813badd1614bf0cea74\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Administrator\.android\build-cache\63920b4b2b9ad3f9c22f500eb3ec9795a41f36e2\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Administrator\.android\build-cache\7619c5ae6865359cca3f4c010fe82116e0b779ae\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Administrator\.android\build-cache\50dc8b64c149dc7483c623bb3561a9266f01dd70\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Administrator\.android\build-cache\f3eae6ed3aa3ec19af5f82c6ca95a983535fef06\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Administrator\.android\build-cache\e5e5b911244af1e23e9f4e19bb9215f11f2262ae\output\AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:71:9-41
+	android:supportsRtl
+		ADDED from [com.kaopiz:kprogresshud:1.0.2] C:\Users\Administrator\.android\build-cache\152353a9c046a09d0fdb42abe6265b3de97b3652\output\AndroidManifest.xml:13:9-35
+	android:allowBackup
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:69:9-35
+	android:icon
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:70:9-38
+	android:persistent
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:74:9-34
+	android:theme
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:72:9-40
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:73:9-48
+service#com.amap.api.location.APSService
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:77:13-71
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:77:22-69
+service#com.yhrjkf.woyundong.service.SportTimerService
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:81:13-82:46
+	android:process
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:82:17-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:81:22-83
+service#com.yhrjkf.woyundong.service.MapService
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:84:13-59
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:84:22-56
+meta-data#com.amap.api.v2.apikey
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:87:13-89:25
+	android:value
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:88:19-67
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:87:24-61
+activity#com.yhrjkf.woyundong.activity.LaunchActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:91:9-100:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:94:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:93:13-45
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:92:13-72
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:96:13-99:29
+action#android.intent.action.MAIN
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:97:17-69
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:97:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:98:17-77
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:98:27-74
+activity#com.yhrjkf.woyundong.activity.MainActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:101:10-107:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:104:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:103:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:105:13-42
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:102:13-70
+activity#com.yhrjkf.woyundong.activity.SetActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:108:9-114:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:111:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:110:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:112:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:109:13-69
+activity#com.yhrjkf.woyundong.activity.JianBuXingActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:116:9-123:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:121:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:118:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:119:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:117:13-76
+activity#com.yhrjkf.woyundong.activity.LoginActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:124:10-130:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:127:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:126:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:128:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:125:13-71
+activity#com.yhrjkf.woyundong.activity.RegisterActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:131:10-137:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:134:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:133:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:135:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:132:13-74
+activity#com.yhrjkf.woyundong.activity.EventDetails
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:138:11-144:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:141:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:140:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:142:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:139:13-70
+activity#com.yhrjkf.woyundong.activity.NewsDetails
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:145:9-151:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:148:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:147:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:149:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:146:13-69
+activity#com.yhrjkf.woyundong.activity.NewMedalActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:152:9-158:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:155:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:154:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:156:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:153:13-74
+activity#com.yhrjkf.woyundong.activity.NewRecordActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:159:9-165:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:162:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:161:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:163:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:160:13-75
+activity#com.yhrjkf.woyundong.activity.HistoryActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:166:9-172:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:169:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:168:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:170:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:167:13-73
+activity#com.yhrjkf.woyundong.activity.NickName
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:173:9-179:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:176:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:175:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:177:13-42
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:174:13-66
+activity#com.yhrjkf.woyundong.activity.EmailActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:180:9-186:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:183:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:182:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:184:13-42
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:181:13-71
+activity#com.yhrjkf.woyundong.activity.OpinionActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:187:9-193:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:190:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:189:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:191:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:188:13-73
+activity#com.yhrjkf.woyundong.activity.SignatureActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:194:9-200:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:197:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:196:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:198:13-42
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:195:13-75
+activity#com.yhrjkf.woyundong.activity.StarshineActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:201:9-207:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:204:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:203:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:205:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:202:13-75
+activity#com.yhrjkf.woyundong.activity.IntegralActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:208:9-214:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:211:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:210:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:212:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:209:13-74
+activity#com.yhrjkf.woyundong.activity.ProductActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:215:9-221:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:218:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:217:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:219:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:216:13-73
+activity#com.yhrjkf.woyundong.activity.AboutUsActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:222:10-228:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:225:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:224:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:226:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:223:13-73
+activity#com.yhrjkf.woyundong.activity.TechnologyActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:229:9-235:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:232:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:231:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:233:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:230:13-76
+activity#com.yhrjkf.woyundong.activity.RuleActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:236:9-242:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:239:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:238:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:240:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:237:13-70
+activity#com.yhrjkf.woyundong.activity.HistoryDayActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:244:10-250:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:247:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:246:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:248:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:245:13-76
+activity#com.yhrjkf.woyundong.activity.HistoryMapActivity
+ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:251:9-257:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:254:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:253:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:255:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport3\app\src\main\AndroidManifest.xml:252:13-76
+service#com.vise.xsnow.download.core.DownService
+ADDED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport3\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:20:9-76
+	android:name
+		ADDED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport3\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:20:18-73
+uses-permission#android.permission.DISABLE_KEYGUARD
+ADDED from [com.vise.xiaoyaoyou:viseutils:1.0.0] C:\Users\Administrator\.android\build-cache\f8d2671a05cb70149493cbf2aeb5165f76eed9d6\output\AndroidManifest.xml:12:5-75
+	android:name
+		ADDED from [com.vise.xiaoyaoyou:viseutils:1.0.0] C:\Users\Administrator\.android\build-cache\f8d2671a05cb70149493cbf2aeb5165f76eed9d6\output\AndroidManifest.xml:12:22-72

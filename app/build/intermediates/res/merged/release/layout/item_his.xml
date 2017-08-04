@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:background="@color/transparent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/item_his_ll_style"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:layout_margin="3dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="40dp"
+            android:background="@drawable/circle_btn_style"
+            android:text="1次"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:id="@+id/ih_id"
+            android:gravity="center"
+            android:layout_height="40dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:id="@+id/ih_tv_time"
+            android:gravity="center"
+            android:text="0:12:00时长"
+            android:textSize="18sp"
+            android:textColor="@color/grayfont"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/ih_tv_caloria"
+            android:gravity="center"
+            android:text="90千卡"
+            android:textSize="18sp"
+            android:textColor="@color/grayfont"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/ih_tv_distance"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0.36km"
+            android:textColor="@color/grayfont"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</LinearLayout>

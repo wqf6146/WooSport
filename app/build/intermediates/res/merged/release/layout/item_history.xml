@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        >
+        <TextView 
+            android:id="@+id/tv_item_cishu"
+            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:textColor="#000000"
+            />
+        <TextView 
+            android:id="@+id/tv_item_time"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="用时2000秒"
+            android:textColor="#000000"
+            />
+         <TextView 
+            android:id="@+id/tv_item_reliang"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="消耗热量3千卡"
+            android:textColor="#000000"
+            />
+         <TextView 
+            android:id="@+id/tv_item_juli"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="距离0.1km"
+            android:textColor="#000000"
+            />
+    </LinearLayout>
+
+</LinearLayout>

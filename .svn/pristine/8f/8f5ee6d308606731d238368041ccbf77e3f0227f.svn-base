@@ -1,0 +1,95 @@
+package com.yhrjkf.woyundong.fragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.vise.log.ViseLog;
+import com.vise.xsnow.net.callback.ApiCallback;
+import com.vise.xsnow.net.exception.ApiException;
+import com.vise.xsnow.net.mode.CacheResult;
+import com.yhrjkf.woyundong.BaseFragment;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.adapter.ConsultPagerAdapter;
+import com.yhrjkf.woyundong.bean.CNewsBean;
+import com.yhrjkf.woyundong.http.Api;
+import com.yhrjkf.woyundong.http.WooSportApi;
+import com.yhrjkf.woyundong.utils.RxUtils;
+
+import butterknife.Bind;
+
+public class ConsultFragment extends BaseFragment {
+
+	@Bind(R.id.fc_tablayout)
+	TabLayout mTablayout;
+
+	@Bind(R.id.fc_viewpager)
+	ViewPager mViewPager;
+
+	ConsultPagerAdapter mAdapter;
+
+	public static ConsultFragment getInstance() {
+		ConsultFragment fragment = new ConsultFragment();
+		fragment.setArguments(new Bundle());
+		return fragment;
+	}
+
+	@Override
+	protected int getFragmentLayoutId() {
+		return R.layout.fragment_consult;
+	}
+
+	@Override
+	protected void initView(View contentView) {
+
+	}
+
+	@Override
+	protected void initData() {
+		init();
+	}
+
+	@Override
+	protected void bindEvent() {
+
+	}
+
+	private void init() {
+		WooSportApi.getInstance().startGetCatList(mContext, "1", new ApiCallback<CacheResult<CNewsBean>>() {
+			@Override
+			public void onStart() {
+
+			}
+
+			@Override
+			public void onError(ApiException e) {
+				ViseLog.e(e);
+			}
+
+			@Override
+			public void onCompleted() {
+
+			}
+
+			@Override
+			public void onNext(CacheResult<CNewsBean> cNewsBean) {
+				if (cNewsBean == null) {
+					return;
+				}
+				mAdapter = new ConsultPagerAdapter(getChildFragmentManager(), cNewsBean.getCacheData().getData());
+				mViewPager.setAdapter(mAdapter);
+				mViewPager.setOffscreenPageLimit(3);
+				mTablayout.setupWithViewPager(mViewPager);
+			}
+		});
+	}
+}

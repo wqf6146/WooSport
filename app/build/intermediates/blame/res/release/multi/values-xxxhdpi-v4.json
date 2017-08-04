@@ -1,0 +1,86 @@
+[
+    {
+        "outputFile": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-xxxhdpi-v4\\values-xxxhdpi-v4.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\values-xxxhdpi\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 113,
+                    "endColumn": 55,
+                    "endOffset": 164
+                },
+                "from": {
+                    "file": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\values-xxxhdpi\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 169,
+                    "endColumn": 46,
+                    "endOffset": 211
+                },
+                "from": {
+                    "file": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\values-xxxhdpi\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 216,
+                    "endColumn": 39,
+                    "endOffset": 251
+                },
+                "from": {
+                    "file": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\values-xxxhdpi\\dimens.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 350,
+                        "endColumn": 39,
+                        "endOffset": 385
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 256,
+                    "endColumn": 42,
+                    "endOffset": 294
+                },
+                "from": {
+                    "file": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\values-xxxhdpi\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 299,
+                    "endColumn": 48,
+                    "endOffset": 343
+                },
+                "from": {
+                    "file": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\values-xxxhdpi\\dimens.xml"
+                }
+            }
+        ]
+    }
+]

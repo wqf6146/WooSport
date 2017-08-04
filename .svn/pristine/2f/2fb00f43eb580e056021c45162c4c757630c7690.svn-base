@@ -1,0 +1,173 @@
+package com.yhrjkf.woyundong.tools;
+
+import android.graphics.Bitmap;
+
+import com.amap.api.location.AMapLocation;
+
+public class Connectors {
+
+//
+//	private static String level;
+//	private static String xp;
+//	private static String id;
+//	private static String phone;
+//	private static String password;
+//	private static String email;
+//	private static String avatar;
+//	private static String point;
+//	private static String sex;
+//	private static String height;
+//	private static String weight;
+//	private static String birthday;
+//	private static String bmi;
+//	private static String realname;
+//	private static String motto;
+//	private static Bitmap touxiang;
+//	private static AMapLocation amapLocation;
+//	private static Boolean boolean1 = true;
+//
+//	public static Boolean getBoolean1() {
+//		return boolean1;
+//	}
+//
+//	public static void setBoolean1(Boolean boolean1) {
+//		Connectors.boolean1 = boolean1;
+//	}
+//
+//	public static AMapLocation getAmapLocation() {
+//		return amapLocation;
+//	}
+//
+//	public static void setAmapLocation(AMapLocation amapLocation) {
+//		Connectors.amapLocation = amapLocation;
+//	}
+//
+//	public static String getPassword() {
+//		return password;
+//	}
+//
+//	public static void setPassword(String password) {
+//		Connectors.password = password;
+//	}
+//
+//	public static Bitmap getTouxiang() {
+//		return touxiang;
+//	}
+//
+//	public static void setTouxiang(Bitmap touxiang) {
+//		Connectors.touxiang = touxiang;
+//	}
+//
+//	public static String getEmail() {
+//		return email;
+//	}
+//
+//	public static void setEmail(String email) {
+//		Connectors.email = email;
+//	}
+//
+//	public static String getAvatar() {
+//		return avatar;
+//	}
+//
+//	public static void setAvatar(String avatar) {
+//		Connectors.avatar = avatar;
+//	}
+//
+//	public static String getPoint() {
+//		return point;
+//	}
+//
+//	public static void setPoint(String point) {
+//		Connectors.point = point;
+//	}
+//
+//	public static String getSex() {
+//		return sex;
+//	}
+//
+//	public static void setSex(String sex) {
+//		Connectors.sex = sex;
+//	}
+//
+//	public static String getHeight() {
+//		return height;
+//	}
+//
+//	public static void setHeight(String height) {
+//		Connectors.height = height;
+//	}
+//
+//	public static String getWeight() {
+//		return weight;
+//	}
+//
+//	public static void setWeight(String weight) {
+//		Connectors.weight = weight;
+//	}
+//
+//	public static String getBirthday() {
+//		return birthday;
+//	}
+//
+//	public static void setBirthday(String birthday) {
+//		Connectors.birthday = birthday;
+//	}
+//
+//	public static String getBmi() {
+//		return bmi;
+//	}
+//
+//	public static void setBmi(String bmi) {
+//		Connectors.bmi = bmi;
+//	}
+//
+//	public static String getRealname() {
+//		return realname;
+//	}
+//
+//	public static void setRealname(String realname) {
+//		Connectors.realname = realname;
+//	}
+//
+//	public static String getMotto() {
+//		return motto;
+//	}
+//
+//	public static void setMotto(String motto) {
+//		Connectors.motto = motto;
+//	}
+//
+//	public static String getLevel() {
+//		return level;
+//	}
+//
+//	public static void setLevel(String level) {
+//		Connectors.level = level;
+//	}
+//
+//	public static String getXp() {
+//		return xp;
+//	}
+//
+//	public static void setXp(String xp) {
+//		Connectors.xp = xp;
+//	}
+//
+//	public static String getId() {
+//		return id;
+//	}
+//
+//	public static void setId(String id) {
+//		Connectors.id = id;
+//	}
+//
+//	public static String getphone() {
+//		return phone;
+//	}
+//
+//	public static void setphone(String phone) {
+//		Connectors.phone = phone;
+//	}
+
+}

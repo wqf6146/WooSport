@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\calendarlibrary\\build\\intermediates\\res\\merged\\debug\\color\\mcv_text_date_dark.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\calendarlibrary\\src\\main\\res\\color\\mcv_text_date_dark.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport3\\calendarlibrary\\build\\intermediates\\res\\merged\\debug\\color\\mcv_text_date_light.xml",
+        "source": "E:\\WorkPlaces\\WoSport3\\calendarlibrary\\src\\main\\res\\color\\mcv_text_date_light.xml"
+    }
+]

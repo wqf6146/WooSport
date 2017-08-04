@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_template_big_media.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\layout-v11\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\layout-v11\\notification_media_action.xml"
+    }
+]

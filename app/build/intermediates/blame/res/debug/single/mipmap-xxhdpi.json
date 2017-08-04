@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\icon_arrow_up.png",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\mipmap-xxhdpi\\icon_arrow_up.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\icon_arrow_down.png",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\mipmap-xxhdpi\\icon_arrow_down.png"
+    }
+]

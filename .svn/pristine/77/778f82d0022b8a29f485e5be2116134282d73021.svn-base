@@ -1,0 +1,447 @@
+package com.yhrjkf.woyundong.fragment;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.util.Log;
+import android.util.Xml;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.amap.api.maps2d.model.LatLng;
+import com.baidu.apistore.sdk.ApiCallBack;
+import com.baidu.apistore.sdk.ApiStoreSDK;
+import com.baidu.apistore.sdk.network.Parameters;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.vise.log.ViseLog;
+import com.vise.xsnow.event.EventSubscribe;
+import com.vise.xsnow.event.IEvent;
+import com.vise.xsnow.loader.ILoader;
+import com.vise.xsnow.loader.LoaderFactory;
+import com.vise.xsnow.net.callback.ApiCallback;
+import com.vise.xsnow.net.exception.ApiException;
+import com.vise.xsnow.net.mode.CacheResult;
+import com.yhrjkf.woyundong.BaseFragment;
+import com.yhrjkf.woyundong.activity.IntegralActivity;
+import com.yhrjkf.woyundong.activity.JianBuXingActivity;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.activity.StarshineActivity;
+import com.yhrjkf.woyundong.bean.DiscoverBean;
+import com.yhrjkf.woyundong.bean.WeatherBean;
+import com.yhrjkf.woyundong.event.JianBuXingEvent;
+import com.yhrjkf.woyundong.http.WooSportApi;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+import com.youth.banner.Transformer;
+import com.youth.banner.loader.ImageLoader;
+
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.Bind;
+
+public class CircleFragment extends BaseFragment implements OnClickListener {
+
+	private LinearLayout ll_home_jbx, ll_home_xgdd, ll_home_jfly;
+	TextView tv_city, tv_pm, tv_wendu, tv_kqzl;
+	private List<String> imageUrls;
+
+	@Bind(R.id.fh_banner)
+	Banner mBanner;
+
+	private class BannerImageLoader extends ImageLoader{
+		@Override
+		public void displayImage(Context context, Object o, ImageView imageView) {
+			LoaderFactory.getLoader().loadNet(imageView, (String) o,
+					new ILoader.Options(R.drawable.biaoti, R.drawable.biaoti));
+		}
+	}
+
+	@EventSubscribe
+	public void showJianBuxingFragment(IEvent event){
+		if (event != null && event instanceof JianBuXingEvent) {
+			ViseLog.i("Receive Event Message:" + ((JianBuXingEvent) event).getShowId());
+			Intent intent = new Intent();
+			intent.setClass(getActivity(), JianBuXingActivity.class);
+			intent.putExtra("tab",  ((JianBuXingEvent) event).getShowId());
+			startActivity(intent);
+		}
+	}
+
+	@Override
+	protected void initView(View contentView) {
+		setOnResumeRegisterBus(true);
+		ll_home_jbx = (LinearLayout) contentView.findViewById(R.id.ll_home_jbx);
+		ll_home_xgdd = (LinearLayout) contentView.findViewById(R.id.ll_home_xgdd);
+		ll_home_jfly = (LinearLayout) contentView.findViewById(R.id.ll_home_jfly);
+		tv_city = (TextView) contentView.findViewById(R.id.tv_city);
+		tv_pm = (TextView) contentView.findViewById(R.id.tv_pm);
+		tv_wendu = (TextView) contentView.findViewById(R.id.tv_wendu);
+		tv_kqzl = (TextView) contentView.findViewById(R.id.tv_kqzl);
+	}
+
+	@Override
+	protected void initData() {
+		WooSportApi.getInstance().startGetDiscover(mContext, new ApiCallback<CacheResult<DiscoverBean>>() {
+			@Override
+			public void onStart() {
+
+			}
+
+			@Override
+			public void onError(ApiException e) {
+				ViseLog.e(e);
+			}
+
+			@Override
+			public void onCompleted() {
+
+			}
+
+			@Override
+			public void onNext(CacheResult<DiscoverBean> discoverBeanCacheResult) {
+				if (discoverBeanCacheResult == null){
+					return;
+				}
+				List<DiscoverBean.DataBean> data = discoverBeanCacheResult.getCacheData().getData();
+				imageUrls = new ArrayList<String>();
+				for (int i=0; i<data.size();i++){
+					imageUrls.add(data.get(i).getImage());
+				}
+
+				mBanner.setImages(imageUrls).setImageLoader(new BannerImageLoader()).start();
+			}
+		});
+
+		getWeatherMsg();
+	}
+	private void getWeatherMsg() {
+//		WooSportApi.getInstance().startGetWeather(mContext,
+//				new ApiCallback<WeatherBean>() {
+//					@Override
+//					public void onStart() {
+//
+//					}
+//
+//					@Override
+//					public void onError(ApiException e) {
+//						ViseLog.e(e);
+//					}
+//
+//					@Override
+//					public void onCompleted() {
+//
+//					}
+//
+//					@Override
+//					public void onNext(WeatherBean weatherBean) {
+//						if (weatherBean.getError_code() == 0){
+//							WeatherBean.ResultBean.TodayBean todayBean = weatherBean.getResult().getToday();
+//							tv_city.setText(todayBean.getCity());
+//							tv_kqzl.setText(todayBean.getWeather());
+//							tv_pm.setText("霾:"+todayBean.getWeather_id().getFb());
+//							tv_wendu.setText(weatherBean.getResult().getSk().getTemp()+"度");
+//						}
+//					}
+//				});
+		WooSportApi.getInstance().startGetXmlWeather(mContext, new ApiCallback<String>() {
+			@Override
+			public void onStart() {
+
+			}
+
+			@Override
+			public void onError(ApiException e) {
+				ViseLog.e(e);
+			}
+
+			@Override
+			public void onCompleted() {
+
+			}
+
+			@Override
+			public void onNext(String s) {
+				ViseLog.e(s);
+				parseXMLWithPull(s);
+			}
+		});
+	}
+
+	private void parseXMLWithPull(String xmlData){
+		try {
+			XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+			XmlPullParser xmlPullParser = factory.newPullParser();
+			//设置输入的内容
+			xmlPullParser.setInput(new StringReader(xmlData));
+			//获取当前解析事件，返回的是数字
+			int eventType = xmlPullParser.getEventType();
+
+			while (eventType != (XmlPullParser.END_DOCUMENT)){
+				String nodeName = xmlPullParser.getName();
+				switch (eventType){
+					//开始解析XML
+					case XmlPullParser.START_TAG:{
+						//nextText()用于获取结点内的具体内容
+						if("city".equals(nodeName)){
+							tv_city.setText(xmlPullParser.nextText());
+						}
+						else if("quality".equals(nodeName)){
+							tv_kqzl.setText(xmlPullParser.nextText());
+						}else if("pm25".equals(nodeName)){
+							tv_pm.setText("pm:"+xmlPullParser.nextText());
+						}else if("wendu".equals(nodeName)){
+							tv_wendu.setText(xmlPullParser.nextText()+"度");
+						}
+					} break;
+					//结束解析
+					case XmlPullParser.END_TAG:
+						break;
+					default: break;
+				}
+				//下一个
+				eventType = xmlPullParser.next();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	protected void bindEvent() {
+		ll_home_xgdd.setOnClickListener(this);
+		ll_home_jbx.setOnClickListener(this);
+		ll_home_jfly.setOnClickListener(this);
+	}
+
+
+	@Override
+	protected int getFragmentLayoutId() {
+		return R.layout.fragment_home;
+	}
+
+//	@Override
+//	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//			Bundle savedInstanceState) {
+//		// TODO Auto-generated method stub
+//		view = inflater.inflate(R.layout.fragment_home, null);
+//		ll_home_jbx = (LinearLayout) view.findViewById(R.id.ll_home_jbx);
+//		ll_home_xgdd = (LinearLayout) view.findViewById(R.id.ll_home_xgdd);
+//		ll_home_jfly = (LinearLayout) view.findViewById(R.id.ll_home_jfly);
+//		tv_city = (TextView) view.findViewById(R.id.tv_city);
+//		tv_pm = (TextView) view.findViewById(R.id.tv_pm);
+//		tv_wendu = (TextView) view.findViewById(R.id.tv_wendu);
+//		tv_kqzl = (TextView) view.findViewById(R.id.tv_kqzl);
+//
+//		ll_home_xgdd.setOnClickListener(this);
+//		ll_home_jbx.setOnClickListener(this);
+//		ll_home_jfly.setOnClickListener(this);
+//		infos = new ArrayList<ADInfo>();
+//		Log.i("length", infos.size() + "");
+//		mAdView = (ImageCycleView) view.findViewById(R.id.ad_view);
+//		HttpUtils httpUtils = new HttpUtils();
+//		httpUtils.send(HttpMethod.POST, AppConfig.EVENT,
+//				new RequestCallBack<String>() {
+//					@Override
+//					public void onFailure(HttpException arg0, String arg1) {
+//						// TODO Auto-generated method stub
+//					}
+//
+//					@Override
+//					public void onSuccess(ResponseInfo<String> responseInfo) {
+//						// TODO Auto-generated method stub
+//						Log.i("result", responseInfo.result);
+//						rqlist = new ArrayList<HashMap<String, String>>();
+//						try {
+//							JSONObject jsonObject = new JSONObject(
+//									responseInfo.result);
+//							JSONArray jsonArray = jsonObject
+//									.getJSONArray("Data");
+//							for (int i = 0; i < jsonArray.length(); i++) {
+//								JSONObject jsob = jsonArray.getJSONObject(i);
+//								HashMap<String, String> hm = new HashMap<String, String>();
+//								hm.put("image", jsob.getString("image"));
+//								rqlist.add(hm);
+//							}
+//							Message message = new Message();
+//							message.arg1 = 0;
+//							handler.sendMessage(message);
+//
+//						} catch (JSONException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//
+//					}
+//				});
+//		handler = new Handler() {
+//			@Override
+//			public void handleMessage(Message msg) {
+//				// TODO Auto-generated method stub
+//				super.handleMessage(msg);
+//				imageUrls = new String[rqlist.size()];
+//				if (msg.arg1 == 0) {
+//					for (int i = 0; i < rqlist.size(); i++) {
+//						imageUrls[i] = rqlist.get(i).get("image");
+//						Log.i("image", imageUrls[0]);
+//					}
+//					for (int i = 0; i < imageUrls.length; i++) {
+//						ADInfo info = new ADInfo();
+//						info.setUrl(imageUrls[i]);
+//						info.setContent("top-->" + i);
+//						infos.add(info);
+//					}
+//					mAdView.setImageResources(infos, mAdCycleViewListener);
+//
+//				}
+//			}
+//		};
+//
+//		apiTest();
+//
+//		return view;
+//	}
+
+	@SuppressWarnings("unchecked")
+	private void apiTest() {
+		// TODO Auto-generated method stub
+		Parameters para = new Parameters();
+		para.put("city", "baoding");
+		ApiStoreSDK.execute("http://apis.baidu.com/heweather/weather/free",
+				ApiStoreSDK.GET, para, new ApiCallBack() {
+					@Override
+					public void onSuccess(int status, String responseString) {
+						// TODO Auto-generated method stub
+						Log.i("responseString", responseString);
+						try {
+							JSONObject jsonObject = new JSONObject(
+									responseString);
+							JSONArray jsonArray = jsonObject
+									.getJSONArray("HeWeather data service 3.0");
+							JSONObject jsonObject2 = jsonArray.getJSONObject(0);
+							JSONObject jsonObject3 = jsonObject2
+									.getJSONObject("aqi");
+							JSONObject jsonObject4 = jsonObject3
+									.getJSONObject("city");
+							String kqzl = jsonObject4.getString("qlty");
+							String pm = jsonObject4.getString("pm25");
+							JSONObject jsonObject5 = jsonObject2
+									.getJSONObject("basic");
+							String city = jsonObject5.getString("city");
+							JSONObject jsonObject6 = jsonObject2
+									.getJSONObject("now");
+							String wendu = jsonObject6.getString("tmp");
+							// , , ,
+							tv_city.setText(city);
+							tv_pm.setText("PM2.5:" + pm + "μg/m³");
+							tv_wendu.setText(wendu + "℃");
+							tv_kqzl.setText(kqzl);
+
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
+					}
+
+					@Override
+					public void onComplete() {
+						// TODO Auto-generated method stub
+					}
+
+					@Override
+					public void onError(int status, String responseString,
+							Exception e) {
+					}
+
+				});
+
+	}
+
+//	public ImageLoader imageLoader = ImageLoader.getInstance();
+
+//	private ImageCycleViewListener mAdCycleViewListener = new ImageCycleViewListener() {
+//
+//		@Override
+//		public void onImageClick(ADInfo info, int position, View imageView) {
+//			// Toast.makeText(getActivity(), "content->" + info.getContent(),
+//			// Toast.LENGTH_SHORT).show();
+//		}
+//
+//		@Override
+//		public void displayImage(String imageURL, ImageView imageView) {
+//			imageLoader.init(ImageLoaderConfiguration
+//					.createDefault(getActivity()));
+//			ImageLoader.getInstance().displayImage(imageURL, imageView);// 使用ImageLoader对图片进行加装！
+//		}
+//	};
+//
+//	public void onResume() {
+//		super.onResume();
+//		mAdView.startImageCycle();
+//	};
+//
+//	@Override
+//	public void onPause() {
+//		// TODO Auto-generated method stub
+//		super.onPause();
+//		mAdView.pushImageCycle();
+//	}
+
+	@Override
+	public void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+//		mAdView.pushImageCycle();
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.ll_home_jbx:
+			Intent intent = new Intent();
+			intent.setClass(getActivity(), JianBuXingActivity.class);
+			intent.putExtra("tab", 0);
+			startActivity(intent);
+			break;
+		case R.id.ll_home_xgdd:
+			Intent intent2 = new Intent();
+			intent2.setClass(getActivity(), StarshineActivity.class);
+			startActivity(intent2);
+			// Uri uri = Uri.parse(AppConfig.STARTSHINE);
+			// Intent it = new Intent(Intent.ACTION_VIEW, uri);
+			// startActivity(it);
+			break;
+		case R.id.ll_home_jfly:
+			Intent intent3 = new Intent();
+			intent3.setClass(getActivity(), IntegralActivity.class);
+			startActivity(intent3);
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
+}

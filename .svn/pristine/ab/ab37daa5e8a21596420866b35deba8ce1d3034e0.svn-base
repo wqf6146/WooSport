@@ -1,0 +1,30 @@
+package com.yhrjkf.woyundong.adapter;
+
+import com.bumptech.glide.Glide;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.bean.RankBean;
+import com.yhrjkf.woyundong.view.CircleImageView;
+
+import java.util.List;
+
+/**
+ * Created by Administrator on 2017/3/14.
+ */
+
+public class RankAdapter extends BaseQuickAdapter<RankBean.DataBean,BaseViewHolder> {
+
+    public RankAdapter( List<RankBean.DataBean> dataBeen){
+        super(R.layout.item_rank,dataBeen);
+    }
+
+    @Override
+    protected void convert(BaseViewHolder baseViewHolder, RankBean.DataBean dataBean) {
+        baseViewHolder.setText(R.id.ir_tv_rankid,String.valueOf(baseViewHolder.getLayoutPosition()+1));
+        Glide.with(mContext).load(dataBean.getAvatar()).into(
+                (CircleImageView)baseViewHolder.getView(R.id.ir_img_myimg));
+        baseViewHolder.setText(R.id.ir_tv_myname,dataBean.getName());
+        baseViewHolder.setText(R.id.ir_tv_mydistance,String.valueOf(dataBean.getDistance()));
+    }
+}

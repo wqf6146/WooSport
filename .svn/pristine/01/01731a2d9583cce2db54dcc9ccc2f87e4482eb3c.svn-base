@@ -1,0 +1,54 @@
+package com.yhrjkf.woyundong.activity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+
+import com.jaeger.library.StatusBarUtil;
+import com.yhrjkf.woyundong.BaseActivity;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.fragment.MainFragment;
+import com.yhrjkf.woyundong.service.SportTimerService;
+
+/**
+ * Created by Administrator on 2017/2/27.
+ */
+
+public class MainActivity extends BaseActivity {
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void bindEvent() {
+
+    }
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_base);
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.bluefont));
+        if (savedInstanceState==null){
+            loadRootFragment(R.id.ab_container, MainFragment.getInstance());
+        }
+
+        if (getIntent().getBooleanExtra(SportTimerService.ACTION_RESTART,false))
+            reStartModule();
+    }
+
+    private void reStartModule() {
+        Intent intent = new Intent();
+        intent.putExtra(SportTimerService.ACTION_RESTART,true);
+        intent.setClass(getApplicationContext(),
+                JianBuXingActivity.class);
+        startActivity(intent);
+    }
+}

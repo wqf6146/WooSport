@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="E:\WorkPlaces\WoSport3\xsnow\src\main\assets"/><source path="E:\WorkPlaces\WoSport3\xsnow\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\WorkPlaces\WoSport3\xsnow\src\debug\assets"/></dataSet></merger>

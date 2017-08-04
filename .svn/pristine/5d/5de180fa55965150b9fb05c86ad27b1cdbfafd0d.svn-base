@@ -1,0 +1,60 @@
+// Generated code from Butter Knife. Do not modify!
+package com.yhrjkf.woyundong.fragment;
+
+import android.view.View;
+import butterknife.ButterKnife.Finder;
+import butterknife.ButterKnife.ViewBinder;
+
+public class MainFragment$$ViewBinder<T extends com.yhrjkf.woyundong.fragment.MainFragment> implements ViewBinder<T> {
+  @Override public void bind(final Finder finder, final T target, Object source) {
+    View view;
+    view = finder.findRequiredView(source, 2131624110, "field 'viewPager'");
+    target.viewPager = finder.castView(view, 2131624110, "field 'viewPager'");
+    view = finder.findRequiredView(source, 2131624112, "field 'll_home'");
+    target.ll_home = finder.castView(view, 2131624112, "field 'll_home'");
+    view = finder.findRequiredView(source, 2131624115, "field 'll_faxian'");
+    target.ll_faxian = finder.castView(view, 2131624115, "field 'll_faxian'");
+    view = finder.findRequiredView(source, 2131624120, "field 'img_store'");
+    target.img_store = finder.castView(view, 2131624120, "field 'img_store'");
+    view = finder.findRequiredView(source, 2131624122, "field 'll_my'");
+    target.ll_my = finder.castView(view, 2131624122, "field 'll_my'");
+    view = finder.findRequiredView(source, 2131624119, "field 'll_zixun'");
+    target.ll_zixun = finder.castView(view, 2131624119, "field 'll_zixun'");
+    view = finder.findRequiredView(source, 2131624118, "field 'img_run'");
+    target.img_run = finder.castView(view, 2131624118, "field 'img_run'");
+    view = finder.findRequiredView(source, 2131624113, "field 'img_circle'");
+    target.img_circle = finder.castView(view, 2131624113, "field 'img_circle'");
+    view = finder.findRequiredView(source, 2131624116, "field 'img_discover'");
+    target.img_discover = finder.castView(view, 2131624116, "field 'img_discover'");
+    view = finder.findRequiredView(source, 2131624123, "field 'img_woo'");
+    target.img_woo = finder.castView(view, 2131624123, "field 'img_woo'");
+    view = finder.findRequiredView(source, 2131624114, "field 'tv_zx'");
+    target.tv_zx = finder.castView(view, 2131624114, "field 'tv_zx'");
+    view = finder.findRequiredView(source, 2131624117, "field 'tv_hd'");
+    target.tv_hd = finder.castView(view, 2131624117, "field 'tv_hd'");
+    view = finder.findRequiredView(source, 2131624121, "field 'tv_xx'");
+    target.tv_xx = finder.castView(view, 2131624121, "field 'tv_xx'");
+    view = finder.findRequiredView(source, 2131624124, "field 'tv_my'");
+    target.tv_my = finder.castView(view, 2131624124, "field 'tv_my'");
+    view = finder.findRequiredView(source, 2131624111, "field 'mTabLayout'");
+    target.mTabLayout = finder.castView(view, 2131624111, "field 'mTabLayout'");
+  }
+
+  @Override public void unbind(T target) {
+    target.viewPager = null;
+    target.ll_home = null;
+    target.ll_faxian = null;
+    target.img_store = null;
+    target.ll_my = null;
+    target.ll_zixun = null;
+    target.img_run = null;
+    target.img_circle = null;
+    target.img_discover = null;
+    target.img_woo = null;
+    target.tv_zx = null;
+    target.tv_hd = null;
+    target.tv_xx = null;
+    target.tv_my = null;
+    target.mTabLayout = null;
+  }
+}

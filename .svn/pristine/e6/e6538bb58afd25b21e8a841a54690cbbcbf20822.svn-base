@@ -1,0 +1,98 @@
+package com.yhrjkf.woyundong.fragment;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+
+import android.view.View;
+import android.widget.ListView;
+
+import com.vise.log.ViseLog;
+import com.vise.xsnow.net.callback.ApiCallback;
+import com.vise.xsnow.net.exception.ApiException;
+import com.vise.xsnow.net.mode.CacheResult;
+import com.yhrjkf.woyundong.BaseFragment;
+import com.yhrjkf.woyundong.BaseToolbarFragment;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.adapter.IndentCusAdapter;
+import com.yhrjkf.woyundong.bean.NewBean;
+import com.yhrjkf.woyundong.http.Api;
+import com.yhrjkf.woyundong.http.WooSportApi;
+import com.yhrjkf.woyundong.utils.RxUtils;
+
+import butterknife.Bind;
+
+public class NewDetailFragment extends BaseFragment {
+
+	String TAG = NewDetailFragment.class.getName();
+
+	@Bind(R.id.lv_new)
+	ListView mListView;
+
+	IndentCusAdapter mAdapter;
+
+
+	public static String TYPE="type";
+
+	//标识
+	String mType;
+
+	public static NewDetailFragment getInstance() {
+		NewDetailFragment fragment = new NewDetailFragment();
+		Bundle bundle = new Bundle();
+		fragment.setArguments(bundle);
+		return fragment;
+	}
+
+
+	@Override
+	protected int getFragmentLayoutId() {
+		return R.layout.fragment_new;
+	}
+
+	@Override
+	protected void initView(View contentView) {
+
+	}
+
+	@Override
+	protected void initData() {
+		mType = getArguments().getString(TYPE);
+		init();
+	}
+
+	@Override
+	protected void bindEvent() {
+
+	}
+
+	private void init() {
+		WooSportApi.getInstance().startGetNewInfo(mContext, mType, new ApiCallback<CacheResult<NewBean>>() {
+			@Override
+			public void onStart() {
+
+			}
+
+			@Override
+			public void onError(ApiException e) {
+				ViseLog.e(e);
+			}
+
+			@Override
+			public void onCompleted() {
+
+			}
+
+			@Override
+			public void onNext(CacheResult<NewBean> newBean) {
+                if (newBean == null){
+                    return;
+                }
+				mAdapter = new IndentCusAdapter(getContext(),newBean.getCacheData().getData());
+				mListView.setAdapter(mAdapter);
+			}
+		});
+	}
+
+
+
+}

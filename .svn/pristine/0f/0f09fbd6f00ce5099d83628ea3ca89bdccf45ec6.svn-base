@@ -1,0 +1,47 @@
+// Generated code from Fit. Do not modify!
+package com.yhrjkf.woyundong.bean;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import fit.MM;
+import fit.internal.Utils;
+import java.lang.Override;
+import java.lang.String;
+
+public class CSportInfoBean_Preference implements MM<CSportInfoBean> {
+  @Override
+  public Editor save(Context context, String name, CSportInfoBean obj) {
+    SharedPreferences.Editor editor = Utils.getSharedPreferenceEditor(context, name);
+    editor.putInt("Calorie_unit", obj.getCalorie_unit());
+    editor.putString("Start_time", obj.getStart_time());
+    editor.putLong("Calorie", Double.doubleToLongBits( obj.getCalorie()));
+    editor.putString("Path", obj.getPath());
+    editor.putLong("Distance", Double.doubleToLongBits( obj.getDistance()));
+    editor.putString("Time", obj.getTime());
+    editor.putString("Finish_time", obj.getFinish_time());
+    editor.putString("Types", obj.getTypes());
+    return editor;
+  }
+
+  @Override
+  public CSportInfoBean get(Context context, String name) {
+    SharedPreferences sharedPreferences = context.getSharedPreferences(name, Context.MODE_PRIVATE);
+    CSportInfoBean obj = new CSportInfoBean();
+    obj.setTime( sharedPreferences.getString("Time",null));
+    obj.setTypes( sharedPreferences.getString("Types",null));
+    obj.setPath( sharedPreferences.getString("Path",null));
+    obj.setFinish_time( sharedPreferences.getString("Finish_time",null));
+    obj.setStart_time( sharedPreferences.getString("Start_time",null));
+    obj.setDistance( Double.longBitsToDouble(sharedPreferences.getLong("Distance", 0)));
+    obj.setCalorie( Double.longBitsToDouble(sharedPreferences.getLong("Calorie", 0)));
+    obj.setCalorie_unit( sharedPreferences.getInt("Calorie_unit",0));
+    return obj;
+  }
+
+  @Override
+  public Editor clear(Context context, String name) {
+    SharedPreferences.Editor editor = Utils.getSharedPreferenceEditor(context, name).clear();
+    return editor;
+  }
+}

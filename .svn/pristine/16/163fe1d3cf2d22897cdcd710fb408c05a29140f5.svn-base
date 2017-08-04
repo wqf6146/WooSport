@@ -1,0 +1,262 @@
+package com.yhrjkf.woyundong.activity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.vise.xsnow.cache.SpCache;
+import com.vise.xsnow.net.callback.ApiCallback;
+import com.vise.xsnow.net.exception.ApiException;
+import com.yhrjkf.woyundong.App;
+import com.yhrjkf.woyundong.BaseActivity;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.bean.LoginBean;
+import com.yhrjkf.woyundong.http.Api;
+import com.yhrjkf.woyundong.http.WooSportApi;
+import com.yhrjkf.woyundong.tools.AppConfig;
+import com.yhrjkf.woyundong.tools.Connectors;
+import com.yhrjkf.woyundong.utils.RxUtils;
+import com.yhrjkf.woyundong.utils.WooConfig;
+
+public class SetActivity extends BaseActivity implements OnClickListener {
+
+	private RelativeLayout rl_set_yjfk, rl_set_cpjs, rl_set_gywm, rl_set_jszc;
+	private TextView tv_set_tbydsj, tv_set_bb;
+
+	private LinearLayout ll_set_back;
+	Toast mToast;
+
+	private CheckBox cheb_set;
+
+	@Override
+	protected void initData() {
+		//*********要改
+		if (App.newInstance().getVoiceTip()) {
+			cheb_set.setChecked(true);
+		} else {
+			cheb_set.setChecked(false);
+		}
+
+		PackageManager manager;
+		PackageInfo info = null;
+		manager = this.getPackageManager();
+		try {
+			info = manager.getPackageInfo(this.getPackageName(), 0);
+		} catch (NameNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		tv_set_bb.setText("V" + info.versionName);
+	}
+
+	@Override
+	protected void initView() {
+		rl_set_yjfk = (RelativeLayout) findViewById(R.id.rl_set_yjfk);
+		ll_set_back = (LinearLayout) findViewById(R.id.ll_set_back);
+		tv_set_tbydsj = (TextView) findViewById(R.id.tv_set_tbydsj);
+		rl_set_cpjs = (RelativeLayout) findViewById(R.id.rl_set_cpjs);
+		rl_set_gywm = (RelativeLayout) findViewById(R.id.rl_set_gywm);
+		rl_set_jszc = (RelativeLayout) findViewById(R.id.rl_set_jszc);
+
+		cheb_set = (CheckBox) findViewById(R.id.cheb_set);
+		tv_set_bb = (TextView) findViewById(R.id.tv_set_bb);
+	}
+
+	@Override
+	protected void bindEvent() {
+		cheb_set.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+				// TODO Auto-generated method stub
+				App.newInstance().setVoiceTip(arg1);
+			}
+		});
+		rl_set_yjfk.setOnClickListener(this);
+		ll_set_back.setOnClickListener(this);
+		tv_set_tbydsj.setOnClickListener(this);
+		rl_set_cpjs.setOnClickListener(this);
+		rl_set_gywm.setOnClickListener(this);
+		rl_set_jszc.setOnClickListener(this);
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_set);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.rl_set_cpjs:
+			Intent intent1 = new Intent();
+			intent1.setClass(getApplicationContext(), ProductActivity.class);
+			startActivity(intent1);
+
+			break;
+		case R.id.rl_set_gywm:
+			Intent intent2 = new Intent();
+			intent2.setClass(getApplicationContext(), AboutUsActivity.class);
+			startActivity(intent2);
+			break;
+		case R.id.ll_set_back:
+			finish();
+			break;
+		case R.id.tv_set_tbydsj:
+			WooSportApi.getInstance().startUpdateUser(mContext, new ApiCallback<LoginBean>() {
+				@Override
+				public void onCompleted() {
+
+				}
+
+				@Override
+				public void onError(ApiException e) {
+
+				}
+
+				@Override
+				public void onNext(LoginBean loginBean) {
+					SpCache sp = new SpCache(mContext, WooConfig.USER.USER_FILE);
+					sp.put(WooConfig.USER.LOGINBEAN,loginBean);
+					showToast("数据更新成功");
+				}
+
+				@Override
+				public void onStart() {
+
+				}
+			});
+//			RxUtils.addSubScription(Api.getInstance().getLoginRes(App.newInstance().getmUserBean().getData().getPhone(),
+//					App.newInstance().getmUserBean().getData().getPassword()),
+//					new ApiCallback<LoginBean>() {
+//						@Override
+//						public void onSuccess(LoginBean model) {
+//							App.newInstance().saveUserInfo(model);
+//							showToast("数据同步成功");
+//						}
+//
+//						@Override
+//						public void onFailure(int code, String msg) {
+//							showToast("数据同步失败");
+//						}
+//
+//						@Override
+//						public void onFinish() {
+//
+//						}
+//					});
+//			HttpUtils httpUtils1 = new HttpUtils();
+//			RequestParams params1 = new RequestParams("UTF-8");
+//			params1.addBodyParameter("phone", mUserBean.getPhone());
+//			params1.addBodyParameter("password", mUserBean.getPassword());
+//
+//			httpUtils1.send(HttpMethod.POST, AppConfig.LOGIN, params1,
+//					new RequestCallBack<String>() {
+//
+//						@Override
+//						public void onFailure(HttpException arg0, String arg1) {
+//
+//						}
+//
+//						@Override
+//						public void onSuccess(ResponseInfo<String> responseInfo) {
+//							Log.i("result", responseInfo.result);
+//
+//							try {
+//								JSONObject jsonObject = new JSONObject(
+//										responseInfo.result);
+//								errcode = jsonObject.get("Recode").toString();
+//								Log.i("errcode", errcode);
+//								if (errcode.equals("200")) {
+//									JSONObject jsonObject2 = jsonObject
+//											.getJSONObject("Data");
+//									Connectors.setId(jsonObject2.get("id")
+//											.toString());
+//									Connectors.setEmail(jsonObject2
+//											.get("email").toString());
+//									Connectors.setLevel(jsonObject2
+//											.get("level").toString());
+//									Connectors.setAvatar(jsonObject2.get(
+//											"avatar").toString());
+//									Connectors.setPoint(jsonObject2
+//											.get("point").toString());
+//									Connectors.setSex(jsonObject2.get("sex")
+//											.toString());
+//									Connectors.setHeight(jsonObject2.get(
+//											"height").toString());
+//									Connectors.setWeight(jsonObject2.get(
+//											"weight").toString());
+//									Connectors.setBirthday(jsonObject2.get(
+//											"birthday").toString());
+//									Connectors.setBmi(jsonObject2.get("bmi")
+//											.toString());
+//									Connectors.setRealname(jsonObject2.get(
+//											"realname").toString());
+//									Connectors.setMotto(jsonObject2
+//											.get("motto").toString());
+//									Connectors.setXp(jsonObject2
+//											.getString("xp"));
+//									showToast("数据同步成功");
+//								}
+//
+//							} catch (JSONException e) {
+//								// TODO Auto-generated catch block
+//								e.printStackTrace();
+//							}
+//						}
+//					});
+			break;
+
+		case R.id.rl_set_yjfk:
+			Intent intent = new Intent();
+			intent.setClass(getApplicationContext(), OpinionActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.rl_set_jszc:
+			Intent intent3 = new Intent();
+			intent3.setClass(getApplicationContext(), TechnologyActivity.class);
+			startActivity(intent3);
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
+	public void showToast(String text) {
+		if (mToast == null) {
+			mToast = Toast.makeText(getApplicationContext(), text,
+					Toast.LENGTH_SHORT);
+		} else {
+			mToast.setText(text);
+			mToast.setDuration(Toast.LENGTH_SHORT);
+		}
+		mToast.show();
+	}
+}

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/hideView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+
+
+
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        >
+        <ImageView 
+            android:id="@+id/img_buxing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buxing1"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            />
+        <ImageView 
+            android:id="@+id/img_qixing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/qixing2"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            />
+        
+        <LinearLayout 
+            android:id="@+id/ll_jbxing_bj"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="@drawable/beijingquan"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+        <TextView 
+            android:id="@+id/tv_jbxing_ms"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="步行"
+            android:textSize="16dp"
+            android:textColor="#000000"
+            />
+        <TextView 
+            android:id="@+id/tv_jbxing_juli"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="0.0千米"
+            android:textColor="#000000"
+            />
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ll_jbxing_bj"
+            android:layout_toLeftOf="@+id/ll_jbxing_bj"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="时长" 
+                android:textColor="#000000"
+                />
+
+            <TextView
+                android:id="@+id/fj_runsecond"
+                android:layout_width="wrap_content"
+                android:format="%s"
+                android:textColor="#000000"
+                android:layout_height="wrap_content" />
+
+            <Chronometer 
+                android:id="@+id/timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format="%s"
+                android:textColor="#000000"
+                />
+            <TextView 
+                android:id="@+id/tv_his_pj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="速度：0.00km/h"
+                />
+
+        </LinearLayout>
+         <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ll_jbxing_bj"
+            android:layout_toRightOf="@+id/ll_jbxing_bj"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="卡路里" 
+                android:textColor="#000000"/>
+            <TextView
+                android:id="@+id/tv_jbxing_kll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0大卡"
+                android:textColor="#000000"/>
+            <Button 
+                android:id="@+id/bt_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="暂停"
+                />
+        <!--   <TextView
+                android:id="@+id/tv_jbxing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试：0"
+                android:textColor="#000000"/>
+                -->
+        </LinearLayout>
+        <ImageView 
+            android:id="@+id/img_jbxing_start"
+            android:layout_width="260dp"
+            android:layout_height="60dp"
+            android:src="@drawable/start"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            />
+       <com.amap.api.maps2d.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_jbxing_bj"
+        android:layout_above="@+id/img_jbxing_start"
+
+        >
+    </com.amap.api.maps2d.MapView>
+    
+        <LinearLayout 
+            android:id="@+id/ll_jbxing_last"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_jbxing_bj"
+            android:visibility="invisible"
+            android:layout_above="@+id/img_jbxing_start"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+            <LinearLayout 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:id="@+id/ll_his"
+                >
+                <TextView 
+                android:id="@+id/tv_jbxing_zuij"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2016-7-31"
+                android:textColor="#000000"
+                />
+                 <TextView 
+                android:id="@+id/tv_jbxing_lic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="里程是200米"
+                android:textColor="#000000"
+                />
+                 <TextView 
+                android:id="@+id/tv_jbxing_lis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用时0.0分钟"
+                android:textColor="#000000"
+                />
+            </LinearLayout>
+            <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/xiaoren"
+                />
+        </LinearLayout>
+       
+    </RelativeLayout>
+    
+
+</LinearLayout>

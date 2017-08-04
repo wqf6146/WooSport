@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_warning_white_48dp.png",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\drawable-xhdpi\\ic_warning_white_48dp.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_warning_outline_white.png",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\drawable-xhdpi\\ic_warning_outline_white.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_launcher.png",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\toast_frame.9.png",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\drawable-xhdpi\\toast_frame.9.png"
+    }
+]

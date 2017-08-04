@@ -1,0 +1,190 @@
+package com.yhrjkf.woyundong.activity;
+
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.util.Base64;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.yhrjkf.woyundong.App;
+import com.yhrjkf.woyundong.BaseActivity;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.bean.LoginBean;
+import com.yhrjkf.woyundong.fragment.EventFragment;
+import com.yhrjkf.woyundong.fragment.JianBuXingFragment;
+import com.yhrjkf.woyundong.fragment.RankingFragment;
+import com.yhrjkf.woyundong.http.Api;
+import com.yhrjkf.woyundong.service.SportTimerService;
+import com.yhrjkf.woyundong.utils.RxUtils;
+import com.yhrjkf.woyundong.utils.SharedPreferencesUtil;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+//import static com.yhrjkf.woyundong.service.SportTimerService.ACTION_RESTART;
+
+public class JianBuXingActivity extends BaseActivity implements
+		OnClickListener {
+	@SuppressWarnings("unused")
+	private LinearLayout content, ll_jbx_back;
+	private FragmentManager fm = null;
+	private FragmentTransaction ft = null;
+
+	@Bind(R.id.tab_activity)
+	TextView mTabActivity;
+
+	@Bind(R.id.tab_ranklist)
+	TextView mTabRanklist;
+
+	@Bind(R.id.tab_sports)
+	TextView mTabSports;
+
+
+	JianBuXingFragment jianBuXingFragment;
+	EventFragment eventFragment;
+	RankingFragment rankingFragment;
+
+	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+	}
+
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.fragment_jbx);
+	}
+
+	@Override
+	protected void bindEvent() {
+		mTabActivity.setOnClickListener(this);
+		mTabSports.setOnClickListener(this);
+		mTabRanklist.setOnClickListener(this);
+		ll_jbx_back.setOnClickListener(this);
+	}
+
+	@Override
+	protected void initData() {
+		jianBuXingFragment = JianBuXingFragment.getInstance();
+		eventFragment = EventFragment.getInstance();
+		rankingFragment = RankingFragment.getInstance();
+
+		jianBuXingFragment.getArguments().putBoolean(SportTimerService.ACTION_RESTART,
+				getIntent().getBooleanExtra(SportTimerService.ACTION_RESTART,false));
+
+		loadMultipleRootFragment(R.id.fj_content,getIntent().getIntExtra("tab",0),jianBuXingFragment,eventFragment,rankingFragment);
+		tabColor(getIntent().getIntExtra("tab",0));
+	}
+
+	@Override
+	protected void initView() {
+		ll_jbx_back = (LinearLayout) findViewById(R.id.ll_jbx_back);
+	}
+
+//	private void restoreData(){
+//		String name = (String) SharedPreferencesUtil.getData("phone", "");
+//		String habit = (String) SharedPreferencesUtil.getData("password", "");
+//		if (name.equals("") || name == null) {
+//			Intent intent = new Intent();
+//			intent.setClass(getApplicationContext(),
+//					LoginActivity.class);
+//			startActivity(intent);
+//			finish();
+//		} else {
+//			String phone = new String(Base64.decode(name.getBytes(), Base64.DEFAULT));
+//			final String passwd = new String(Base64.decode(habit.getBytes(), Base64.DEFAULT));
+////			unSubscribe();
+////			mSubscription = RxUtils.addSubScription(
+////					Api.getInstance().getLoginRes(phone, passwd), new ApiCallback<LoginBean>() {
+////						@Override
+////						public void onSuccess(LoginBean model) {
+////							App.newInstance().saveUserInfo(model);
+//////							if (model.getRecode().equals("200")) {
+//////								Intent intent = new Intent();
+//////								intent.setClass(getApplicationContext(),
+//////										MainActivity.class);
+//////								startActivity(intent);
+//////								finish();
+//////							}
+////							jianBuXingFragment.getArguments().putBoolean(SportTimerService.ACTION_RESTART,true);
+////							loadMultipleRootFragment(R.id.fj_content,getIntent().getIntExtra("tab",0),jianBuXingFragment,eventFragment,rankingFragment);
+////						}
+////
+////						@Override
+////						public void onFailure(int code, String msg) {
+////							Log.e("code:" + code, msg);
+////						}
+////
+////						@Override
+////						public void onFinish() {
+////
+////						}
+////					});
+//		}
+//	}
+
+	private void tabColor(int tab){
+		switch (tab){
+			case 0:
+				mTabSports.setBackgroundResource(R.drawable.lin_left_red);
+				mTabActivity.setBackgroundResource(R.drawable.textview_bk_white);
+				mTabRanklist.setBackgroundResource(R.drawable.lin_right_white);
+				mTabSports.setTextColor(Color.parseColor("#FFFFFF"));
+				mTabActivity.setTextColor(Color.parseColor("#B3B3B3"));
+				mTabRanklist.setTextColor(Color.parseColor("#B3B3B3"));
+				break;
+			case 1:
+				mTabSports.setBackgroundResource(R.drawable.lin_left_white);
+				mTabActivity.setBackgroundResource(R.drawable.textview_bk_red);
+				mTabRanklist.setBackgroundResource(R.drawable.lin_right_white);
+				mTabSports.setTextColor(Color.parseColor("#B3B3B3"));
+				mTabActivity.setTextColor(Color.parseColor("#FFFFFF"));
+				mTabRanklist.setTextColor(Color.parseColor("#B3B3B3"));
+				break;
+			case 2:
+				mTabSports.setBackgroundResource(R.drawable.lin_left_white);
+				mTabActivity.setBackgroundResource(R.drawable.textview_bk_white);
+				mTabRanklist.setBackgroundResource(R.drawable.lin_right_red);
+				mTabSports.setTextColor(Color.parseColor("#B3B3B3"));
+				mTabActivity.setTextColor(Color.parseColor("#B3B3B3"));
+				mTabRanklist.setTextColor(Color.parseColor("#FFFFFF"));
+				break;
+		}
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+//		ft = fm.beginTransaction();
+		switch (v.getId()) {
+		case R.id.tab_sports:
+//			ft.replace(R.id.content, new JianBuXingFragment());
+			tabColor(0);
+			showHideFragment(jianBuXingFragment);
+			break;
+		case R.id.tab_activity:
+//			ft.replace(R.id.content, new EventFragment());
+			tabColor(1);
+			showHideFragment(eventFragment);
+			break;
+		case R.id.tab_ranklist:
+//			ft.replace(R.id.content, new RankingFragment());
+			tabColor(3);
+			showHideFragment(rankingFragment);
+			break;
+		case R.id.ll_jbx_back:
+			if (! jianBuXingFragment.getSportStatue())
+				finish();
+			break;
+		default:
+			break;
+		}
+//		ft.commit();
+	}
+
+}

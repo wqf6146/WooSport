@@ -1,0 +1,325 @@
+package com.yhrjkf.woyundong.http;
+
+import android.content.Context;
+import android.content.Intent;
+import android.util.Base64;
+import android.widget.Toast;
+
+import com.kaopiz.kprogresshud.KProgressHUD;
+import com.vise.log.ViseLog;
+import com.vise.xsnow.cache.SpCache;
+import com.vise.xsnow.net.api.ViseApi;
+import com.vise.xsnow.net.callback.ApiCallback;
+import com.vise.xsnow.net.exception.*;
+import com.vise.xsnow.net.exception.ApiException;
+import com.yhrjkf.woyundong.activity.LoginActivity;
+import com.yhrjkf.woyundong.activity.MainActivity;
+import com.yhrjkf.woyundong.bean.CNewsBean;
+import com.yhrjkf.woyundong.bean.InvitationBean;
+import com.yhrjkf.woyundong.bean.LoginBean;
+import com.yhrjkf.woyundong.bean.PicBean;
+import com.yhrjkf.woyundong.http.api.ApiSercice;
+import com.yhrjkf.woyundong.utils.WooConfig;
+
+import java.io.File;
+import java.util.HashMap;
+
+//import static com.vise.xsnow.net.mode.CacheMode.CACHE_AND_REMOTE;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+
+import static com.vise.xsnow.net.mode.CacheMode.FIRST_CACHE;
+import static com.vise.xsnow.net.mode.CacheMode.FIRST_REMOTE;
+
+/**
+ * Created by Administrator on 2017/3/9.
+ */
+
+public class WooSportApi {
+    private static WooSportApi wooSportApi;
+
+    KProgressHUD mHud;
+    private WooSportApi(){
+    }
+
+    public static WooSportApi getInstance() {
+        if (wooSportApi == null){
+            synchronized (WooSportApi.class){
+                if (wooSportApi == null){
+                    return new WooSportApi();
+                }
+            }
+        }
+        return wooSportApi;
+    }
+
+    /***
+     * 数据更新
+     */
+    public <T> void startUpdateUser(final Context context,ApiCallback<T> apicallback){
+        ViseApi api = new ViseApi.Builder(context).build();
+        SpCache sp = new SpCache(context,WooConfig.USER.USER_FILE);
+        String phone = sp.get(WooConfig.USER.ZH,"");
+        String pwd = sp.get(WooConfig.USER.PWD,"");
+        if (phone.equals("") || pwd.equals("")){
+            Intent intent = new Intent();
+            intent.setClass(context, LoginActivity.class);
+            context.startActivity(intent);
+        }else{
+            HashMap hashMap = new HashMap();
+            hashMap.put("phone",new String(Base64.decode(phone.getBytes(), Base64.DEFAULT)));
+            hashMap.put("password",new String(Base64.decode(pwd.getBytes(), Base64.DEFAULT)));
+            api.post(ApiSercice.URL_LOGIN, hashMap, apicallback);
+        }
+
+    }
+
+    /***
+     * 登陆
+     * @param context
+     * @param phone
+     */
+    public <T> void startLogin(final Context context,String phone, String pwd,ApiCallback<T> apicallback){
+        ViseApi api = new ViseApi.Builder(context).build();
+        SpCache sp = new SpCache(context,WooConfig.USER.USER_FILE);
+
+        HashMap hashMap = new HashMap();
+        hashMap.put("phone",phone);
+        hashMap.put("password",pwd);
+        api.post(ApiSercice.URL_LOGIN, hashMap, apicallback);
+    }
+
+    /***
+     * 登陆
+     * @param context
+     * @param phone
+     * @param passwd
+     * @param key
+     */
+    public void startLogin(final Context context,final String phone,final String passwd,final String key){
+        ViseApi api = new ViseApi.Builder(context).build();
+        HashMap hashMap = new HashMap();
+        hashMap.put("phone",phone);
+        hashMap.put("password",passwd);
+        api.post(ApiSercice.URL_LOGIN, hashMap, new ApiCallback<LoginBean>(){
+            @Override
+            public void onCompleted() {
+            }
+
+            @Override
+            public void onError(ApiException e) {
+                Toast.makeText(context,"登陆失败，请重试!",Toast.LENGTH_SHORT).show();
+                mHud.dismiss();
+                ViseLog.e(e);
+            }
+
+            @Override
+            public void onNext(LoginBean loginBean) {
+                doInvitation(context,phone,passwd,loginBean,key);
+            }
+
+            @Override
+            public void onStart() {
+                ViseLog.i("StartLogin");
+                mHud = KProgressHUD.create(context)
+                        .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                        .setCancellable(true);
+                mHud.show();
+            }
+        });
+    }
+    //邀请码
+    private void doInvitation(final Context context, final String phone,final String pwd, final LoginBean loginbean,String key){
+        HashMap hashMap = new HashMap();
+        hashMap.put("uid",loginbean.getData().getId());
+        hashMap.put("key",key);
+        ViseApi api = new ViseApi.Builder(context).build();
+        api.form(ApiSercice.URL_CHECKKEY, hashMap, new ApiCallback<InvitationBean>(){
+            @Override
+            public void onCompleted() {
+                ViseLog.i("Login success!");
+                mHud.dismiss();
+                ((LoginActivity)context).finish();
+            }
+
+            @Override
+            public void onError(ApiException e) {
+                mHud.dismiss();
+            }
+
+            @Override
+            public void onNext(InvitationBean invitationBean) {
+                SpCache sp = new SpCache(context, WooConfig.USER.USER_FILE);
+                sp.put(WooConfig.USER.LOGINBEAN,loginbean);
+                sp.put(WooConfig.USER.ZH, Base64.encodeToString(phone.getBytes(), Base64.DEFAULT));
+                sp.put(WooConfig.USER.PWD,Base64.encodeToString(pwd.getBytes(), Base64.DEFAULT));
+                Intent intent = new Intent();
+                intent.setClass(context, MainActivity.class);
+                context.startActivity(intent);
+            }
+
+            @Override
+            public void onStart() {
+
+            }
+        });
+    }
+
+    /**
+     * 获取咨询列表
+     */
+
+    public <T> void startGetCatList(Context context,String type, ApiCallback<T> callback){
+        HashMap hashMap = new HashMap();
+        hashMap.put("type",type);
+        ViseApi api = new ViseApi.Builder(context).cacheKey(ApiSercice.URL_CATLIST+type).cacheMode(FIRST_REMOTE).build();
+        api.cachePost(ApiSercice.URL_CATLIST, hashMap, callback);
+    }
+
+    /**
+     *  //咨询列表
+        String URL_NEWSLIST = URL + "/api/news/list";
+     */
+    public <T> void startGetNewInfo(Context context, String cat,ApiCallback<T> callback){
+        HashMap hashMap = new HashMap();
+        hashMap.put("cat",cat);
+        ViseApi api = new ViseApi.Builder(context).cacheKey(ApiSercice.URL_NEWSLIST+cat).cacheMode(FIRST_REMOTE).build();
+        api.cachePost(ApiSercice.URL_NEWSLIST, hashMap, callback);
+    }
+
+    /**
+     * 更新用户信息
+     */
+    public <T> void startUpdateUserInfo(Context context,HashMap hashmap,ApiCallback<T> callback){
+        ViseApi api = new ViseApi.Builder(context).build();
+        api.post(ApiSercice.USER, hashmap, callback);
+    }
+
+    /***
+     * 发现
+     */
+    public <T> void startGetDiscover(Context context ,ApiCallback<T> callback){
+        ViseApi api = new ViseApi.Builder(context).cacheKey(ApiSercice.EVENT).cacheMode(FIRST_REMOTE).build();
+        api.cachePost(ApiSercice.EVENT,  new HashMap(), callback);
+    }
+
+
+    /***
+     * 获取天气信息
+     */
+    public <T> void startGetWeather(Context context, ApiCallback<T> callback){
+        ViseApi api = new ViseApi.Builder(context).build();
+        HashMap hashMap = new HashMap();
+        hashMap.put("cityname","保定");
+        hashMap.put("key","78a1691257f4a5e1a163e183350ab58d");
+        api.get(ApiSercice.GETWEATHER,hashMap, callback);
+    }
+    public <T> void startGetXmlWeather(Context context, ApiCallback<T> callback){
+        ViseApi api = new ViseApi.Builder(context).build();
+        api.get(ApiSercice.XMLWEATHER,new HashMap<String, String>(), callback);
+    }
+
+    /**
+     * 获取rank
+     */
+    public <T> void startGetRankInfo(Context context,String type,String timetype,ApiCallback<T> callback){
+        ViseApi api = new ViseApi.Builder(context).cacheKey(ApiSercice.RANKING + type + timetype)
+                .cacheMode(FIRST_REMOTE).build();
+        HashMap hashMap = new HashMap();
+        hashMap.put("limit_1",type);
+        hashMap.put("limit_2",timetype);
+        hashMap.put("limit_3","0");
+        api.cachePost(ApiSercice.RANKING,hashMap, callback);
+    }
+
+    /***
+     * 上传跑步数据
+     */
+    public <T> void startPostSportInfo(Context context,HashMap hashMap,ApiCallback<T> callback){
+        ViseApi api = new ViseApi.Builder(context).build();
+        api.post(ApiSercice.ADDED,hashMap, callback);
+    }
+
+    /**
+     * 获取月数
+     */
+    public <T> void startGetSportMonthByCache(Context context,String uid,ApiCallback<T> callback){
+        ViseApi api = new ViseApi.Builder(context).cacheKey(ApiSercice.HISTORYMON + uid)
+                .cacheMode(FIRST_REMOTE).build();
+        HashMap hashMap = new HashMap();
+        hashMap.put("uid",uid);
+        api.cachePost(ApiSercice.HISTORYMON,hashMap, callback);
+    }
+    public <T> void startGetSportMonth(Context context,String uid,ApiCallback<T> callback){
+        ViseApi api = new ViseApi.Builder(context).build();
+        HashMap hashMap = new HashMap();
+        hashMap.put("uid",uid);
+        api.post(ApiSercice.HISTORYMON,hashMap, callback);
+    }
+
+    /**
+     * 获取每天运动历史
+     */
+    public <T> void startGetSportDay(Context context,String uid,String monst,ApiCallback<T> callback){
+        ViseApi api = new ViseApi.Builder(context).cacheKey(ApiSercice.HISTORYDAY + uid + monst)
+                .cacheMode(FIRST_REMOTE).build();
+        HashMap hashMap = new HashMap();
+        hashMap.put("uid",uid);
+        hashMap.put("monst",monst);
+        api.cachePost(ApiSercice.HISTORYDAY,hashMap, callback);
+    }
+
+    /**
+     * 获取每天运动历史具体
+     */
+    public <T> void startGetSportDayDetail(Context context,String uid,String monst,String day,ApiCallback<T> callback){
+        ViseApi api = new ViseApi.Builder(context).cacheKey(ApiSercice.HISTORYDAYS + uid + monst+day)
+                .cacheMode(FIRST_REMOTE).build();
+        HashMap hashMap = new HashMap();
+        hashMap.put("uid",uid);
+        hashMap.put("monst",monst);
+        hashMap.put("day",day);
+        api.cachePost(ApiSercice.HISTORYDAYS,hashMap, callback);
+    }
+
+    /**
+     * 获取回放点数组
+     */
+    public <T> void startGetSportPoint(Context context,String mid,ApiCallback<T> callback){
+        ViseApi api = new ViseApi.Builder(context).cacheKey(ApiSercice.HISTORYMAP + mid)
+                .cacheMode(FIRST_REMOTE).build();
+        HashMap hashMap = new HashMap();
+        hashMap.put("mid",mid);
+        api.cachePost(ApiSercice.HISTORYMAP,hashMap, callback);
+    }
+//
+//    /**
+//     * 上传图片
+//     */
+//    public <T> void startPostPic(Context context, String uid, File file){
+//        ViseApi api = new ViseApi.Builder(context).build();
+//        RequestBody requestBody =
+//                RequestBody.create(MediaType.parse("multipart/form-data"),file);
+//        MultipartBody.Part part = MultipartBody.Part.createFormData("uid",uid,requestBody);
+//        api.uploadFile(ApiSercice.PORTRAIT,requestBody,part, PicBean.class);
+//    }
+
+    /***
+     * 签到
+     */
+    public <T> void startPostSign(Context context,String uid,ApiCallback<T> callback){
+        ViseApi api = new ViseApi.Builder(context).build();
+        HashMap hashMap = new HashMap();
+        hashMap.put("uid",uid);
+        api.post(ApiSercice.SIGN,hashMap, callback);
+    }
+
+    /***
+     * 修改用户信息
+     */
+    public <T> void startPostUserMeg(Context context,HashMap hashMap ,ApiCallback<T> callback){
+        ViseApi api = new ViseApi.Builder(context).build();
+        api.post(ApiSercice.USER,hashMap, callback);
+    }
+}

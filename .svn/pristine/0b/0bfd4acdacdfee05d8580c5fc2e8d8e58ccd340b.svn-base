@@ -1,0 +1,87 @@
+// Generated code from Butter Knife. Do not modify!
+package com.yhrjkf.woyundong.activity;
+
+import android.view.View;
+import butterknife.ButterKnife.Finder;
+import butterknife.ButterKnife.ViewBinder;
+
+public class NewMedalActivity$$ViewBinder<T extends com.yhrjkf.woyundong.activity.NewMedalActivity> implements ViewBinder<T> {
+  @Override public void bind(final Finder finder, final T target, Object source) {
+    View view;
+    view = finder.findRequiredView(source, 2131624135, "field 'mMedalGoodTwo'");
+    target.mMedalGoodTwo = finder.castView(view, 2131624135, "field 'mMedalGoodTwo'");
+    view = finder.findRequiredView(source, 2131624136, "field 'mMedalQi'");
+    target.mMedalQi = finder.castView(view, 2131624136, "field 'mMedalQi'");
+    view = finder.findRequiredView(source, 2131624137, "field 'mMedaljianchi'");
+    target.mMedaljianchi = finder.castView(view, 2131624137, "field 'mMedaljianchi'");
+    view = finder.findRequiredView(source, 2131624138, "field 'mMedalxiguan'");
+    target.mMedalxiguan = finder.castView(view, 2131624138, "field 'mMedalxiguan'");
+    view = finder.findRequiredView(source, 2131624143, "field 'mMedalaishagn'");
+    target.mMedalaishagn = finder.castView(view, 2131624143, "field 'mMedalaishagn'");
+    view = finder.findRequiredView(source, 2131624144, "field 'mMedal60'");
+    target.mMedal60 = finder.castView(view, 2131624144, "field 'mMedal60'");
+    view = finder.findRequiredView(source, 2131624145, "field 'mMedal90'");
+    target.mMedal90 = finder.castView(view, 2131624145, "field 'mMedal90'");
+    view = finder.findRequiredView(source, 2131624146, "field 'mMedal120'");
+    target.mMedal120 = finder.castView(view, 2131624146, "field 'mMedal120'");
+    view = finder.findRequiredView(source, 2131624151, "field 'mMedal_ds_1'");
+    target.mMedal_ds_1 = finder.castView(view, 2131624151, "field 'mMedal_ds_1'");
+    view = finder.findRequiredView(source, 2131624152, "field 'mMedal_ds_10'");
+    target.mMedal_ds_10 = finder.castView(view, 2131624152, "field 'mMedal_ds_10'");
+    view = finder.findRequiredView(source, 2131624153, "field 'mMedal_ds_50'");
+    target.mMedal_ds_50 = finder.castView(view, 2131624153, "field 'mMedal_ds_50'");
+    view = finder.findRequiredView(source, 2131624154, "field 'mMedal_ds_100'");
+    target.mMedal_ds_100 = finder.castView(view, 2131624154, "field 'mMedal_ds_100'");
+    view = finder.findRequiredView(source, 2131624155, "field 'mMedal_ds_500'");
+    target.mMedal_ds_500 = finder.castView(view, 2131624155, "field 'mMedal_ds_500'");
+    view = finder.findRequiredView(source, 2131624156, "field 'mMedal_ds_800'");
+    target.mMedal_ds_800 = finder.castView(view, 2131624156, "field 'mMedal_ds_800'");
+    view = finder.findRequiredView(source, 2131624139, "field 'mTvGoodTwo'");
+    target.mTvGoodTwo = finder.castView(view, 2131624139, "field 'mTvGoodTwo'");
+    view = finder.findRequiredView(source, 2131624140, "field 'mTvQi'");
+    target.mTvQi = finder.castView(view, 2131624140, "field 'mTvQi'");
+    view = finder.findRequiredView(source, 2131624141, "field 'mTvjianchi'");
+    target.mTvjianchi = finder.castView(view, 2131624141, "field 'mTvjianchi'");
+    view = finder.findRequiredView(source, 2131624142, "field 'mTvxiguan'");
+    target.mTvxiguan = finder.castView(view, 2131624142, "field 'mTvxiguan'");
+    view = finder.findRequiredView(source, 2131624147, "field 'mTvaishang'");
+    target.mTvaishang = finder.castView(view, 2131624147, "field 'mTvaishang'");
+    view = finder.findRequiredView(source, 2131624148, "field 'mTv60'");
+    target.mTv60 = finder.castView(view, 2131624148, "field 'mTv60'");
+    view = finder.findRequiredView(source, 2131624149, "field 'mTv90'");
+    target.mTv90 = finder.castView(view, 2131624149, "field 'mTv90'");
+    view = finder.findRequiredView(source, 2131624150, "field 'mTv120'");
+    target.mTv120 = finder.castView(view, 2131624150, "field 'mTv120'");
+    view = finder.findRequiredView(source, 2131624132, "field 'mImgBack'");
+    target.mImgBack = finder.castView(view, 2131624132, "field 'mImgBack'");
+    view = finder.findRequiredView(source, 2131624134, "field 'mTvRule'");
+    target.mTvRule = finder.castView(view, 2131624134, "field 'mTvRule'");
+  }
+
+  @Override public void unbind(T target) {
+    target.mMedalGoodTwo = null;
+    target.mMedalQi = null;
+    target.mMedaljianchi = null;
+    target.mMedalxiguan = null;
+    target.mMedalaishagn = null;
+    target.mMedal60 = null;
+    target.mMedal90 = null;
+    target.mMedal120 = null;
+    target.mMedal_ds_1 = null;
+    target.mMedal_ds_10 = null;
+    target.mMedal_ds_50 = null;
+    target.mMedal_ds_100 = null;
+    target.mMedal_ds_500 = null;
+    target.mMedal_ds_800 = null;
+    target.mTvGoodTwo = null;
+    target.mTvQi = null;
+    target.mTvjianchi = null;
+    target.mTvxiguan = null;
+    target.mTvaishang = null;
+    target.mTv60 = null;
+    target.mTv90 = null;
+    target.mTv120 = null;
+    target.mImgBack = null;
+    target.mTvRule = null;
+  }
+}

@@ -1,0 +1,136 @@
+package com.yhrjkf.woyundong.activity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
+
+import com.tencent.smtt.sdk.TbsDownloader;
+import com.vise.log.ViseLog;
+import com.vise.xsnow.cache.SpCache;
+import com.vise.xsnow.net.callback.ApiCallback;
+import com.vise.xsnow.net.exception.ApiException;
+import com.yhrjkf.woyundong.App;
+import com.yhrjkf.woyundong.BaseActivity;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.bean.LoginBean;
+import com.yhrjkf.woyundong.http.Api;
+import com.yhrjkf.woyundong.http.WooSportApi;
+import com.yhrjkf.woyundong.service.SportTimerService;
+import com.yhrjkf.woyundong.utils.RxUtils;
+import com.yhrjkf.woyundong.utils.SharedPreferencesUtil;
+import com.yhrjkf.woyundong.utils.WooConfig;
+
+public class LaunchActivity extends BaseActivity {
+//	private String errcode, name, habit;
+	TbsDownloader tbsDownloader;
+
+	@Override
+	protected void initData() {
+
+	}
+
+	@Override
+	protected void initView() {
+
+	}
+
+	@Override
+	protected void bindEvent() {
+
+	}
+
+	@SuppressWarnings("static-access")
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		doStart();
+		tbsDownloader.needDownload(getApplicationContext(), false);
+	}
+
+	private void doStart() {
+
+		final SpCache sp = new SpCache(mContext, WooConfig.USER.USER_FILE);
+		String name = sp.get(WooConfig.USER.ZH,"");
+		String habit = sp.get(WooConfig.USER.PWD,"");
+		if (name.equals("") || habit.equals("") ){
+			Intent intent = new Intent();
+			intent.setClass(this,
+					LoginActivity.class);
+			startActivity(intent);
+			finish();
+		} else {
+			String phone = new String(Base64.decode(name.getBytes(), Base64.DEFAULT));
+			String passwd = new String(Base64.decode(habit.getBytes(), Base64.DEFAULT));
+
+			WooSportApi.getInstance().startLogin(mContext,
+					phone, passwd,new ApiCallback<LoginBean>(){
+						@Override
+						public void onStart() {
+							ViseLog.i("Start Login");
+						}
+
+						@Override
+						public void onNext(LoginBean loginBean) {
+
+							if (loginBean.getRecode().equals("200")) {
+								SpCache spCache = new SpCache(mContext,WooConfig.USER.USER_FILE);
+								spCache.put(WooConfig.USER.LOGINBEAN,loginBean);
+								Intent intent = new Intent();
+								if (getIntent().getBooleanExtra(SportTimerService.ACTION_RESTART,false)){
+									intent.putExtra(SportTimerService.ACTION_RESTART,true);
+								}
+								intent.setClass(LaunchActivity.this,
+										MainActivity.class);
+								startActivity(intent);
+								finish();
+							}
+						}
+
+						@Override
+						public void onError(ApiException e) {
+							ViseLog.e(e);
+							Intent intent = new Intent();
+							intent.setClass(mContext,
+									LoginActivity.class);
+							startActivity(intent);
+						}
+
+						@Override
+						public void onCompleted() {
+							ViseLog.i("Start Success");
+						}
+					});
+//			unSubscribe();
+//			mSubscription = RxUtils.addSubScription(
+//					Api.getInstance().getLoginRes(phone, passwd), new ApiCallback<LoginBean>() {
+//						@Override
+//						public void onSuccess(LoginBean model) {
+//							App.newInstance().saveUserInfo(model);
+//							if (model.getRecode().equals("200")) {
+//								Intent intent = new Intent();
+//								if (getIntent().getBooleanExtra(SportTimerService.ACTION_RESTART,false)){
+//									intent.putExtra(SportTimerService.ACTION_RESTART,true);
+//								}
+//								intent.setClass(getApplicationContext(),
+//										MainActivity.class);
+//								startActivity(intent);
+//								finish();
+//							}
+//						}
+//
+//						@Override
+//						public void onFailure(int code, String msg) {
+//							Log.e("code:" + code, msg);
+//						}
+//
+//						@Override
+//						public void onFinish() {
+//
+//						}
+//					});
+		}
+	}
+
+}

@@ -1,0 +1,45 @@
+// Generated code from Butter Knife. Do not modify!
+package com.yhrjkf.woyundong.fragment;
+
+import android.view.View;
+import butterknife.ButterKnife.Finder;
+import butterknife.ButterKnife.ViewBinder;
+
+public class RankingFragment$$ViewBinder<T extends com.yhrjkf.woyundong.fragment.RankingFragment> implements ViewBinder<T> {
+  @Override public void bind(final Finder finder, final T target, Object source) {
+    View view;
+    view = finder.findRequiredView(source, 2131624343, "field 'lv_ranking'");
+    target.lv_ranking = finder.castView(view, 2131624343, "field 'lv_ranking'");
+    view = finder.findRequiredView(source, 2131624334, "field 'tv_ranking_alls'");
+    target.tv_ranking_alls = finder.castView(view, 2131624334, "field 'tv_ranking_alls'");
+    view = finder.findRequiredView(source, 2131624335, "field 'tv_ranking_jianzou'");
+    target.tv_ranking_jianzou = finder.castView(view, 2131624335, "field 'tv_ranking_jianzou'");
+    view = finder.findRequiredView(source, 2131624336, "field 'tv_ranking_qixing'");
+    target.tv_ranking_qixing = finder.castView(view, 2131624336, "field 'tv_ranking_qixing'");
+    view = finder.findRequiredView(source, 2131624337, "field 'tv_ranking_day'");
+    target.tv_ranking_day = finder.castView(view, 2131624337, "field 'tv_ranking_day'");
+    view = finder.findRequiredView(source, 2131624338, "field 'tv_ranking_week'");
+    target.tv_ranking_week = finder.castView(view, 2131624338, "field 'tv_ranking_week'");
+    view = finder.findRequiredView(source, 2131624339, "field 'tv_ranking_month'");
+    target.tv_ranking_month = finder.castView(view, 2131624339, "field 'tv_ranking_month'");
+    view = finder.findRequiredView(source, 2131624340, "field 'tv_ranking_quarter'");
+    target.tv_ranking_quarter = finder.castView(view, 2131624340, "field 'tv_ranking_quarter'");
+    view = finder.findRequiredView(source, 2131624341, "field 'tv_ranking_halfyear'");
+    target.tv_ranking_halfyear = finder.castView(view, 2131624341, "field 'tv_ranking_halfyear'");
+    view = finder.findRequiredView(source, 2131624342, "field 'tv_ranking_year'");
+    target.tv_ranking_year = finder.castView(view, 2131624342, "field 'tv_ranking_year'");
+  }
+
+  @Override public void unbind(T target) {
+    target.lv_ranking = null;
+    target.tv_ranking_alls = null;
+    target.tv_ranking_jianzou = null;
+    target.tv_ranking_qixing = null;
+    target.tv_ranking_day = null;
+    target.tv_ranking_week = null;
+    target.tv_ranking_month = null;
+    target.tv_ranking_quarter = null;
+    target.tv_ranking_halfyear = null;
+    target.tv_ranking_year = null;
+  }
+}

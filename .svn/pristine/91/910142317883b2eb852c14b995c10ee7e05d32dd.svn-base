@@ -1,0 +1,167 @@
+package com.yhrjkf.woyundong.activity;
+
+import java.util.HashMap;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.kaopiz.kprogresshud.KProgressHUD;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.yhrjkf.woyundong.App;
+import com.yhrjkf.woyundong.BaseActivity;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.http.api.ApiSercice;
+import com.yhrjkf.woyundong.tools.AppConfig;
+import com.yhrjkf.woyundong.tools.Connectors;
+
+public class RecordActivity extends BaseActivity {
+
+	private LinearLayout ll_back;
+	HashMap<String, String> hm;
+	Handler handler;
+	private TextView tv_jilu_time, tv_jilu_shijian, tv_jilu_shijian1,
+			tv_jilu_shijian2, tv_jilu_shijian3, tv_jilu_juli, tv_jilu_ranshao,
+			tv_jilu_sudu;
+
+	@Override
+	protected void initData() {
+
+	}
+
+	@Override
+	protected void initView() {
+		ll_back = (LinearLayout) findViewById(R.id.ll_back);
+		tv_jilu_time = (TextView) findViewById(R.id.tv_jilu_time);
+		tv_jilu_shijian = (TextView) findViewById(R.id.tv_jilu_shijian);
+		tv_jilu_shijian1 = (TextView) findViewById(R.id.tv_jilu_shijian1);
+		tv_jilu_shijian2 = (TextView) findViewById(R.id.tv_jilu_shijian2);
+		tv_jilu_shijian3 = (TextView) findViewById(R.id.tv_jilu_shijian3);
+		tv_jilu_juli = (TextView) findViewById(R.id.tv_jilu_juli);
+		tv_jilu_ranshao = (TextView) findViewById(R.id.tv_jilu_ranshao);
+		tv_jilu_sudu = (TextView) findViewById(R.id.tv_jilu_sudu);
+	}
+
+	@Override
+	protected void bindEvent() {
+
+		ll_back.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+			finish();
+			return;
+		}
+		setContentView(R.layout.activity_record);
+
+
+		HttpUtils httpUtils = new HttpUtils();
+		RequestParams params = new RequestParams("UTF-8");
+		params.addBodyParameter("uid", String.valueOf(App.newInstance().getUserBean().getId()));
+		mHud = KProgressHUD.create(this)
+				.setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+				.setCancellable(true);
+		mHud.show();
+		httpUtils.send(HttpMethod.POST, ApiSercice.RECORD, params,
+				new RequestCallBack<String>() {
+
+					@Override
+					public void onFailure(HttpException arg0, String arg1) {
+						// TODO Auto-generated method stub
+						mHud.dismiss();
+					}
+
+					@Override
+					public void onSuccess(ResponseInfo<String> responseInfo) {
+						// TODO Auto-generated method stub
+						Log.i("result", responseInfo.result);
+						try {
+							JSONObject jsonObject = new JSONObject(
+									responseInfo.result);
+							JSONObject jsonObject2 = jsonObject
+									.getJSONObject("Data");
+							JSONObject jsonObject3 = jsonObject2
+									.getJSONObject("distance");
+							JSONObject jsonObject4 = jsonObject2
+									.getJSONObject("time");
+							JSONObject jsonObject5 = jsonObject2
+									.getJSONObject("calorie");
+							JSONObject jsonObject6 = jsonObject2
+									.getJSONObject("speed");
+
+							hm = new HashMap<String, String>();
+							hm.put("distance",
+									jsonObject3.getString("distance"));
+							hm.put("distancetime",
+									jsonObject3.getString("created_at"));
+
+							hm.put("time", jsonObject4.getString("time"));
+							hm.put("timetime",
+									jsonObject4.getString("created_at"));
+
+							hm.put("calorie", jsonObject5.getString("calorie"));
+							hm.put("calorietime",
+									jsonObject5.getString("created_at"));
+
+							hm.put("speed", jsonObject6.getString("speed"));
+							hm.put("speedtime",
+									jsonObject6.getString("created_at"));
+
+							Message message = new Message();
+							message.arg1 = 0;
+							handler.sendMessage(message);
+							mHud.dismiss();
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
+					}
+				});
+		handler = new Handler() {
+			@Override
+			public void handleMessage(Message msg) {
+				// TODO Auto-generated method stub
+				super.handleMessage(msg);
+				if (msg.arg1 == 0) {
+					tv_jilu_time.setText(hm.get("time") + "秒");
+					tv_jilu_juli.setText(hm.get("distance") + "米");
+					tv_jilu_ranshao.setText(hm.get("calorie") + "千卡");
+					tv_jilu_sudu.setText(hm.get("speed") + "m/h");
+					tv_jilu_shijian.setText(hm.get("timetime") + "创建");
+					tv_jilu_shijian1.setText(hm.get("distancetime") + "创建");
+					tv_jilu_shijian2.setText(hm.get("calorietime") + "创建");
+					tv_jilu_shijian3.setText(hm.get("speedtime") + "创建");
+
+				}
+			}
+		};
+
+	}
+}

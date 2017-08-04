@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yhrjkf.woyundong"
+    android:versionCode="13"
+    android:anyDensity="true"
+    android:versionName="3.3.3.1">
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+      <!--//地图包、搜索包需要的基础权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!--定位包、导航包需要的额外权限（注：基础权限也需要）-->
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!--<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <!--获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <!--用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <!--这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <!--用于访问网络，网络定位需要上网-->
+    <!--用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!--写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <!--用于申请调用A-GPS模块-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"></uses-permission>
+    <!--用于申请获取蓝牙信息进行室内定位-->
+    <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
+    
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:name="com.yhrjkf.woyundong.App"
+        android:persistent="true"
+        tools:replace="Android:icon, android:theme">
+
+        <service
+            android:name="com.amap.api.location.APSService" >
+        </service>
+
+        <service android:name=".service.NotificationService" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="043513770bfbf334d02714e3eea0e684"/>
+
+        <activity
+            android:name="com.yhrjkf.woyundong.activity.LaunchActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:theme="@style/SplashTheme"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:name="com.yhrjkf.woyundong.activity.MainActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask">
+             <intent-filter>
+                 <action android:name="com.yhrjkf.woyundong.activity.action.RETURN" />
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.yhrjkf.woyundong.activity.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" 
+            android:launchMode="singleTask"
+            >
+        </activity>
+         <activity
+            android:name="com.yhrjkf.woyundong.activity.RegisterActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            >
+        </activity>
+        <activity
+            android:name="com.yhrjkf.woyundong.activity.PersonalActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            >
+        </activity>
+
+        <activity android:name=".activity.KeepLiveActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:finishOnTaskLaunch="false"
+            android:launchMode="singleInstance"
+            android:taskAffinity=".KeepLiveActivity"
+            android:theme="@style/KeepLiveStyle" />
+
+        <activity
+            android:name="com.yhrjkf.woyundong.activity.NewRecordActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            >
+        </activity>
+
+        <activity
+            android:name="com.yhrjkf.woyundong.activity.NickNameActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" 
+            android:launchMode="standard"
+            >
+        </activity>
+        <activity
+            android:name="com.yhrjkf.woyundong.activity.EmailActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:launchMode="standard"
+             >
+        </activity>
+        <activity
+            android:name="com.yhrjkf.woyundong.activity.OpinionActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            >
+        </activity>
+        <activity
+            android:name="com.yhrjkf.woyundong.activity.SignatureActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" 
+            android:launchMode="standard"
+            >
+        </activity>
+
+
+        <activity
+            android:name="com.yhrjkf.woyundong.activity.ProductActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+             >
+        </activity>
+         <activity
+            android:name="com.yhrjkf.woyundong.activity.AboutUsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+             >
+        </activity>
+        <activity
+            android:name="com.yhrjkf.woyundong.activity.TechnologyActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            >
+        </activity>
+
+        <activity
+            android:name="com.yhrjkf.woyundong.activity.HistoryMapActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            >
+        </activity>
+        
+    </application>
+
+</manifest>

@@ -1,0 +1,17 @@
+// IBgSportsRunService.aidl
+package com.yhrjkf.woyundong;
+
+// Declare any non-default types here with import statements
+
+import com.yhrjkf.woyundong.IServiceCallback;
+
+interface IBgSportsRunService {
+
+    void registerCallback(IServiceCallback cb);
+
+    void unregisterCallback(IServiceCallback cb);
+
+    void startTimer();
+
+    void pauseTimer();
+}

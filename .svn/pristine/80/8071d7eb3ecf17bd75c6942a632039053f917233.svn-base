@@ -1,0 +1,214 @@
+package com.yhrjkf.woyundong.fragment;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.lidroid.xutils.BitmapUtils;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.vise.log.ViseLog;
+import com.vise.xsnow.loader.ILoader;
+import com.vise.xsnow.loader.LoaderFactory;
+import com.vise.xsnow.net.callback.ApiCallback;
+import com.vise.xsnow.net.exception.ApiException;
+import com.vise.xsnow.net.mode.CacheResult;
+import com.yhrjkf.woyundong.BaseFragment;
+import com.yhrjkf.woyundong.activity.EventDetails;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.bean.DiscoverBean;
+import com.yhrjkf.woyundong.http.WooSportApi;
+import com.yhrjkf.woyundong.tools.AppConfig;
+
+import butterknife.Bind;
+
+public class DiscoverFragment extends BaseFragment {
+
+	@Bind(R.id.lv_event_hd)
+	ListView lv_event_hd;
+
+	IndentCusAdapter rpAdapter;
+
+	@Bind(R.id.vt_toolbar)
+	Toolbar mToolBar;
+
+	@Bind(R.id.vt_title)
+	TextView mTvTitle;
+
+	@Override
+	protected void initData() {
+		mToolBar.setTitle("");
+		mTvTitle.setText("发现");
+	}
+
+	@Override
+	protected void initView(View contentView) {
+		((AppCompatActivity)getActivity()).setSupportActionBar(mToolBar);
+
+		WooSportApi.getInstance().startGetDiscover(mContext, new ApiCallback<CacheResult<DiscoverBean>>() {
+			@Override
+			public void onStart() {
+
+			}
+
+			@Override
+			public void onError(ApiException e) {
+				ViseLog.e(e);
+			}
+
+			@Override
+			public void onCompleted() {
+
+			}
+
+			@Override
+			public void onNext(CacheResult<DiscoverBean> discoverBean) {
+				if (discoverBean==null){
+					return;
+				}
+				rpAdapter = new IndentCusAdapter(discoverBean.getCacheData().getData());
+				lv_event_hd.setAdapter(rpAdapter);
+			}
+		});
+	}
+
+	@Override
+	protected void bindEvent() {
+
+	}
+
+	@Override
+	protected int getFragmentLayoutId() {
+		return R.layout.fragment_events;
+	}
+
+
+	private class IndentCusAdapter extends BaseAdapter {
+
+		List<DiscoverBean.DataBean> list = new ArrayList<>();
+
+		public IndentCusAdapter(List<DiscoverBean.DataBean>  overduelist) {
+			list = overduelist;
+		}
+
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return list.size();
+		}
+
+		@Override
+		public Object getItem(int position) {
+			// TODO Auto-generated method stub
+			return list.get(position);
+		}
+
+		@Override
+		public long getItemId(int position) {
+			// TODO Auto-generated method stub
+			return position;
+		}
+
+		@Override
+		public View getView(final int position, View convertView,
+				ViewGroup parent) {
+			// TODO Auto-generated method stub
+			final Cache cache;
+
+			if (convertView == null) {
+
+				convertView = LayoutInflater.from(getActivity()).inflate(
+						R.layout.item_eventfragment,parent,false);
+				cache = new Cache();
+				cache.img_eventitem = (ImageView) convertView
+						.findViewById(R.id.img_eventitem);
+				cache.tv_eventitem_bt = (TextView) convertView
+						.findViewById(R.id.tv_eventitem_bt);
+				cache.tv_eventitem_start = (TextView) convertView
+						.findViewById(R.id.tv_eventitem_start);
+				cache.tv_eventitem_end = (TextView) convertView
+						.findViewById(R.id.tv_eventitem_end);
+				cache.tv_eventitem_canjia = (TextView) convertView
+						.findViewById(R.id.tv_eventitem_canjia);
+				cache.img_eventitem = (ImageView) convertView
+						.findViewById(R.id.img_eventitem);
+
+				convertView.setTag(cache);
+			} else {
+				cache = (Cache) convertView.getTag();
+			}
+
+			cache.tv_eventitem_bt.setText(list.get(position).getTitle());
+			cache.tv_eventitem_start.setText(list.get(position).getStart());
+			cache.tv_eventitem_end.setText(list.get(position).getEnd());
+			cache.tv_eventitem_canjia.setText("参加人数"
+					+ list.get(position).getSign_total());
+//			BitmapUtils bitmapUtils = new BitmapUtils(getActivity());
+//			bitmapUtils.display(cache.img_eventitem,
+//					list.get(position).getImage());
+
+			LoaderFactory.getLoader().loadNet(cache.img_eventitem, list.get(position).getImage(),
+					new ILoader.Options(R.drawable.biaoti, R.drawable.biaoti));
+
+			// ImageLoader.getInstance().loadImage(
+			// mLatLngList.get(position).get("image"),
+			// new SimpleImageLoadingListener() {
+			// @Override
+			// public void onLoadingComplete(String imageUri,
+			// View view, Bitmap loadedImage) {
+			// // TODO Auto-generated method stub
+			// cache.img_eventitem.setImageBitmap(loadedImage);
+			// super.onLoadingComplete(imageUri, view, loadedImage);
+			// }
+			// });
+			convertView.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Intent intent = new Intent();
+					intent.setClass(getActivity(), EventDetails.class);
+					Log.i("content", list.get(position).getContent());
+					intent.putExtra("content", list.get(position)
+							.getContent());
+
+					startActivity(intent);
+
+				}
+			});
+			return convertView;
+		}
+	}
+
+	class Cache {
+		ImageView img_eventitem;
+		TextView tv_eventitem_bt, tv_eventitem_start, tv_eventitem_end,
+				tv_eventitem_canjia;
+	}
+
+}

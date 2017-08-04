@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="?actionBarSize"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/fc_rl_topbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="7%"
+        android:background="@color/bluefont">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:src="@drawable/leftarrow"
+            android:layout_centerVertical="true"
+            android:padding="12dp"
+            android:id="@+id/fc_img_back"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/fc_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:text="发现"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <im.delight.android.webview.AdvancedWebView
+        android:layout_width="match_parent"
+        android:id="@+id/fc_webview"
+        android:layout_below="@+id/fc_rl_topbar"
+        android:layout_height="match_parent"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/fc_fl_error"
+        android:background="@color/white"
+        android:visibility="invisible"
+        android:layout_below="@+id/fc_rl_topbar"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="网络错误,点击重新加载!"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:textColor="@color/grayfont"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+
+</android.support.percent.PercentRelativeLayout>

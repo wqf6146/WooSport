@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yhrjkf.woyundong.view.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/fr_rl_topbar"
+        android:background="@color/bluefont"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="100%">
+
+        <ImageView
+            android:id="@+id/al_img_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:padding="12dp"
+            android:src="@drawable/leftarrow" />
+
+        <TextView
+            android:id="@+id/fr_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:text="密码修改"
+
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/fu_edit_oldpwd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="100%"
+        android:inputType="textPassword"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:hint="请输入原密码密码"
+        android:textColorHint="@color/grayline"
+        android:padding="5dp"
+        android:background="@drawable/findpw_edit_style" />
+
+
+    <EditText
+        android:id="@+id/fu_edit_newpwd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="100%"
+        android:inputType="textPassword"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:hint="请输入新密码"
+        android:textColorHint="@color/grayline"
+        android:padding="5dp"
+        android:background="@drawable/findpw_edit_style" />
+    <EditText
+        android:id="@+id/fu_edit_newpwd2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="100%"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:layout_gravity="center_horizontal"
+        android:hint="再次输入新密码"
+        android:textColorHint="@color/grayline"
+        android:padding="5dp"
+        android:background="@drawable/findpw_edit_style" />
+
+
+    <TextView
+        android:id="@+id/fp_btn_commitpwd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/textview_back_gray"
+        android:gravity="center"
+        android:text="完成"
+        android:textColor="@color/graybtnfont"
+        android:textSize="18dp"
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="80%" />
+
+</com.yhrjkf.woyundong.view.PercentLinearLayout>

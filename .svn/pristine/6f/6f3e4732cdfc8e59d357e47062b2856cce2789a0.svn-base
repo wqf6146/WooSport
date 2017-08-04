@@ -1,0 +1,60 @@
+package com.yhrjkf.woyundong.activity;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.LinearLayout;
+
+import com.tencent.smtt.sdk.WebSettings;
+import com.tencent.smtt.sdk.WebView;
+import com.tencent.smtt.sdk.WebViewClient;
+import com.yhrjkf.woyundong.R;
+import com.yhrjkf.woyundong.tools.AppConfig;
+
+public class StarshineActivity extends Activity {
+
+	private WebView web_starshine;
+	private LinearLayout ll_back;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+			finish();
+			return;
+		}
+		setContentView(R.layout.activity_starshine);
+		web_starshine = (WebView) findViewById(R.id.web_starshine);
+		ll_back = (LinearLayout) findViewById(R.id.ll_back);
+		web_starshine.loadUrl(AppConfig.STARTSHINE);
+
+		WebSettings webSettings = web_starshine.getSettings();
+		webSettings.setJavaScriptEnabled(true);
+		webSettings.setUseWideViewPort(true);
+
+		web_starshine.setWebViewClient(new WebViewClient() {
+			public boolean shouldOverrideUrlLoading(WebView view, String url) {
+				view.loadUrl(url);
+				return true;
+			}
+		});
+		ll_back.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		web_starshine.loadUrl("about:blank");
+		super.onPause();
+	}
+}

@@ -1,0 +1,242 @@
+[
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\fade_out_center.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\anim\\fade_out_center.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\mainactivity_rotate_right.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\mainactivity_rotate_right.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_from_top.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\slide_in_from_top.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_from_bottom.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\slide_in_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\mainactivity_rotate_left.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\mainactivity_rotate_left.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\v_fragment_exit.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\42122e5389809cc56faa14556defc641bf5b2165\\output\\res\\anim\\v_fragment_exit.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\interpolator_slight_overshoot.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\interpolator_slight_overshoot.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\337b79ff7a2d9bf43e7784f5dabb9ab71ad4367a\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\modal_out.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\sweetdialog\\build\\intermediates\\bundles\\default\\res\\anim\\modal_out.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\mainactivity_fade_in.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\mainactivity_fade_in.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\error_frame_in.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\sweetdialog\\build\\intermediates\\bundles\\default\\res\\anim\\error_frame_in.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_to_bottom.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\slide_out_to_bottom.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_to_top.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\slide_out_to_top.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\h_fragment_pop_enter.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\42122e5389809cc56faa14556defc641bf5b2165\\output\\res\\anim\\h_fragment_pop_enter.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\mainactivity_push_bottom_in.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\mainactivity_push_bottom_in.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\pop_exit_no_anim.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\42122e5389809cc56faa14556defc641bf5b2165\\output\\res\\anim\\pop_exit_no_anim.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\location_btn_out.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\location_btn_out.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\v_fragment_pop_exit.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\42122e5389809cc56faa14556defc641bf5b2165\\output\\res\\anim\\v_fragment_pop_exit.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\h_fragment_exit.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\42122e5389809cc56faa14556defc641bf5b2165\\output\\res\\anim\\h_fragment_exit.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\tabbar_in.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\tabbar_in.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\337b79ff7a2d9bf43e7784f5dabb9ab71ad4367a\\output\\res\\anim\\design_fab_in.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\no_anim.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\42122e5389809cc56faa14556defc641bf5b2165\\output\\res\\anim\\no_anim.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\tabbar_out.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\tabbar_out.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\menu_fadeout.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\menu_fadeout.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\anim\\slide_out_bottom.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\337b79ff7a2d9bf43e7784f5dabb9ab71ad4367a\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\v_fragment_pop_enter.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\42122e5389809cc56faa14556defc641bf5b2165\\output\\res\\anim\\v_fragment_pop_enter.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\location_btn_in.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\location_btn_in.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\anim\\slide_in_bottom.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\run_btn_right_in.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\run_btn_right_in.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\fade_in_center.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\37521ccf4a68e81fb8226e48508455e7bb22f353\\output\\res\\anim\\fade_in_center.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\run_btn_left_out.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\run_btn_left_out.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\interpolator_slight_anticipate.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\interpolator_slight_anticipate.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\mainactivity_fade_out.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\mainactivity_fade_out.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\337b79ff7a2d9bf43e7784f5dabb9ab71ad4367a\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\337b79ff7a2d9bf43e7784f5dabb9ab71ad4367a\\output\\res\\anim\\design_fab_out.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\run_btn_right_out.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\run_btn_right_out.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\mainactivity_push_bottom_out.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\mainactivity_push_bottom_out.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\success_bow_roate.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\sweetdialog\\build\\intermediates\\bundles\\default\\res\\anim\\success_bow_roate.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\error_x_in.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\sweetdialog\\build\\intermediates\\bundles\\default\\res\\anim\\error_x_in.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\modal_in.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\sweetdialog\\build\\intermediates\\bundles\\default\\res\\anim\\modal_in.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\v_fragment_enter.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\42122e5389809cc56faa14556defc641bf5b2165\\output\\res\\anim\\v_fragment_enter.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\success_mask_layout.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\sweetdialog\\build\\intermediates\\bundles\\default\\res\\anim\\success_mask_layout.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\337b79ff7a2d9bf43e7784f5dabb9ab71ad4367a\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\menu_fadein.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\menu_fadein.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\popup_in.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\popup_in.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\a438a8c10ecd641951e7a641ccd1775f9e38ea41\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\h_fragment_pop_exit.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\42122e5389809cc56faa14556defc641bf5b2165\\output\\res\\anim\\h_fragment_pop_exit.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\popup_out.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\popup_out.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\h_fragment_enter.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\42122e5389809cc56faa14556defc641bf5b2165\\output\\res\\anim\\h_fragment_enter.xml"
+    },
+    {
+        "merged": "E:\\WorkPlaces\\WoSport4\\app\\build\\intermediates\\res\\merged\\release\\anim\\run_btn_left_in.xml",
+        "source": "E:\\WorkPlaces\\WoSport4\\app\\src\\main\\res\\anim\\run_btn_left_in.xml"
+    }
+]

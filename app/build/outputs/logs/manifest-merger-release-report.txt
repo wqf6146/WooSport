@@ -1,0 +1,442 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:2:1-205:12
+	package
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:4:5-35
+		INJECTED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:7:5-34
+		INJECTED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:5:5-29
+		INJECTED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:2:11-69
+	android:anyDensity
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:6:5-30
+uses-sdk
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:9:5-11:41
+MERGED from [com.github.CymChad:BaseRecyclerViewAdapterHelper:2.8.6] C:\Users\Administrator\.android\build-cache\d6a9bb5b681652f589bdad218ba2f50acb0dd32b\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:25.2.0] C:\Users\Administrator\.android\build-cache\337b79ff7a2d9bf43e7784f5dabb9ab71ad4367a\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Administrator\.android\build-cache\1b04b06239672aeff5780aeeb51efc7c3b0fda78\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.2.0] C:\Users\Administrator\.android\build-cache\5846a1c76f896f61a1183f6c36172084cba8603e\output\AndroidManifest.xml:20:5-44
+MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\Administrator\.android\build-cache\37078a445314354e8fb62fb07cfbbe9d73ceff5d\output\AndroidManifest.xml:5:5-7:41
+MERGED from [me.yokeyword:fragmentation:0.10.1] C:\Users\Administrator\.android\build-cache\42122e5389809cc56faa14556defc641bf5b2165\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:percent:25.2.0] C:\Users\Administrator\.android\build-cache\0a22cf00af995b0877f9293718bbcedd463f47d1\output\AndroidManifest.xml:20:5-43
+MERGED from [com.youth.banner:banner:1.4.9] C:\Users\Administrator\.android\build-cache\e50b04f66f525d0aae70fed8266741bfb0d1f2c9\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.bigkoo:alertview:1.0.2] C:\Users\Administrator\.android\build-cache\37521ccf4a68e81fb8226e48508455e7bb22f353\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.yanzhenjie:permission:1.0.5] C:\Users\Administrator\.android\build-cache\017cead78cc2ed4bd9643e1b19bffca1866f5be5\output\AndroidManifest.xml:21:5-23:41
+MERGED from [com.yanzhenjie.alertdialog:alertdialog:1.0.0] C:\Users\Administrator\.android\build-cache\52469835b0f16bb745ab01d976adc47129deb658\output\AndroidManifest.xml:6:5-8:41
+MERGED from [com.kaopiz:kprogresshud:1.0.2] C:\Users\Administrator\.android\build-cache\152353a9c046a09d0fdb42abe6265b3de97b3652\output\AndroidManifest.xml:7:5-9:41
+MERGED from [cn.qqtheme.framework:WheelPicker:1.4.3] C:\Users\Administrator\.android\build-cache\55acf334d34de22e5d3a5d17e53c93d9c75f2840\output\AndroidManifest.xml:8:5-10:41
+MERGED from [cn.qqtheme.framework:Common:1.4.3] C:\Users\Administrator\.android\build-cache\1abeb195cf4355831fc8b816af96189ba3b7b86c\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.zcweng:switch-button:0.0.3] C:\Users\Administrator\.android\build-cache\eb678ffb54f6a9f8ae001da9433734cab0335b24\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.wanjian:cockroach:0.0.5] C:\Users\Administrator\.android\build-cache\c831d930db916649a407f9983fc639679280a43b\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport4\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.vise.xiaoyaoyou:viseutils:1.0.0] C:\Users\Administrator\.android\build-cache\f8d2671a05cb70149493cbf2aeb5165f76eed9d6\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.vise.xiaoyaoyou:viselog:1.0.0] C:\Users\Administrator\.android\build-cache\32c3adc515d852f3cafe23cf2396a17bac9d9aed\output\AndroidManifest.xml:7:5-9:41
+MERGED from [WoSport4:calendarlibrary:1.4.3] E:\WorkPlaces\WoSport4\calendarlibrary\build\intermediates\bundles\default\AndroidManifest.xml:8:5-10:41
+MERGED from [com.vise.xiaoyaoyou:sweetdialog:1.4.3] E:\WorkPlaces\WoSport4\sweetdialog\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.pnikosis:materialish-progress:1.0] C:\Users\Administrator\.android\build-cache\f46760d61a3ed33db8cd5e1335cc46ae755acbaf\output\AndroidManifest.xml:7:5-9:41
+MERGED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.soundcloud.android.crop:lib_crop:1.0.0] C:\Users\Administrator\.android\build-cache\f764aaff1f1069462d5a08b7b80c32c80dafaaa0\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Administrator\.android\build-cache\a438a8c10ecd641951e7a641ccd1775f9e38ea41\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Administrator\.android\build-cache\f3e6e54c52e5eea3f37193631e3a3bf7b50c69bf\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Administrator\.android\build-cache\e4b07bff3922b2ac8e2aa9a3f6841089fe124259\output\AndroidManifest.xml:21:5-43
+MERGED from [me.shaohui.advancedluban:library:1.3.2] C:\Users\Administrator\.android\build-cache\99d555d0301c0f2c7e283ecd34b5c467afb12afd\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\2e7ef59fb16527c686714bfc20de860455530b47\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\18a27a8e292a46f5ac730a55bfc0ae97f2303883\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\f65345d1b45e514d6f1345000aa9ed0d7e140e7f\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\babedcd30af7a6a04934d6fe6c998d7d4e015991\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\9069f85a66665cf9c82ae978af6eae01f51576f7\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\ffba70fbd49fe89d684f9354e4f50f4f468abf26\output\AndroidManifest.xml:21:5-23:58
+MERGED from [io.reactivex:rxandroid:1.2.1] C:\Users\Administrator\.android\build-cache\cc358df9db1eadf5ae803742b3742b9686632fd7\output\AndroidManifest.xml:19:5-43
+MERGED from [com.white.countdownbutton:countdownbtn:1.0.1] E:\WorkPlaces\WoSport4\countdownbtn\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.2.0] C:\Users\Administrator\.android\build-cache\337b79ff7a2d9bf43e7784f5dabb9ab71ad4367a\output\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:11:9-38
+		INJECTED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:10:9-34
+		INJECTED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:13:5-79
+MERGED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport4\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:13:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:15:5-76
+MERGED from [com.vise.xiaoyaoyou:viseutils:1.0.0] C:\Users\Administrator\.android\build-cache\f8d2671a05cb70149493cbf2aeb5165f76eed9d6\output\AndroidManifest.xml:11:5-76
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:15:22-73
+uses-permission#android.permission.INTERNET
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:17:5-67
+MERGED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport4\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:17:22-64
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:18:5-73
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:18:22-70
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:19:5-75
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:19:22-72
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:20:5-80
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:20:22-77
+uses-permission#android.permission.WAKE_LOCK
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:23:5-68
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:23:22-65
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:24:5-80
+MERGED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport4\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:14:5-80
+MERGED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:24:22-77
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:27:6-79
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:27:23-77
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:28:5-70
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:28:22-68
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:30:5-81
+MERGED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport4\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:13:5-81
+MERGED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:30:22-78
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:33:5-81
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:33:22-78
+uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:38:5-89
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:38:22-86
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:40:5-76
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:40:22-73
+uses-permission#android.permission.BLUETOOTH
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:58:5-84
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:58:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:59:5-90
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:59:22-71
+application
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:62:5-203:19
+MERGED from [com.android.support:design:25.2.0] C:\Users\Administrator\.android\build-cache\337b79ff7a2d9bf43e7784f5dabb9ab71ad4367a\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:transition:25.2.0] C:\Users\Administrator\.android\build-cache\5846a1c76f896f61a1183f6c36172084cba8603e\output\AndroidManifest.xml:22:5-20
+MERGED from [com.github.delight-im:Android-AdvancedWebView:v3.0.0] C:\Users\Administrator\.android\build-cache\37078a445314354e8fb62fb07cfbbe9d73ceff5d\output\AndroidManifest.xml:9:5-20
+MERGED from [me.yokeyword:fragmentation:0.10.1] C:\Users\Administrator\.android\build-cache\42122e5389809cc56faa14556defc641bf5b2165\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:percent:25.2.0] C:\Users\Administrator\.android\build-cache\0a22cf00af995b0877f9293718bbcedd463f47d1\output\AndroidManifest.xml:22:5-20
+MERGED from [com.kaopiz:kprogresshud:1.0.2] C:\Users\Administrator\.android\build-cache\152353a9c046a09d0fdb42abe6265b3de97b3652\output\AndroidManifest.xml:11:5-13:38
+MERGED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport4\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:16:5-21:19
+MERGED from [com.vise.xiaoyaoyou:viselog:1.0.0] C:\Users\Administrator\.android\build-cache\32c3adc515d852f3cafe23cf2396a17bac9d9aed\output\AndroidManifest.xml:11:5-15:19
+MERGED from [WoSport4:calendarlibrary:1.4.3] E:\WorkPlaces\WoSport4\calendarlibrary\build\intermediates\bundles\default\AndroidManifest.xml:12:5-20
+MERGED from [com.vise.xiaoyaoyou:sweetdialog:1.4.3] E:\WorkPlaces\WoSport4\sweetdialog\build\intermediates\bundles\default\AndroidManifest.xml:11:5-20
+MERGED from [com.pnikosis:materialish-progress:1.0] C:\Users\Administrator\.android\build-cache\f46760d61a3ed33db8cd5e1335cc46ae755acbaf\output\AndroidManifest.xml:11:5-15:19
+MERGED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:14:5-26:19
+MERGED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:13:5-34:19
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Administrator\.android\build-cache\a438a8c10ecd641951e7a641ccd1775f9e38ea41\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Administrator\.android\build-cache\f3e6e54c52e5eea3f37193631e3a3bf7b50c69bf\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Administrator\.android\build-cache\e4b07bff3922b2ac8e2aa9a3f6841089fe124259\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\2e7ef59fb16527c686714bfc20de860455530b47\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\18a27a8e292a46f5ac730a55bfc0ae97f2303883\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\f65345d1b45e514d6f1345000aa9ed0d7e140e7f\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\babedcd30af7a6a04934d6fe6c998d7d4e015991\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\9069f85a66665cf9c82ae978af6eae01f51576f7\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\ffba70fbd49fe89d684f9354e4f50f4f468abf26\output\AndroidManifest.xml:29:5-20
+MERGED from [com.white.countdownbutton:countdownbtn:1.0.1] E:\WorkPlaces\WoSport4\countdownbtn\build\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:65:9-41
+	android:supportsRtl
+		ADDED from [com.kaopiz:kprogresshud:1.0.2] C:\Users\Administrator\.android\build-cache\152353a9c046a09d0fdb42abe6265b3de97b3652\output\AndroidManifest.xml:13:9-35
+	android:allowBackup
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:63:9-35
+	android:icon
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:64:9-38
+		REJECTED from [com.pnikosis:materialish-progress:1.0] C:\Users\Administrator\.android\build-cache\f46760d61a3ed33db8cd5e1335cc46ae755acbaf\output\AndroidManifest.xml:13:9-45
+	android:persistent
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:68:9-34
+	android:theme
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:66:9-40
+	tools:replace
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:69:9-52
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:67:9-48
+service#com.amap.api.location.APSService
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:71:9-73:19
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:72:13-60
+service#com.yhrjkf.woyundong.service.NotificationService
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:75:9-64
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:75:18-61
+meta-data#com.amap.api.v2.apikey
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:77:9-79:63
+	android:value
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:79:13-61
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:78:13-50
+activity#com.yhrjkf.woyundong.activity.LaunchActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:81:9-92:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:86:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:83:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:84:13-44
+	android:theme
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:85:13-47
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:82:13-72
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:88:13-91:29
+action#android.intent.action.MAIN
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:89:17-69
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:89:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:90:17-77
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:90:27-74
+activity#com.yhrjkf.woyundong.activity.MainActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:93:10-102:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:96:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:95:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:97:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:94:13-70
+intent-filter#android.intent.category.LAUNCHER+com.yhrjkf.woyundong.activity.action.RETURN
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:98:14-101:30
+action#com.yhrjkf.woyundong.activity.action.RETURN
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:99:18-87
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:99:26-84
+activity#com.yhrjkf.woyundong.activity.LoginActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:104:9-110:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:107:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:106:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:108:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:105:13-71
+activity#com.yhrjkf.woyundong.activity.RegisterActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:111:10-117:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:114:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:113:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:115:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:112:13-74
+activity#com.yhrjkf.woyundong.activity.PersonalActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:118:9-124:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:121:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:120:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:122:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:119:13-74
+activity#com.yhrjkf.woyundong.activity.KeepLiveActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:126:9-133:52
+	android:excludeFromRecents
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:128:13-46
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:131:13-48
+	android:exported
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:129:13-37
+	android:configChanges
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:127:13-94
+	android:finishOnTaskLaunch
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:130:13-47
+	android:theme
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:133:13-49
+	android:taskAffinity
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:132:13-53
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:126:19-60
+activity#com.yhrjkf.woyundong.activity.NewRecordActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:135:9-141:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:138:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:137:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:139:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:136:13-75
+activity#com.yhrjkf.woyundong.activity.NickNameActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:143:9-149:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:146:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:145:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:147:13-42
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:144:13-74
+activity#com.yhrjkf.woyundong.activity.EmailActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:150:9-156:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:153:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:152:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:154:13-42
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:151:13-71
+activity#com.yhrjkf.woyundong.activity.OpinionActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:157:9-163:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:160:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:159:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:161:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:158:13-73
+activity#com.yhrjkf.woyundong.activity.SignatureActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:164:9-170:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:167:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:166:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:168:13-42
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:165:13-75
+activity#com.yhrjkf.woyundong.activity.ProductActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:173:9-179:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:176:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:175:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:177:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:174:13-73
+activity#com.yhrjkf.woyundong.activity.AboutUsActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:180:10-186:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:183:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:182:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:184:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:181:13-73
+activity#com.yhrjkf.woyundong.activity.TechnologyActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:187:9-193:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:190:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:189:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:191:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:188:13-76
+activity#com.yhrjkf.woyundong.activity.HistoryMapActivity
+ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:195:9-201:20
+	android:screenOrientation
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:198:13-49
+	android:label
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:197:13-45
+	android:launchMode
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:199:13-44
+	android:name
+		ADDED from E:\WorkPlaces\WoSport4\app\src\main\AndroidManifest.xml:196:13-76
+service#com.vise.xsnow.download.core.DownService
+ADDED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport4\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:20:9-76
+	android:name
+		ADDED from [com.vise.xiaoyaoyou:xsnow:1.0.1] E:\WorkPlaces\WoSport4\xsnow\build\intermediates\bundles\default\AndroidManifest.xml:20:18-73
+uses-permission#android.permission.DISABLE_KEYGUARD
+ADDED from [com.vise.xiaoyaoyou:viseutils:1.0.0] C:\Users\Administrator\.android\build-cache\f8d2671a05cb70149493cbf2aeb5165f76eed9d6\output\AndroidManifest.xml:12:5-75
+	android:name
+		ADDED from [com.vise.xiaoyaoyou:viseutils:1.0.0] C:\Users\Administrator\.android\build-cache\f8d2671a05cb70149493cbf2aeb5165f76eed9d6\output\AndroidManifest.xml:12:22-72
+uses-permission#android.permission.CAMERA
+ADDED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:12:5-65
+	android:name
+		ADDED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:12:22-62
+activity#com.soundcloud.android.crop.CropImageActivity
+ADDED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:15:9-82
+	android:name
+		ADDED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:15:19-79
+provider#android.support.v4.content.FileProvider
+ADDED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:17:9-25:20
+	android:authorities
+		ADDED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:19:13-64
+	android:grantUriPermissions
+		ADDED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:21:13-47
+	android:exported
+		ADDED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:20:13-37
+	android:name
+		ADDED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:18:13-67
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:22:13-24:54
+	android:resource
+		ADDED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:24:17-51
+	android:name
+		ADDED from [WoSport4:takephoto_library:1.4.3] E:\WorkPlaces\WoSport4\takephoto_library\build\intermediates\bundles\default\AndroidManifest.xml:23:17-67
+activity#com.darsh.multipleimageselect.activities.AlbumSelectActivity
+ADDED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:16:9-24:20
+	android:label
+		ADDED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:19:13-45
+	android:configChanges
+		ADDED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:18:13-59
+	android:theme
+		ADDED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:20:13-60
+	android:name
+		ADDED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:17:13-88
+intent-filter#android.intent.category.DEFAULT
+ADDED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:21:13-23:29
+category#android.intent.category.DEFAULT
+ADDED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:22:17-76
+	android:name
+		ADDED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:22:27-73
+activity#com.darsh.multipleimageselect.activities.ImageSelectActivity
+ADDED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:25:9-33:20
+	android:label
+		ADDED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:28:13-45
+	android:configChanges
+		ADDED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:27:13-59
+	android:theme
+		ADDED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:29:13-60
+	android:name
+		ADDED from [com.darsh.multipleimageselect:multipleimageselect:1.0.4] C:\Users\Administrator\.android\build-cache\7c76ee43c4940cd0cdfd9982c609194032ae460b\output\AndroidManifest.xml:26:13-88
+meta-data#android.support.VERSION
+ADDED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\2e7ef59fb16527c686714bfc20de860455530b47\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\18a27a8e292a46f5ac730a55bfc0ae97f2303883\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\f65345d1b45e514d6f1345000aa9ed0d7e140e7f\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\babedcd30af7a6a04934d6fe6c998d7d4e015991\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\9069f85a66665cf9c82ae978af6eae01f51576f7\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\ffba70fbd49fe89d684f9354e4f50f4f468abf26\output\AndroidManifest.xml:25:5-27:41
+	android:value
+		ADDED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\2e7ef59fb16527c686714bfc20de860455530b47\output\AndroidManifest.xml:27:9-38
+	android:name
+		ADDED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.android\build-cache\2e7ef59fb16527c686714bfc20de860455530b47\output\AndroidManifest.xml:26:9-47
